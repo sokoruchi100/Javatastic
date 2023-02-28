@@ -29,72 +29,299 @@
         </nav>
     </header>
     <main>
+        <section id="information">
+            <h1>Java Fundamentals</h1>
+            <h3>We all gotta start somewhere</h3>
+            <div id="sec1">
+                <h2>Programming? Java? Huh?</h2>
+                <p>Even if you might be living under a rock, you've probably heard of words like <em>"Programming"</em> and <em>"Java"</em> thrown around by nerds living in their mom's basement. Now, since you're on this website, you must be curious as to whatever programming is. Well, according to Wikipedia: </p>
+                <blockquote>Computer programming is the process of performing a particular computation (or more generally, accomplishing a specific computing result), usually by designing and building an executable computer program.</blockquote>
+                <p>Or in more simpler terms</p>
+                <blockquote>Programming is when you do stuff on computer and it do stuff back.</blockquote>
+                <p>Simple enough to follow, right? So, now you might be wondering:</p>
+                <q>What is Java? Why are we using it specifically?</q>
+                <p>Java is a programming language. A programming language is a way you can communicate with the computer, just like how you can use normal languages like english or spanish to communicate with other people. Now, why Java in particular? Collegeboard. Most people who learn Java as their first language are just doing it for that sweet sweet AP Credit. But if you're under the age of 15, you probably won't have to care about that until you're older.</p>
+                <p>Anyways, since we have those basic things taken care of, you probably want to know how to start programming in Java. Well, just like in any language, we gotta start at the fundamentals. Here is how you can print out <em>"Hello World!"</em> in Java.</p>
+                <p>But, that's not to say Java is a bad language to learn. In fact, many popular applications like Minecraft and Netflix are all programmed in Java. Just saying that if you're new to programming and want to learn, start with something easier like python.</p>
+                <pre>
+                    <code>
+                        public class MyClass {
+                            public static void main(String[] args) {
+                                System.out.print("Hello World!");
+                            }
+                        }
+                        
+                    </code>
+                </pre>
+                <p>Whew, that's quite a mouthful, so let's unpack this. Every java program is written in a class as you can see in the first line. We'll explain what classes are later. Just remember, if you put this in a java file, the file and the class need to have the same name.
+                    Therefore, if you have a file called <strong>MyClass.java</strong>, the class within that file will need to start with <strong>public class MyClass</strong>. </p>
+                <p>The second line is the main method. Basically, this just runs whatever code is inside it. Most java classes need this method because it runs the code automatically rather than you having to call it.</p>
+                <p>The third line is the actual code being run: the print statement. The code uses System.in as the object(we'll go over this in the next section) that we use to call the methods <strong>print()</strong> and <strong>println()</strong>. These methods just print out whatever we put inside of the paranthesis.
+                    However, the difference here is that <strong>println()</strong> prints out a new line after printing your input while <strong>print()</strong> doesn't.</p>
+                <p>Also, do you notice how the phrase <em>"Hello World!"</em> is in quotes? It's written like this because it is a string literal. Unfortunately, the computer isn't able to recognize simple sentences without them being inside of quotation marks. If you tried putting that phrase in the print method without the quotes, it would output an error.</p>
+                <p>Notice the <strong>;</strong> semicolon at the end of the print method? Always remember to put that at the end of every statement. If you don't, you get an error. Yeah, java's just weird like that. The <strong>{}</strong> curly brackets that you see are used to enclose blocks of code. It basically keeps the code inside.</p>
+                <p>Now, let's move onto comments</p>
+                <pre>
+                    <code>
+                        //This is a comment
+                        /*
+                            This is
+                            a block
+                            comment
+                        */
+                    </code>
+                </pre>
+                <p>The examples you see above are comments. Java ignores these statements when you run the code. They are used to comment your code or make the compiler ignore them. Use two forward slashes <strong>//</strong> to make a single line comment or a slash and asterisk <strong>/* */</strong> to make a block comment that can span multiple lines.</p>
+                <p>Now you're wondering, <q>Compiler? What's a compiler?</q> Well, a compiler is basically a translator that turns your java code into machine code that the computer can understand. If you have any slight mishaps in your java code, the compiler won't make sense of the code a compile-time error.
+                    These errors are rather simple to fix, just make sure your syntax is correct.</p>
+
+            </div>
+            <div id="sec2">
+                <h2>The Many Types of Data</h2>
+                <p>Just like in math, there exists variables in computer science that stores numbers, but they can also store words as well.</p>
+                <p>Variables can be declared and initialized as followed:</p>
+                <pre>
+                    <code>
+                        int x = 2;
+                        String greeting = "Hello World!";
+                    </code>
+                </pre>
+                <p>The first thing you write when declaring a variable is the data type. This defines what kind of a variable it is. In the cases above, x is an int(short for integer) and greeting is a String(word or sentence).
+                    However, there is a fundamental difference between these data types. <strong>int</strong> is a primitive type, meaning it is a basic and fundamental type, while <strong>String</strong> is a reference type, also known as an object.
+                    We'll explain more as we get into objects, but basically, primitive types are basic while reference types are more complex.<br>
+                    The main three primitive types to remember are <strong>ints</strong>, <strong>booleans</strong>, and <strong>doubles</strong>.
+                    To summarize, ints are integer numbers, doubles are decimal numbers, and booleans are either <strong>true</strong> or <strong>false</strong> values. Take a look at the code below:
+                    <pre>
+                        <code>
+                            int numberOfCats = 1;
+                            double liters = 3.5;
+                            boolean isRunning = true;
+                        </code>
+                    </pre>
+                    In computer science, variables are actually just locations within a computer's memory that stores data.
+                    Primitive variables actually store real primitive values within these memory locations. These are basically just 1s and 0s. <br>
+                    I've been throwing around words like declare and initialize as if they're the same, but there is a subtle difference.
+                    When you declare a variable, you are creating it by calling the type and name. However, when you initialize a variable, you are giving it a value for the first time using the = assignment operator.
+                    Take a look at this code:</p>
+                    <pre>
+                        <code>
+                            final int PI = 3.14159;
+                        </code>
+                    </pre>
+                    <p>
+                        This is a final variable. Unlike other variables that can be altered after being initialized, final variables can not be changed once they are initialized with a value.
+                    </p>
+                </p>
+            </div>
+            <div id="sec3">
+                <h2>Math. Yay.</h2>
+                <p>Everyone loves math, right? Well, you're gonna be doing quite a bit of math when programming in Java. Look at this arithmetic expression below:
+                    <pre>
+                        <code>
+                            int x = 2;
+                            double y = 4.2;
+                            System.out.println(x + y);
+                        </code>
+                    </pre>
+                    Arithmetic expressions consist of ints, doubles, and some kind of operator symbol like +, -, *, or /. + adds things up, - subtracts two values, * multiplies, and / divides. Oh yeah, there is alsp %, the modulo operator.
+                    Don't confuse this for a percent sign because it's not. This operator divides the first number by the second and returns the remainder instead of the quotient.
+                    <br>Now, what do you think 5 / 2 will output. 2.5? Wrong. It actually outputs 2. The reason is because if two ints are used in division, the output must be an int, so the decimal value is cut off.
+                    If you want your arithmetic expression to output 2.5, just make sure one of the values is a double like this:
+                    <pre>
+                        <code>
+                            System.out.print(5.0/2); //Outputs 2.5
+                        </code>
+                    </pre>
+                    Just like in math, you can combine arithmetic expressions together to create compound arithmetic expressions like so:
+                    <pre>
+                        <code>
+                            (5+2)*3.0 % 4; //Outputs 1
+                        </code>
+                    </pre>
+                    Arithmetic expressions also follow good old PEMDAS you learned from 4th grade. Or BODMAS if you're bri'ish.
+                    Make sure not to divide by 0 because it is literally impossible and the computer won't be able to break the laws of math.<br>
+                    The assignment operator (=) is a useful operator that doesn't actually do math, but instead, changes values of variables. As said before, you can use it to initialize a variable or change its value later in the code.
+                    Always remember that when using the = operator, the variable on the left stores the data on the right, not the other way around. Look at the example below:
+                    <pre>
+                        <code>
+                            int x = 0;
+                            int y = 2;
+                            x = y; //This assigns the value of y (2) to x. This does not assign the value of x to y.
+                            System.out.println(x); //Outputs 2
+                        </code>
+                    </pre>
+                    Expressions can only return 1 value and the type depends on the values within the expression. Just like before, an arithmetic expression with a double will return a double, but an expression with only ints will return an int.
+                </p>
+                
+            </div>
+            <div id="sec4">
+                <h2>Arithmetic and Assignment at the Same Time?</h2>
+                <p>Now let's say you need to add a value to an int variable. You can simply just set the variable to itself in addition to any other arithmetic operators. For example:
+                    <pre>
+                        <code>
+                            int x = 1;
+                            x = x + 2; //x is now equal to 3
+                        </code>
+                    </pre>
+                    But what if you're too lazy to do that. Well, fret not, because we got compound assignment operators:
+                    <pre>
+                        <code>
+                            int x = 1;
+                            x += 2; //adds 2 to x
+                            x -= 2; //subtracts 2 from x
+                            x *= 2; //multiples x by 2
+                            x /= 2; //divides x by 2
+                            x %= 2; //modulos x by 2
+                        </code>
+                    </pre>
+                    Pretty simple, right? Well, what if you were so lazy, you couldn't even be bothered to write x += 1 or x -= 1. Well, have no fear, we got operators for those too.
+                    <pre>
+                        <code>
+                            int x = 1;
+                            x++; //adds x by 1
+                            x--; //subtracts x by 1
+                        </code>
+                    </pre>
+                    If you use the operators above, make sure to note that they can only increment or decrement by 1.
+                </p>
+            </div>
+            <div id="sec5">
+                <h2>Type-Castaways and Homes on the Variable Range</h2>
+                <p>
+                    Type casting in Java is a way to convert one type of data into another type. Just like how you can convert inches to centimeters, you can convert one data type to another.
+
+                    For example, let's say you have a variable "age" that is an integer (a whole number) and you want to print it out as a decimal (a number with a decimal point). You can use type casting to convert the integer to a decimal like this:
+                    
+                    <pre>
+                        <code>
+                            int age = 12;
+                            double decimalAge = (double) age;
+                            System.out.println(decimalAge);
+                        </code>
+                    </pre>
+                    
+                    The "(double)" in the second line is the type casting operator. It tells Java to convert the integer variable "age" to a double variable called "decimalAge".
+                    
+                    Type casting is useful when you want to perform operations with variables of different data types, or when you want to assign a value of one data type to a variable of another data type.
+                    In Java, each type of variable has a range, which is the set of values that it can hold.
+
+                    For example, the "int" variable type in Java can hold whole numbers between -2,147,483,648 and 2,147,483,647. That means if you try to assign a value outside of that range to an int variable, you'll get an error.
+
+                    Other variable types have different ranges. For example, the "byte" variable type can hold values between -128 and 127, while the "double" variable type can hold much larger numbers with decimal places.
+
+                    It's important to know the range of each variable type because if you try to assign a value outside of that range, your program might not work correctly. Additionally, using a variable with a larger range than you need can waste memory and slow down your program.
+                </p>
+            </div>
+        </section>
         <section id="quiz">
             <h1>Quiz</h1>
             <div>
                 <h2>Question 1</h2>
-                <p>This is just some text for a question.</p>
+                <p>Which of the following print statements will output the text "Hello, world!" to the console?
                 <form>
                     <input type="radio" id="q1a1" value="q1a1" name="question1">
-                    <label for="q1a1">Answer 1</label><br>
+                    <label for="q1a1">System.out.print("Hello, world!")</label><br>
                     <input type="radio" id="q1a2" value="q1a2" name="question1">
-                    <label for="q1a2">Answer 2</label><br>
+                    <label for="q1a2">System.out.println("Hello, world!");</label><br>
                     <input type="radio" id="q1a3" value="q1a3" name="question1">
-                    <label for="q1a3">Answer 3</label><br>
+                    <label for="q1a3">System.out.print("Hello"); System.out.println(", "); System.out.print("world!");</label><br>
                     <input type="radio" id="q1a4" value="q1a4" name="question1">
-                    <label for="q1a4">Answer 4</label><br>
-                    <input type="submit" value="Submit">
+                    <label for="q1a4">System.out.println("Hello"); System.out.print("world!");</label><br>
+                    <input type="submit" value="Check">
                 </form>
                 <hr>
             </div>
             <div>
                 <h2>Question 2</h2>
-                <p>This is just some text for a question.</p>
+                <p>Which of the following data types in Java is used to store whole numbers?</p>
                 <form>
                     <input type="radio" id="q2a1" value="q2a1" name="question2">
-                    <label for="q2a1">Answer 1</label><br>
+                    <label for="q2a1">double</label><br>
                     <input type="radio" id="q2a2" value="q2a2" name="question2">
-                    <label for="q2a2">Answer 2</label><br>
+                    <label for="q2a2">float</label><br>
                     <input type="radio" id="q2a3" value="q2a3" name="question2">
-                    <label for="q2a3">Answer 3</label><br>
+                    <label for="q2a3">int</label><br>
                     <input type="radio" id="q2a4" value="q2a4" name="question2">
-                    <label for="q2a4">Answer 4</label><br>
-                    <input type="submit" value="Submit">
+                    <label for="q2a4">char</label><br>
+                    <input type="submit" value="Check">
                 </form>
                 <hr>
             </div>
             <div>
                 <h2>Question 3</h2>
-                <p>This is just some text for a question.</p>
+                <p>
+                    What is the value of the variable result after the following code is executed?
+                    <pre>
+                        <code>
+                            int a = 5;
+                            int b = 2;
+                            int c = 3;
+                            int result = a + b * c;
+                        </code>
+                    </pre>
+                </p>
                 <form>
                     <input type="radio" id="q3a1" value="q3a1" name="question3">
-                    <label for="q3a1">Answer 1</label><br>
+                    <label for="q3a1">10</label><br>
                     <input type="radio" id="q3a2" value="q3a2" name="question3">
-                    <label for="q3a2">Answer 2</label><br>
+                    <label for="q3a2">11</label><br>
                     <input type="radio" id="q3a3" value="q3a3" name="question3">
-                    <label for="q3a3">Answer 3</label><br>
+                    <label for="q3a3">15</label><br>
                     <input type="radio" id="q3a4" value="q3a4" name="question3">
-                    <label for="q3a4">Answer 4</label><br>
-                    <input type="submit" value="Submit">
+                    <label for="q3a4">17</label><br>
+                    <input type="submit" value="Check">
                 </form>
                 <hr>
             </div>
             <div>
                 <h2>Question 4</h2>
-                <p>This is just some text for a question.</p>
+                <p>
+                    What is the value of the variable count after the following code is executed?
+                    <pre>
+                        <code>
+                            int count = 5;
+                            count += 3;
+                            count *= 2;
+                            count -= 7;
+                        </code>
+                    </pre>
+                </p>
                 <form>
                     <input type="radio" id="q4a1" value="q4a1" name="question4">
-                    <label for="q4a1">Answer 1</label><br>
+                    <label for="q4a1">6</label><br>
                     <input type="radio" id="q4a2" value="q4a2" name="question4">
-                    <label for="q4a2">Answer 2</label><br>
+                    <label for="q4a2">10</label><br>
                     <input type="radio" id="q4a3" value="q4a3" name="question4">
-                    <label for="q4a3">Answer 3</label><br>
+                    <label for="q4a3">9</label><br>
                     <input type="radio" id="q4a4" value="q4a4" name="question4">
-                    <label for="q4a4">Answer 4</label><br>
-                    <input type="submit" value="Submit">
+                    <label for="q4a4">13</label><br>
+                    <input type="submit" value="Check">
                 </form>
             </div>
-            
+            <div>
+                <h2>Question 5</h2>
+                <p>
+                    What is the value of the variable result after the following code is executed?
+                    <pre>
+                        <code>
+                            int a = 5;
+                            double b = 2.5;
+                            double result = a * b;
+                        </code>
+                    </pre>
+                </p>
+                <form>
+                    <input type="radio" id="q4a1" value="q4a1" name="question4">
+                    <label for="q4a1">7.5</label><br>
+                    <input type="radio" id="q4a2" value="q4a2" name="question4">
+                    <label for="q4a2">10.0</label><br>
+                    <input type="radio" id="q4a3" value="q4a3" name="question4">
+                    <label for="q4a3">12.5</label><br>
+                    <input type="radio" id="q4a4" value="q4a4" name="question4">
+                    <label for="q4a4">12</label><br>
+                    <input type="submit" value="Check">
+                </form>
+            </div>
         </section>
     </main>
     <footer>
