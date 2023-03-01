@@ -1,16 +1,47 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Roboto+Slab&display=swap');
 @import "variables";
-
+@mixin button {
+  background-color: $miscColor;
+  color: $mainBackgroundColor;
+  width: 50px;
+  height: 30px;
+  border-radius: 5px;
+  padding: 10px;
+  font-family: $headFont;
+  border: 2px dashed $hoverColor;
+  margin: 10px;
+}
 
 /* General Styles */
 body {
   margin: 0;
   padding: 0;
   font-family: $textFont;
-  font-size: 24px;
+  font-size: 18px;
   line-height: 1.5;
   background-color: $mainBackgroundColor;
   color: $textColor;
+
+  a {
+    text-decoration: none;
+    white-space: nowrap
+  }
+
+  .button {
+    @include button;
+    transition: box-shadow 0.5s, transform 0.5s;
+
+    
+  }
+  .button:hover {
+    box-shadow: -3px 3px $textColor;
+    transform: translate(50px, 100px);
+  }
+
+  p {
+    padding: 10px;
+    text-align: justify;
+  }
   
   /* Header Styles */
   header {
@@ -28,17 +59,6 @@ body {
       font-size: 36px;
       text-shadow: 2px 2px $miscColor, 3px 3px $hoverColor;
     }
-  }
-
-  a {
-    color:$textColor;
-    text-decoration: none;
-    transition: color 0.5s, text-shadow 0.5s;
-  }
-  
-  a:hover {
-    color: $hoverColor;
-    text-shadow: 2px 2px $miscColor, 4px 4px $textColor;
   }
   
   h1 {
@@ -101,6 +121,12 @@ body {
         a {
           font-weight: bold;
           color: $mainBackgroundColor;
+          color:$textColor;
+          transition: text-shadow 0.5s;
+        }
+        
+        a:hover {
+          text-shadow: 2px 2px $miscColor, 4px 4px $hoverColor;
         }
       }
     }
@@ -113,11 +139,13 @@ body {
 
     section{
       display: flexbox;
-      height: 100vh;
+      min-height: 400px;
+      height: 75vh;
+      padding: 0 60px;
     
       h1, h2, h3, h4, h5, h6 {
         margin: 0;
-        font-size: 64px;
+        font-size: 60px;
         font-family: $headFont;
 
         strong {
@@ -128,25 +156,37 @@ body {
     }
     
     section:nth-child(even) {
-      background-color: $secondaryBackgroundColor;
+      background-image: linear-gradient($mainBackgroundColor, $headerColor);
       h2 {
-        float: right;
+        text-align: right;
       }
     }
+    section:nth-child(odd) {
+      background-image: linear-gradient($headerColor, $mainBackgroundColor);
+    }
     
+    #intro {
+      h2, p {
+        text-align: center;
+      }
+      min-height: 700px;
+      height: 100vh;
+    }
   }
   
   /* Footer Styles */
   footer {
-    background-color: $secondaryBackgroundColor;
+    background-color: $mainBackgroundColor;
     color: $textColor;
     padding: 1px;
-    text-align: center;
+    p {
+      text-align: center;
+    }
   }
   
   /* for Desktops*/
-  
-  @media only screen and (min-width: 768px) {
+
+  @media only screen and (min-width: 1255px) {
     nav {
       display: flex;
       justify-content: center;
@@ -175,11 +215,14 @@ body {
         }
       }  
     }
+  }
+  
+  @media only screen and (min-width: 768px) {
 
     main {
       section {
         h1, h2, h3, h4, h5, h6 {
-          font-size: 8vw;
+          font-size: 6vw;
 
           strong {
             text-shadow: 0.5vw 0.5vw $miscColor, 1vw 1vw $hoverColor;
@@ -187,7 +230,7 @@ body {
         }
 
         p {
-          font-size: 32px;
+          font-size: 36px;
         }
       }
     }   
