@@ -4,13 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="CSS/index.css">
+    <link rel="stylesheet" href="CSS/styles.css">
+    <link rel="icon" type="image/x-icon" href="Sources/Images/coffee.png">
     <title>Javatastic | Java Fundamentals</title>
 </head>
 
 <body>
     <header>
-        <h1>Javatastic</h1>
+        <h1 id="title">Javatastic</h1>
         <nav>
             <ul>
                 <!--Page Links Go Here!!!-->
@@ -29,10 +30,10 @@
         </nav>
     </header>
     <main>
-        <section id="information">
+        <div id="information">
             <h1>Java Fundamentals</h1>
             <h3>We all gotta start somewhere</h3>
-            <div id="sec1">
+            <section id="sec1">
                 <h2>Programming? Java? Huh?</h2>
                 <p>Even if you might be living under a rock, you've probably heard of words like <em>"Programming"</em> and <em>"Java"</em> thrown around by nerds living in their mom's basement. Now, since you're on this website, you must be curious as to whatever programming is. Well, according to Wikipedia: </p>
                 <blockquote>Computer programming is the process of performing a particular computation (or more generally, accomplishing a specific computing result), usually by designing and building an executable computer program.</blockquote>
@@ -75,8 +76,8 @@
                 <p>Now you're wondering, <q>Compiler? What's a compiler?</q> Well, a compiler is basically a translator that turns your java code into machine code that the computer can understand. If you have any slight mishaps in your java code, the compiler won't make sense of the code a compile-time error.
                     These errors are rather simple to fix, just make sure your syntax is correct.</p>
 
-            </div>
-            <div id="sec2">
+            </section>
+            <section id="sec2">
                 <h2>The Many Types of Data</h2>
                 <p>Just like in math, there exists variables in computer science that stores numbers, but they can also store words as well.</p>
                 <p>Variables can be declared and initialized as followed:</p>
@@ -112,8 +113,8 @@
                         This is a final variable. Unlike other variables that can be altered after being initialized, final variables can not be changed once they are initialized with a value.
                     </p>
                 </p>
-            </div>
-            <div id="sec3">
+            </section>
+            <section id="sec3">
                 <h2>Math. Yay.</h2>
                 <p>Everyone loves math, right? Well, you're gonna be doing quite a bit of math when programming in Java. Look at this arithmetic expression below:
                     <pre>
@@ -153,8 +154,8 @@
                     Expressions can only return 1 value and the type depends on the values within the expression. Just like before, an arithmetic expression with a double will return a double, but an expression with only ints will return an int.
                 </p>
                 
-            </div>
-            <div id="sec4">
+            </section>
+            <section id="sec4">
                 <h2>Arithmetic and Assignment at the Same Time?</h2>
                 <p>Now let's say you need to add a value to an int variable. You can simply just set the variable to itself in addition to any other arithmetic operators. For example:
                     <pre>
@@ -184,8 +185,8 @@
                     </pre>
                     If you use the operators above, make sure to note that they can only increment or decrement by 1.
                 </p>
-            </div>
-            <div id="sec5">
+            </section>
+            <section id="sec5">
                 <h2>Type-Castaways and Homes on the Variable Range</h2>
                 <p>
                     Type casting in Java is a way to convert one type of data into another type. Just like how you can convert inches to centimeters, you can convert one data type to another.
@@ -211,11 +212,11 @@
 
                     It's important to know the range of each variable type because if you try to assign a value outside of that range, your program might not work correctly. Additionally, using a variable with a larger range than you need can waste memory and slow down your program.
                 </p>
-            </div>
-        </section>
-        <section id="quiz">
+            </section>
+        </div>
+        <div id="quiz">
             <h1>Quiz</h1>
-            <div>
+            <section>
                 <h2>Question 1</h2>
                 <p>Which of the following print statements will output the text "Hello, world!" to the console?
                 <form>
@@ -230,8 +231,8 @@
                     <input type="submit" value="Check">
                 </form>
                 <hr>
-            </div>
-            <div>
+            </section>
+            <section>
                 <h2>Question 2</h2>
                 <p>Which of the following data types in Java is used to store whole numbers?</p>
                 <form>
@@ -246,8 +247,8 @@
                     <input type="submit" value="Check">
                 </form>
                 <hr>
-            </div>
-            <div>
+            </section>
+            <section>
                 <h2>Question 3</h2>
                 <p>
                     What is the value of the variable result after the following code is executed?
@@ -272,8 +273,8 @@
                     <input type="submit" value="Check">
                 </form>
                 <hr>
-            </div>
-            <div>
+            </section>
+            <section>
                 <h2>Question 4</h2>
                 <p>
                     What is the value of the variable count after the following code is executed?
@@ -297,8 +298,8 @@
                     <label for="q4a4">13</label><br>
                     <input type="submit" value="Check">
                 </form>
-            </div>
-            <div>
+            </section>
+            <section>
                 <h2>Question 5</h2>
                 <p>
                     What is the value of the variable result after the following code is executed?
@@ -321,8 +322,8 @@
                     <label for="q4a4">12</label><br>
                     <input type="submit" value="Check">
                 </form>
-            </div>
-        </section>
+            </section>
+        </div>
     </main>
     <footer>
         <p>Daniel Ting - 2023</p>
