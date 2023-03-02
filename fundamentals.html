@@ -5,212 +5,107 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="icon" type="image/x-icon" href="Sources/Images/coffee.png">
     <title>Javatastic | Java Fundamentals</title>
 </head>
 
 <body>
     <header>
-        <h1 id="title">Javatastic</h1>
-        <nav>
-            <ul>
-                <!--Page Links Go Here!!!-->
-                <li><a href="index.html">Home</a></li>
-                <li><a href="fundamentals.html">Fundamentals</a></li>
-                <li><a href="objects.html">Methods and Objects</a></li>
-                <li><a href="conditionals.html">Conditionals</a></li>
-                <li><a href="loops.html">Loops</a></li>
-                <li><a href="classes.html">Classes</a></li>
-                <li><a href="arrays.html">Arrays</a></li>
-                <li><a href="arraylists.html">ArrayLists</a></li>
-                <li><a href="2darrays.html">2D Arrays</a></li>
-                <li><a href="inheritance.html">Inheritance</a></li>
-                <li><a href="recursion.html">Recursion</a></li>
-            </ul>
-        </nav>
+        <h1 id="title"><span class="material-symbols-outlined">coffee</span> Javatastic</h1>
     </header>
+    <nav>
+        <ul>
+            <!--Page Links Go Here!!!-->
+            <li><a href="index.html">Home</a></li>
+            <li><a href="fundamentals.html">Fundamentals</a></li>
+            <li><a href="objects.html">Methods and Objects</a></li>
+            <li><a href="conditionals.html">Conditionals</a></li>
+            <li><a href="loops.html">Loops</a></li>
+            <li><a href="classes.html">Classes</a></li>
+            <li><a href="arrays.html">Arrays</a></li>
+            <li><a href="arraylists.html">ArrayLists</a></li>
+            <li><a href="2darrays.html">2D Arrays</a></li>
+            <li><a href="inheritance.html">Inheritance</a></li>
+            <li><a href="recursion.html">Recursion</a></li>
+        </ul>
+    </nav>
     <main>
         <div id="information">
-            <h1>Java Fundamentals</h1>
-            <h3>We all gotta start somewhere</h3>
+            <section id="intro">
+                <h1>Java Fundamentals</h1>
+                <h3>We all gotta start somewhere</h3>
+            </section>
             <section id="sec1">
-                <h2>Programming? Java? Huh?</h2>
-                <p>Even if you might be living under a rock, you've probably heard of words like <em>"Programming"</em> and <em>"Java"</em> thrown around by nerds living in their mom's basement. Now, since you're on this website, you must be curious as to whatever programming is. Well, according to Wikipedia: </p>
-                <blockquote>Computer programming is the process of performing a particular computation (or more generally, accomplishing a specific computing result), usually by designing and building an executable computer program.</blockquote>
-                <p>Or in more simpler terms</p>
-                <blockquote>Programming is when you do stuff on computer and it do stuff back.</blockquote>
-                <p>Simple enough to follow, right? So, now you might be wondering:</p>
-                <q>What is Java? Why are we using it specifically?</q>
-                <p>Java is a programming language. A programming language is a way you can communicate with the computer, just like how you can use normal languages like english or spanish to communicate with other people. Now, why Java in particular? Collegeboard. Most people who learn Java as their first language are just doing it for that sweet sweet AP Credit. But if you're under the age of 15, you probably won't have to care about that until you're older.</p>
-                <p>Anyways, since we have those basic things taken care of, you probably want to know how to start programming in Java. Well, just like in any language, we gotta start at the fundamentals. Here is how you can print out <em>"Hello World!"</em> in Java.</p>
-                <p>But, that's not to say Java is a bad language to learn. In fact, many popular applications like Minecraft and Netflix are all programmed in Java. Just saying that if you're new to programming and want to learn, start with something easier like python.</p>
-                <pre>
-                    <code>
-                        public class MyClass {
-                            public static void main(String[] args) {
-                                System.out.print("Hello World!");
-                            }
-                        }
-                        
-                    </code>
-                </pre>
-                <p>Whew, that's quite a mouthful, so let's unpack this. Every java program is written in a class as you can see in the first line. We'll explain what classes are later. Just remember, if you put this in a java file, the file and the class need to have the same name.
-                    Therefore, if you have a file called <strong>MyClass.java</strong>, the class within that file will need to start with <strong>public class MyClass</strong>. </p>
-                <p>The second line is the main method. Basically, this just runs whatever code is inside it. Most java classes need this method because it runs the code automatically rather than you having to call it.</p>
-                <p>The third line is the actual code being run: the print statement. The code uses System.in as the object(we'll go over this in the next section) that we use to call the methods <strong>print()</strong> and <strong>println()</strong>. These methods just print out whatever we put inside of the paranthesis.
-                    However, the difference here is that <strong>println()</strong> prints out a new line after printing your input while <strong>print()</strong> doesn't.</p>
-                <p>Also, do you notice how the phrase <em>"Hello World!"</em> is in quotes? It's written like this because it is a string literal. Unfortunately, the computer isn't able to recognize simple sentences without them being inside of quotation marks. If you tried putting that phrase in the print method without the quotes, it would output an error.</p>
-                <p>Notice the <strong>;</strong> semicolon at the end of the print method? Always remember to put that at the end of every statement. If you don't, you get an error. Yeah, java's just weird like that. The <strong>{}</strong> curly brackets that you see are used to enclose blocks of code. It basically keeps the code inside.</p>
-                <p>Now, let's move onto comments</p>
-                <pre>
-                    <code>
-                        //This is a comment
-                        /*
-                            This is
-                            a block
-                            comment
-                        */
-                    </code>
-                </pre>
-                <p>The examples you see above are comments. Java ignores these statements when you run the code. They are used to comment your code or make the compiler ignore them. Use two forward slashes <strong>//</strong> to make a single line comment or a slash and asterisk <strong>/* */</strong> to make a block comment that can span multiple lines.</p>
-                <p>Now you're wondering, <q>Compiler? What's a compiler?</q> Well, a compiler is basically a translator that turns your java code into machine code that the computer can understand. If you have any slight mishaps in your java code, the compiler won't make sense of the code a compile-time error.
-                    These errors are rather simple to fix, just make sure your syntax is correct.</p>
+                <h2>Why Programming? Why Java?</h2>
+                <p>
+                    A Java program is like a set of instructions you give to a computer. It starts with the words 'public class NameOfClass { }'. If you're making your own program, each part should be in a separate file with a name that matches what's inside the curly braces.
 
+Most Java programs start with 'public static void main(String[] args) { }'. This is where you put the code you want the computer to do.
+
+To show things on the computer screen, you can use 'System.out.print()' or 'System.out.println()'. Just put what you want to show inside the parentheses. If you use 'System.out.println()', it will start a new line afterwards.
+
+In Java, you can write text inside double quotes (" ").
+
+Every time you write a command in Java, it needs to end with a semicolon (;). You can use { } to group things together, and // or /* */ to write notes that the computer will ignore.
+
+When you're done with your Java program, a compiler will turn it into a file that the computer can run. If you make a mistake, the compiler will tell you what went wrong. Make sure to use semicolons and matching { }, (), and "" when you're writing your program
+                </p>
             </section>
             <section id="sec2">
-                <h2>The Many Types of Data</h2>
-                <p>Just like in math, there exists variables in computer science that stores numbers, but they can also store words as well.</p>
-                <p>Variables can be declared and initialized as followed:</p>
-                <pre>
-                    <code>
-                        int x = 2;
-                        String greeting = "Hello World!";
-                    </code>
-                </pre>
-                <p>The first thing you write when declaring a variable is the data type. This defines what kind of a variable it is. In the cases above, x is an int(short for integer) and greeting is a String(word or sentence).
-                    However, there is a fundamental difference between these data types. <strong>int</strong> is a primitive type, meaning it is a basic and fundamental type, while <strong>String</strong> is a reference type, also known as an object.
-                    We'll explain more as we get into objects, but basically, primitive types are basic while reference types are more complex.<br>
-                    The main three primitive types to remember are <strong>ints</strong>, <strong>booleans</strong>, and <strong>doubles</strong>.
-                    To summarize, ints are integer numbers, doubles are decimal numbers, and booleans are either <strong>true</strong> or <strong>false</strong> values. Take a look at the code below:
-                    <pre>
-                        <code>
-                            int numberOfCats = 1;
-                            double liters = 3.5;
-                            boolean isRunning = true;
-                        </code>
-                    </pre>
-                    In computer science, variables are actually just locations within a computer's memory that stores data.
-                    Primitive variables actually store real primitive values within these memory locations. These are basically just 1s and 0s. <br>
-                    I've been throwing around words like declare and initialize as if they're the same, but there is a subtle difference.
-                    When you declare a variable, you are creating it by calling the type and name. However, when you initialize a variable, you are giving it a value for the first time using the = assignment operator.
-                    Take a look at this code:</p>
-                    <pre>
-                        <code>
-                            final int PI = 3.14159;
-                        </code>
-                    </pre>
-                    <p>
-                        This is a final variable. Unlike other variables that can be altered after being initialized, final variables can not be changed once they are initialized with a value.
-                    </p>
+                <h2>Variables and Data Types</h2>
+                <p>
+                    In Java, a variable is like a container that can hold a value that can change over time. You can give this container a name so that you can remember what's inside it.
+
+To make a variable, you need to pick what kind of value you want to put in it, like a whole number or a number with a decimal point. Then you give the variable a name, like "score" or "gpa". You can also give the variable a value right away, like saying "score is 8".
+
+There are three types of values that we're using in this course: whole numbers, numbers with decimal points, and true or false statements.
+
+Every variable has a space in the computer's memory where it stores its value. When you make a variable with a whole number or decimal point, the computer stores that number in that space.
+
+When you make a variable "final", it means you can't change what's inside it after you've picked what goes in it.
                 </p>
             </section>
             <section id="sec3">
-                <h2>Math. Yay.</h2>
-                <p>Everyone loves math, right? Well, you're gonna be doing quite a bit of math when programming in Java. Look at this arithmetic expression below:
-                    <pre>
-                        <code>
-                            int x = 2;
-                            double y = 4.2;
-                            System.out.println(x + y);
-                        </code>
-                    </pre>
-                    Arithmetic expressions consist of ints, doubles, and some kind of operator symbol like +, -, *, or /. + adds things up, - subtracts two values, * multiplies, and / divides. Oh yeah, there is alsp %, the modulo operator.
-                    Don't confuse this for a percent sign because it's not. This operator divides the first number by the second and returns the remainder instead of the quotient.
-                    <br>Now, what do you think 5 / 2 will output. 2.5? Wrong. It actually outputs 2. The reason is because if two ints are used in division, the output must be an int, so the decimal value is cut off.
-                    If you want your arithmetic expression to output 2.5, just make sure one of the values is a double like this:
-                    <pre>
-                        <code>
-                            System.out.print(5.0/2); //Outputs 2.5
-                        </code>
-                    </pre>
-                    Just like in math, you can combine arithmetic expressions together to create compound arithmetic expressions like so:
-                    <pre>
-                        <code>
-                            (5+2)*3.0 % 4; //Outputs 1
-                        </code>
-                    </pre>
-                    Arithmetic expressions also follow good old PEMDAS you learned from 4th grade. Or BODMAS if you're bri'ish.
-                    Make sure not to divide by 0 because it is literally impossible and the computer won't be able to break the laws of math.<br>
-                    The assignment operator (=) is a useful operator that doesn't actually do math, but instead, changes values of variables. As said before, you can use it to initialize a variable or change its value later in the code.
-                    Always remember that when using the = operator, the variable on the left stores the data on the right, not the other way around. Look at the example below:
-                    <pre>
-                        <code>
-                            int x = 0;
-                            int y = 2;
-                            x = y; //This assigns the value of y (2) to x. This does not assign the value of x to y.
-                            System.out.println(x); //Outputs 2
-                        </code>
-                    </pre>
-                    Expressions can only return 1 value and the type depends on the values within the expression. Just like before, an arithmetic expression with a double will return a double, but an expression with only ints will return an int.
+                <h2>Expressions and Assignment Statements</h2>
+                <p>
+                    So, in Java, arithmetic expressions are like math problems that you can solve with numbers. You can add, subtract, multiply, divide, and find the remainder of two numbers using special symbols like +, -, *, /, and %.
+
+If you use only whole numbers in your math problem, then the answer will also be a whole number. But if you use a number with a decimal point, then the answer will have a decimal point too.
+
+You can also use brackets to change the order in which the math problems are solved. And if you try to divide a number by zero, you'll get an error because it's not possible.
+
+When you write a program, you can also use variables to store numbers, and the equals sign (=) to give them values. For example, you might write "x = 5 + 3" to give the variable "x" the value 8.
+
+And when you run your program, it will solve these math problems and give you an answer. The answer will be a number too, and it might be a whole number or a decimal number, depending on the math problem you solved.
                 </p>
-                
             </section>
             <section id="sec4">
-                <h2>Arithmetic and Assignment at the Same Time?</h2>
-                <p>Now let's say you need to add a value to an int variable. You can simply just set the variable to itself in addition to any other arithmetic operators. For example:
-                    <pre>
-                        <code>
-                            int x = 1;
-                            x = x + 2; //x is now equal to 3
-                        </code>
-                    </pre>
-                    But what if you're too lazy to do that. Well, fret not, because we got compound assignment operators:
-                    <pre>
-                        <code>
-                            int x = 1;
-                            x += 2; //adds 2 to x
-                            x -= 2; //subtracts 2 from x
-                            x *= 2; //multiples x by 2
-                            x /= 2; //divides x by 2
-                            x %= 2; //modulos x by 2
-                        </code>
-                    </pre>
-                    Pretty simple, right? Well, what if you were so lazy, you couldn't even be bothered to write x += 1 or x -= 1. Well, have no fear, we got operators for those too.
-                    <pre>
-                        <code>
-                            int x = 1;
-                            x++; //adds x by 1
-                            x--; //subtracts x by 1
-                        </code>
-                    </pre>
-                    If you use the operators above, make sure to note that they can only increment or decrement by 1.
+                <h2>Compound Assignment Operators</h2>
+                <p>
+                    In Java, you can make some math problems easier to write by using special shortcuts. These shortcuts are called compound assignment operators, and they let you do an operation and store the result in a variable all in one step. For example, instead of writing "x = x + 5;", you can just write "x += 5;".
+
+There are five of these shortcuts: "+=", "-=", "*=", "/=", and "%=". Each one does a different math operation (adding, subtracting, multiplying, dividing, or finding the remainder), and then puts the answer back into the same variable.
+
+There are also two other special symbols you can use to add or subtract 1 from a variable. These are called the increment operator "++" and the decrement operator "--". For example, if you had a variable called "count" with the value 5, you could write "count++" to make it 6, or "count--" to make it 4.
+
+You can use these shortcuts with other math problems or assignments too. For example, you could write "count += 3;" to add 3 to the value of "count", or "total = price * quantity++;" to multiply the values of "price" and "quantity", and then add 1 to the value of "quantity" and store the result in "total".
+
+But sometimes these shortcuts can be confusing, and they are not always used in the same way. So, we won't be learning about all the different ways they can be used right now.
                 </p>
             </section>
             <section id="sec5">
-                <h2>Type-Castaways and Homes on the Variable Range</h2>
+                <h2>Casting and Ranges of Variables</h2>
                 <p>
-                    Type casting in Java is a way to convert one type of data into another type. Just like how you can convert inches to centimeters, you can convert one data type to another.
+                    In Java, type casting means changing the type of a variable to another type. This can be done using special operators like (int) or (double).
 
-                    For example, let's say you have a variable "age" that is an integer (a whole number) and you want to print it out as a decimal (a number with a decimal point). You can use type casting to convert the integer to a decimal like this:
-                    
-                    <pre>
-                        <code>
-                            int age = 12;
-                            double decimalAge = (double) age;
-                            System.out.println(decimalAge);
-                        </code>
-                    </pre>
-                    
-                    The "(double)" in the second line is the type casting operator. It tells Java to convert the integer variable "age" to a double variable called "decimalAge".
-                    
-                    Type casting is useful when you want to perform operations with variables of different data types, or when you want to assign a value of one data type to a variable of another data type.
-                    In Java, each type of variable has a range, which is the set of values that it can hold.
+When you cast a double value to an int, it will lose the numbers after the decimal point. For example, if you cast 3.1415 to an int, the result will be 3.
 
-                    For example, the "int" variable type in Java can hold whole numbers between -2,147,483,648 and 2,147,483,647. That means if you try to assign a value outside of that range to an int variable, you'll get an error.
+Sometimes, in programming, int values can be changed to double values automatically.
 
-                    Other variable types have different ranges. For example, the "byte" variable type can hold values between -128 and 127, while the "double" variable type can hold much larger numbers with decimal places.
+If you want to round a double value to the nearest whole number, you can use (int)(x + 0.5) or (int)(x - 0.5) for negative numbers.
 
-                    It's important to know the range of each variable type because if you try to assign a value outside of that range, your program might not work correctly. Additionally, using a variable with a larger range than you need can waste memory and slow down your program.
+In Java, an integer is a type of value that uses a fixed amount of memory (4 bytes). This means that an int value must be within a certain range. If an expression gives an int value outside of this range, it is called an integer overflow and it can lead to an incorrect value within the allowed range.
                 </p>
             </section>
         </div>
