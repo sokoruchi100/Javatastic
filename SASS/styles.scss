@@ -1,54 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Roboto+Slab&display=swap');
 @import "variables";
-@mixin button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: $miscColor;
-  color: $mainBackgroundColor;
-  border-radius: 10px;
-  font-family: $headFont;
-  border: 5px solid $hoverColor;
-  font-size: $buttonFontSize;
-  box-sizing: border-box;
-  position: absolute;
-  width: $buttonWidthSize;
-  height: $buttonHeightSize;
-  transition: box-shadow 0.5s, transform 0.5s;
-}
+@import "mixins";
 
-    /* width */
-    ::-webkit-scrollbar {
-      width: 10px;
-    }
-
-    /* Track */
-    ::-webkit-scrollbar-track {
-      background-image: linear-gradient($headerColor, $mainBackgroundColor);
-      box-shadow: inset 0 0 1px $textColor;
-    }
-
-    /* Handle */
-    ::-webkit-scrollbar-thumb {
-      background: $mainBackgroundColor;
-      box-shadow: 0 0 5px $textColor;
-      border-radius: 10px;
-      transition: background-color 0.5s;
-    }
-
-    /* Handle on hover */
-    ::-webkit-scrollbar-thumb:hover {
-      background: $hoverColor;
-      
-    }
-
-/* General Styles */
-body {
+//Removes margins and paddings
+* {
   overflow-x: hidden;
   margin: 0;
   padding: 0;
+}
+
+//Hides scrollbar
+::-webkit-scrollbar {
+  display: none;
+}
+
+//Mobile First Design
+body {
   font-family: $textFont;
-  line-height: 1.5;
   color: $textColor;
   
   p {
@@ -63,7 +31,6 @@ body {
   .button {
     @include button;
     padding: auto 10px;
-    
   }
 
   .button:hover {
@@ -124,7 +91,7 @@ body {
       }
     }
   
-    div.menu:hover {
+    .menuOpen {
       /* Rotate first bar */
       .bar1 {
         transform: translate(0, 11px) rotate(-45deg);
@@ -176,7 +143,7 @@ body {
 
     section{
       
-      display: flexbox;
+      display: flex;
       min-height: 500px;
       height: 100vh;
       padding: 0 60px;

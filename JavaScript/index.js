@@ -1,10 +1,12 @@
-// Function to toggle the mobile navigation menu
-function toggleMobileMenu() {
-  const navLinks = document.querySelector("li a");
-
-  navLinks.classList.toggle("show");
-}
-
-// Event listener to call the toggleMobileMenu function on click of the mobile menu button
-const menuButton = document.getElementsByClassName("menu");
-menuButton.addEventListener("click", toggleMobileMenu());
+"use strict"
+$(document).ready(function(){
+  //Vars to declare
+  const navLinks = $("li a");
+  const menu = $("div.menu");
+  
+  // Function to toggle the mobile navigation menu
+  menu.click(function() {
+    menu.classToggle(".menuOpen");
+    navLinks.toggle();
+  });
+});

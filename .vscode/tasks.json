@@ -7,7 +7,7 @@
     {
       "label": "Sass Compile",
       "type": "shell",
-      "command": "sass ./SASS/styles.scss ./CSS/styles.css;",
+      "command": "sass ./SASS/styles.scss ./CSS/styles.css; sass ./SASS/test.scss ./CSS/test.css;",
       "group": "build"
     }
   ]

@@ -1,0 +1,23 @@
+//Default Button
+@mixin button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $miscColor;
+    color: $mainBackgroundColor;
+    border-radius: 10px;
+    font-family: $headFont;
+    border: 5px solid $hoverColor;
+    font-size: $buttonFontSize;
+    box-sizing: border-box;
+    position: absolute;
+    width: $buttonWidthSize;
+    height: $buttonHeightSize;
+    transition: box-shadow 0.5s, transform 0.5s;
+}
+
+@mixin paragraph {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
