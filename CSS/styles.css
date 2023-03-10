@@ -1,18 +1,210 @@
-/* Error: Undefined variable.
- *   ,
- * 6 |     background-color: $miscColor;
- *   |                       ^^^^^^^^^^
- *   '
- *   SASS\_mixins.scss 6:23  button()
- *   SASS\styles.scss 32:5   root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Undefined variable.\a   \2577 \a 6 \2502      background-color: $miscColor;\d\a   \2502                        ^^^^^^^^^^\a   \2575 \a   SASS\\_mixins.scss 6:23  button()\a   SASS\\styles.scss 32:5   root stylesheet";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Roboto+Slab&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Roboto+Slab&display=swap");
+.navbar-brand .material-symbols-outlined {
+  line-height: 1.2;
+  font-size: calc(12px + 1.5vw + 1vh);
+  color: #131516;
 }
+.navbar-brand #brandText {
+  padding: 0;
+  margin: 0;
+  font-size: calc(12px + 1.5vw + 1vh);
+  color: #131516;
+  overflow-y: hidden;
+}
+
+.navbar-toggler {
+  margin: 0;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: 2px outset #131516;
+  z-index: 1;
+}
+.navbar-toggler .navbar-toggler-icon {
+  overflow-y: hidden;
+  background-image: none;
+  width: 40px;
+  height: 32px;
+  position: relative;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+}
+.navbar-toggler .navbar-toggler-icon .bar {
+  display: block;
+  position: absolute;
+  height: 4px;
+  width: 50%;
+  background: #131516;
+  opacity: 1;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.25s ease-in-out;
+  -moz-transition: 0.25s ease-in-out;
+  -o-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
+}
+.navbar-toggler .navbar-toggler-icon #bar2, .navbar-toggler .navbar-toggler-icon #bar4, .navbar-toggler .navbar-toggler-icon #bar6 {
+  left: 50%;
+  border-radius: 0 9px 9px 0;
+}
+.navbar-toggler .navbar-toggler-icon #bar1, .navbar-toggler .navbar-toggler-icon #bar3, .navbar-toggler .navbar-toggler-icon #bar5 {
+  left: 0px;
+  border-radius: 9px 0 0 9px;
+}
+.navbar-toggler .navbar-toggler-icon #bar1, .navbar-toggler .navbar-toggler-icon #bar2 {
+  top: 7px;
+}
+.navbar-toggler .navbar-toggler-icon #bar3, .navbar-toggler .navbar-toggler-icon #bar4 {
+  top: 14px;
+}
+.navbar-toggler .navbar-toggler-icon #bar5, .navbar-toggler .navbar-toggler-icon #bar6 {
+  top: 21px;
+}
+.navbar-toggler .navOpen #bar1, .navbar-toggler .navOpen #bar6 {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.navbar-toggler .navOpen #bar2, .navbar-toggler .navOpen #bar5 {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+.navbar-toggler .navOpen #bar1 {
+  left: 3px;
+  top: 7px;
+}
+.navbar-toggler .navOpen #bar2 {
+  left: calc(50% - 3px);
+  top: 7px;
+}
+.navbar-toggler .navOpen #bar3 {
+  left: -50%;
+  opacity: 0;
+}
+.navbar-toggler .navOpen #bar4 {
+  left: 100%;
+  opacity: 0;
+}
+.navbar-toggler .navOpen #bar5 {
+  left: 3px;
+  top: 21px;
+}
+.navbar-toggler .navOpen #bar6 {
+  left: calc(50% - 3px);
+  top: 21px;
+}
+
+.secondaryCollapse {
+  position: fixed;
+  top: calc(1rem + 12vh);
+  right: 0;
+}
+.secondaryCollapse ul {
+  height: 80vh !important;
+}
+.secondaryCollapse ul li {
+  overflow-y: hidden;
+}
+.secondaryCollapse ul li a {
+  padding: 0;
+}
+
+header {
+  position: fixed;
+  font-family: "Montserrat", sans-serif;
+  z-index: 1;
+}
+
+#navbarNav ul {
+  height: 100vh;
+}
+#navbarNav ul li {
+  font-weight: bold;
+  font-size: calc(12px + 1.5vw + 1vh);
+}
+
+.bg-primary {
+  background-image: linear-gradient(#3a75b0, #fff);
+}
+
+* {
+  overflow-x: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+.active {
+  font-style: italic;
+}
+
+.container-fluid {
+  padding: 0;
+}
+
+body {
+  overflow-x: hidden;
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+}
+
+@media only screen and (min-width: 768px) {
+  header {
+    height: 10vh;
+  }
+  header nav {
+    height: inherit;
+  }
+  header .navbar-brand {
+    top: 0;
+    left: 0;
+  }
+}
+.carousel-item {
+  position: relative;
+}
+
+.caption {
+  position: absolute;
+}
+
+h1 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+}
+
+.row {
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+}
+
+video {
+  filter: blur(3px);
+  overflow: hidden;
+}
+
+.overlay {
+  background-color: #fff;
+  opacity: 0.75;
+}
+
+/*# sourceMappingURL=styles.css.map */
