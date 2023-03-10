@@ -46,6 +46,8 @@
   margin: 0;
   padding-left: 10px;
   padding-right: 10px;
+  border: 2px outset $black;
+  z-index: 1;
 
   .navbar-toggler-icon {
     overflow-y: hidden;
@@ -148,6 +150,13 @@
       top: 21px;
     }
   }
+}
+
+.secondaryCollapse {
+  position: fixed;
+  top: 0;
+  right: 0;
+  column-gap: 10px;
 }
 
   

@@ -36,6 +36,8 @@
   margin: 0;
   padding-left: 10px;
   padding-right: 10px;
+  border: 2px outset #131516;
+  z-index: 1;
 }
 .navbar-toggler .navbar-toggler-icon {
   overflow-y: hidden;
@@ -121,6 +123,13 @@
 .navbar-toggler .navOpen #bar6 {
   left: calc(50% - 3px);
   top: 21px;
+}
+
+.secondaryCollapse {
+  position: fixed;
+  top: 0;
+  right: 0;
+  column-gap: 10px;
 }
 
 body {
