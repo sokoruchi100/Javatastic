@@ -163,7 +163,7 @@ $(document).ready(function(){
 
 		desktopTLArray[i].to('.menu-bg', {
 			duration:0.5,
-			height:"160px",
+			height:"200px",
 			ease: 'Expo.easeInOut'
 		});
 

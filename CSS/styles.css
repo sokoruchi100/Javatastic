@@ -20,11 +20,15 @@ header .header-row .brand-logo {
   align-items: center;
 }
 header .header-row .brand-logo .material-symbols-outlined {
-  height: 24px;
+  font-size: 2rem;
+  height: 2rem;
+  color: #131516;
 }
 header .header-row .brand-logo h1 {
-  font-weight: normal;
-  font-size: 2rem;
+  font-size: 3rem;
+}
+header .header-row .brand-logo h1 strong {
+  color: #aa2e00;
 }
 header .header-row .desktop-nav {
   display: none;
@@ -55,7 +59,7 @@ header .header-row .menu-toggle .hamburger path {
   padding: 20px;
 }
 .fullpage-menu .fullpage-menu-inner .menu-bg {
-  height: 80px;
+  height: 100px;
   width: 100%;
   position: absolute;
   left: 0;
@@ -86,9 +90,9 @@ nav ul li {
 }
 nav ul li a {
   font-size: calc(1rem + 3vh + 4vw);
-  color: #fff;
+  color: #131516;
   text-decoration: none;
-  font-weight: normal;
+  font-weight: bold;
   display: inline-block;
   line-height: 1;
 }
@@ -156,7 +160,7 @@ nav .secondary-menu {
 body {
   font-family: "Montserrat", sans-serif;
   background: #131516;
-  color: #fff;
+  color: #131516;
 }
 
 /*# sourceMappingURL=styles.css.map */
