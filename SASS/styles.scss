@@ -5,78 +5,14 @@
 @import "navbar";
 
 // Override Bootstrap variables
-.bg-primary {
-  background-image: $backgroundGradient;
-}
-
-* {
-  overflow-x: hidden;
-  padding: 0;
-  margin: 0;
-}
-
-.active {
-  font-style: italic;
-}
-
-.container-fluid {
-  padding: 0;
-}
-
-body {
-  overflow-x: hidden;
-  padding: 0;
-  margin: 0;
-  height: 100vh;
-  width: 100vw;
-}
-
-@media only screen and (min-width: 768px) {
-  header {
-    height: 10vh;
-    nav {
-      height: inherit;
-    }
-    .navbar-brand {
-      top: 0;
-      left: 0;
-    }
-    
-  }
-}
-
-.carousel-item {
-  position: relative;
-}
-
-.caption {
-  position: absolute;
-}
-
-h1 {
-  font-family: $headFont;
-  font-weight: bold;
-}
-
-
-
-.row {
+*{
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-main {
-  padding: 0;
-  margin: 0;
-  height: 100vh;
-}
-
-video {
-  filter: blur(3px);
-  overflow: hidden;
-}
-
-.overlay {
-  background-color: $white;
-  opacity: 0.75;
+body{
+  font-family: 'Montserrat', sans-serif;
+  background: $black;
+  color: $white;
 }
