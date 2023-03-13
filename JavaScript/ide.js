@@ -8,7 +8,7 @@ window.onload = function() {
 }
 
 function executeCode() {
-
+    jQuery.support.cors = true;
     $.ajax({
         url: "../../ide/compiler.php",
 
