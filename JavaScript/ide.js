@@ -10,7 +10,7 @@ window.onload = function() {
 function executeCode() {
 
     $.ajax({
-        url: "/ide/app/compiler.php",
+        url: "../../ide/compiler.php",
 
         method: "POST",
 
