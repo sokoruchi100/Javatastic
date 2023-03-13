@@ -1,4 +1,5 @@
 <?php
+    header("Access-Control-Allow-Origin: *");
     //Stores code
     $code = $_POST['code'];
     //Name of class depends on exercise, posted by javascript
@@ -28,5 +29,4 @@
     $output = shell_exec("cd temp && ..\compilers\java.exe $className 2>&1");
     //Returns output to javascript
     echo $output;
-    
 ?>
