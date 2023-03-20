@@ -3,6 +3,7 @@
 @import "variables";
 @import "mixins";
 @import "navbar";
+@import "login";
 
 // Override Bootstrap variables
 *{
@@ -13,6 +14,6 @@
 
 body{
   font-family: 'Montserrat', sans-serif;
-  background: $black;
+  background: $white;
   color: $black;
 }

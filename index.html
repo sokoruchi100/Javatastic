@@ -26,7 +26,7 @@
     <script type="module" src="JavaScript/three.js"></script>
     <script type="module" src="JavaScript/index.js"></script>
 </head>
-<body>
+<body style="background-color: white;">
     <header>
         <div class="header-row">
             <div class="brand-logo">
@@ -42,6 +42,16 @@
                     <li><a id="desktop-quizzes">Quizzes</a></li>
                 </ul>
             </nav>
+            <div id="login-div">
+                <div id="sign-in">
+                    <button id="sign-in-btn">Sign In With Google</button>
+                </div>
+                <div id="sign-out" hidden>
+                    <h3 id="account-name">Your Name Here</h3>
+                    <button id="sign-out-btn">Sign Out</button>
+                </div>
+            </div>
+            
             <button class="menu-toggle" id="menuToggle">
                 <svg viewBox="0 0 12 10" class="hamburger" height="40px" width="40px">
                     <path d="M10,2 L2,2" class="bar-1"></path>
@@ -107,28 +117,7 @@
             </nav>
         </div>
     </section>
-    <script type="module">
-        // Import the functions you need from the SDKs you need
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js";
-        // TODO: Add SDKs for Firebase products that you want to use
-        // https://firebase.google.com/docs/web/setup#available-libraries
-      
-        // Your web app's Firebase configuration
-        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-        const firebaseConfig = {
-          apiKey: "AIzaSyCBSidRgtADAwuTOG6NPGYjBp8i5vxQY60",
-          authDomain: "javatastic-c0c6b.firebaseapp.com",
-          databaseURL: "https://javatastic-c0c6b-default-rtdb.firebaseio.com",
-          projectId: "javatastic-c0c6b",
-          storageBucket: "javatastic-c0c6b.appspot.com",
-          messagingSenderId: "717299492395",
-          appId: "1:717299492395:web:a3e68438b296b6c4c9ec6e",
-          measurementId: "G-SRR7R7YKP9"
-        };
-      
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-      </script>
+    
 </body>
 
 </html>
