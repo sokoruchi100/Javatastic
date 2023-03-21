@@ -4,32 +4,48 @@
 
 /* Header start */
 
-header{
+.header {
   position: fixed;
-  z-index: 10;
   left: 0;
   top: 0;
   width: 100%;
+  height: 10%;
+  
+  .header-bg {
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    top: 0;
+    background-image: $blueWhiteGradient;
+    width: 100%;
+    height: 100%;
+  }
 
-  .header-row{
+  .main-row{
     padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
 
     .brand-logo {
       display: flex;
       flex-direction: row;
       align-items: center;
+      justify-content: center;
 
       .material-symbols-outlined {
-        font-size: 2rem;
-        height: 2rem;
+        font-size: $logoFontSize;
+        width: $logoFontSize;
+        height: $logoFontSize;
         color: $black
       }
 
       h1 {
-        font-size: 3rem;
+        font-size: $headerFontSize;
+        font-style: italic;
 
         strong {
           color: $red;
@@ -37,8 +53,65 @@ header{
       }
     }
 
-    .desktop-nav {
-      display: none;
+    .main-nav {
+      position: absolute;
+      height: 80vh;
+      top: 10vh;
+      left: 0;
+      padding: 20px;
+      
+      .main-menu{
+        list-style-type: none;
+        padding: 0;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+    
+        li {
+          overflow: hidden;
+          transition: text-decoration 300ms ease-in-out 0s;
+          display: inline-block;
+          position: relative;
+          
+          a {
+            
+            font-size: $jumboFontSize;
+            color: $black;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            transition: color 0.5s;
+          }
+
+          a:hover {
+            color: $red;
+          }
+
+          .active {
+            color: $red;
+          }
+        }
+        
+        li::after {
+          content: '';
+          position: absolute;
+          width: 100%;
+          transform: scaleX(0);
+          height: 2px;
+          bottom: 0;
+          left: 0;
+          background-color: $red;
+          transform-origin: bottom right;
+          transition: transform 0.25s ease-out;
+        }
+        
+        li:hover::after, .active::after {
+          transform: scaleX(1);
+          transform-origin: bottom left;
+        }
+      }
     }
   
     .menu-toggle{
@@ -47,130 +120,85 @@ header{
       cursor: pointer;
       height: 40px;
     
-      .hamburger path{
-        fill: none;
-        stroke: $white;
-        stroke-linecap: round;
+      .hamburger {
+        height: 40px;
+        width: 40px;
+
+        path{
+          fill: none;
+          stroke: $white;
+          stroke-linecap: round;
+        }
+      }
+    }
+  }
+
+  .second-row {
+    .second-nav {
+      position: absolute;
+      height: 80vh;
+      top: 15vh;
+      left: 0;
+      padding: 20px;
+      display: none;
+
+      ul{
+        list-style-type: none;
+        padding: 0;
+        height: 100%;
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+    
+        li {
+          overflow: hidden;
+          transition: text-decoration 300ms ease-in-out 0s;
+          display: inline-block;
+          position: relative;
+          
+          a {
+            font-size: $textFontSize;
+            color: $black;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            transition: color 0.5s;
+          }
+
+          a:hover {
+            color: $red;
+          }
+
+          .active {
+            color: $red;
+          }
+        }
+        
+        li::after {
+          content: '';
+          position: absolute;
+          width: 100%;
+          transform: scaleX(0);
+          height: 2px;
+          bottom: 0;
+          left: 0;
+          background-color: $red;
+          transform-origin: bottom right;
+          transition: transform 0.25s ease-out;
+        }
+        
+        li:hover::after, .active::after {
+          transform: scaleX(1);
+          transform-origin: bottom left;
+        }
       }
     }
   }
 }
 
-.fullpage-menu{
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100vh;
 
-  .fullpage-menu-inner{
-    display: flex;
-    align-items: center;
-    height: 100%;
-    padding: 20px;
-
-    .menu-bg{
-      height: 100px;
-      width: 100%;
-      position: absolute;
-      left: 0;
-      top: 0;
-      background-image: $backgroundGradient;
-      display: block;
-    }
-
-    
-  }
-}
-
-nav {
-  position: relative;
-  z-index: 10;
-  height: 70%;
-  
-  ul{
-    list-style-type: none;
-    padding: 0;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
-    li{
-      overflow: hidden;
-      transition: text-decoration 300ms ease-in-out 0s;
-      display: inline-block;
-      position: relative;
-      color: $orange;
-
-      a{
-        font-size: calc(1rem + 3vh + 4vw);
-        color: $black;
-        text-decoration: none;
-        font-weight: bold;
-        display: inline-block;
-        line-height: 1;
-      }
-    }
-    
-    li::after {
-      content: '';
-      position: absolute;
-      width: 100%;
-      transform: scaleX(0);
-      height: 2px;
-      bottom: 0;
-      left: 0;
-      background-color: $orange;
-      transform-origin: bottom right;
-      transition: transform 0.25s ease-out;
-    }
-    
-    li:hover::after {
-      transform: scaleX(1);
-      transform-origin: bottom left;
-    }
-  }
-  .secondary-menu {
-    display: none;
-  }
-}
 
 @media only screen and (min-width:768px) {
-  #menuToggle {
-    display: none;
-  }
-
-  .mobile-nav {
-    display: none !important;
-  }
-  .desktop-nav {
-    display: flex !important;
-    flex-direction: column;
-    width: 70%;
-    justify-content: flex-end;
-    ul {
-      width: 100%;
-      justify-content: space-around;
-    }
-  }
-
-  .secondary-nav {
-    width: 100%; 
-  }
-
-  .main-menu {
-    flex-direction: row !important;
-    a {
-      font-size: 2rem !important;
-      cursor: pointer;
-    }
-  }
-  .secondary-menu {
-    flex-direction: row !important;
-    a {
-      font-size: 2rem !important;
-      cursor: pointer;
-    }
-  }
+  
 }

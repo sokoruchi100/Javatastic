@@ -1,10 +1,12 @@
+@import "variables";
+
 //Default Button
 @mixin button {
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: $miscColor;
-    color: $mainBackgroundColor;
+    color: $black;
     border-radius: 10px;
     font-family: $headFont;
     border: 5px solid $hoverColor;

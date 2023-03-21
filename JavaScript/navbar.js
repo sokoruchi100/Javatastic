@@ -1,233 +1,138 @@
 "use strict";
 $(document).ready(function(){
-	const menuToggle = $("#menuToggle");
-	const mobileNavLinks = [$("#mobile-lessons"), $("#mobile-exercises"), $("#mobile-quizzes")];
-	const desktopNavLinks = [$("#desktop-lessons"), $("#desktop-exercises"), $("#desktop-quizzes")];
+	const menuToggle = $(".menu-toggle");
+	const subNavLinks = [$("#lessons"), $("#exercises")];
 
 	//Hamburger Menu Bar
-	const menuBar = gsap.timeline();
+	const menuBarTL = gsap.timeline();
 
-	menuBar.to('.bar-1', 0.5,{
+	menuBarTL.to('.bar-1', 0.5,{
 		attr:{d: "M8,2 L2,8"},
 		x:1,
 		ease: Power2.easeInOut
 	}, 'start')
 
-	menuBar.to('.bar-2', 0.5,{
+	menuBarTL.to('.bar-2', 0.5,{
 		autoAlpha: 0
 	}, 'start')
 
-	menuBar.to('.bar-3', 0.5,{
+	menuBarTL.to('.bar-3', 0.5,{
 		attr:{d: "M8,8 L2,2"},
 		x:1,
 		ease: Power2.easeInOut
 	}, 'start')
 
-	menuBar.reverse();
+	menuBarTL.reverse();
 
-	//Opening Menu for Mobile Phones
-	const mobileTL = gsap.timeline({ paused: true});
+	//Mobile Open Links
+	const mobileMainTL = gsap.timeline();
 
-	mobileTL.to('.fullpage-menu', {
-		duration:0,
-		display: "block",
-		ease: 'Expo.easeInOut',
-	});
-
-	mobileTL.to('.menu-bg', {
-		duration:0.5,
-		height:"100%",
+	mobileMainTL.to('.header-bg', {
+		duration: 0.5,
+		height: '100vh',
 		ease: 'Expo.easeInOut'
-	});
+	})
 
-	mobileTL.from('.mobile-nav .main-menu li a', {
-		duration:1,
-		x:"-100%",
-		opacity:0,
+	mobileMainTL.from('.main-menu li', {
+		duration: 0.5,
+		opacity: 0,
+		x: '-100%',
 		stagger: 0.1,
 		ease: 'Expo.easeInOut'
-	} , "-=0.5");
+	}, "-=0.5")
 
-	mobileTL.reverse();
+	mobileMainTL.reverse();
 
-	//Animations for each mobile submenu
-	const mobileTLArray = [gsap.timeline({ paused: true}),gsap.timeline({ paused: true}),gsap.timeline({ paused: true})];
+	//Mobile Submenus
+	const mobileSubTL = [gsap.timeline(),gsap.timeline()];
 
-	for (let i = 0; i < 3; i++) {
-		mobileTLArray[i].to('.mobile-nav .main-menu li a', {
-			duration:1,
-			x:"100%",
-			opacity:0,
+	for (let i = 0; i < 2; i++) {		
+		let submenuClass = i == 0 ? '.lessons-menu' : '.exercises-menu';
+		let mainmenuLi = i == 0 ? '.lessons' : '.exercises';
+		let mainmenuLink = i == 0 ? '#lessons' : '#exercises';
+
+		mobileSubTL[i].to($(`.main-menu li:not(${mainmenuLi})`), {
+			duration: 1,
+			opacity: 0,
+			x: '200%',
+			stagger: 0.1,
+			ease: 'Expo.easeInOut',
+			onComplete: function() {
+				$('.second-nav').toggle();
+			},
+			onReverseComplete: function() {
+				$('.second-nav').toggle();
+			}
+		}, ) 
+
+		mobileSubTL[i].to(mainmenuLi, {
+			duration: 0.5,
+			x: '-12%',
+			y: mainmenuLi=='.lessons' ? '-300%' : '-575%',
+			scale: 0.75,
+			ease: 'Expo.easeInOut',
+			onComplete: function() {
+				$(mainmenuLi).toggleClass('active');
+				$(mainmenuLink).toggleClass('active');
+			},
+			onReverseComplete: function() {
+				$(mainmenuLi).toggleClass('active');
+				$(mainmenuLink).toggleClass('active');
+			}
+		}, "-=0.5" ) 
+
+		mobileSubTL[i].from(submenuClass+' li', {
+			duration: 1,
+			opacity: 0,
+			x: '500%',
 			stagger: 0.1,
 			ease: 'Expo.easeInOut'
-		});
-	
-		mobileTLArray[i].to('.mobile-nav .main-menu', {
-			duration:0,
-			display:"none",
-			ease: 'Expo.easeInOut'
-		});
+		}, "-=0.5")
 
-		if (i == 0) {
-			mobileTLArray[i].to('.mobile-nav .lessons-menu', {
-				duration:0,
-				display:"flex",
-				ease: 'Expo.easeInOut'
-			});
-
-			mobileTLArray[i].from('.mobile-nav .lessons-menu li a', {
-				duration:1,
-				x:"-100%",
-				opacity:0,
-				stagger: 0.1,
-				ease: 'Expo.easeInOut'
-			}, "-=0.5");
-		}
-
-		if (i == 1) {
-			mobileTLArray[i].to('.mobile-nav .exercises-menu', {
-				duration:0,
-				display:"flex",
-				ease: 'Expo.easeInOut'
-			});
-
-			mobileTLArray[i].from('.mobile-nav .exercises-menu li a', {
-				duration:1,
-				x:"-100%",
-				opacity:0,
-				stagger: 0.1,
-				ease: 'Expo.easeInOut'
-			}, "-=0.5");
-		}
-
-		if (i == 2) {
-			mobileTLArray[i].to('.mobile-nav .quizzes-menu', {
-				duration:0,
-				display:"flex",
-				ease: 'Expo.easeInOut'
-			});
-
-			mobileTLArray[i].from('.mobile-nav .quizzes-menu li a', {
-				duration:1,
-				x:"-100%",
-				opacity:0,
-				stagger: 0.1,
-				ease: 'Expo.easeInOut'
-			}, "-=0.5");
-		}
-
-		mobileTLArray[i].reverse();
+		mobileSubTL[i].reverse();
 	}
-	let mobileLessonsOpen = false;
-	let mobileExercisesOpen = false;
-	let mobileQuizzesOpen = false;
 
-	mobileNavLinks[0].click(function() {
-		mobileLessonsOpen = !mobileLessonsOpen;
-		mobileTLArray[0].reversed(!mobileTLArray[0].reversed());
-	})
-	mobileNavLinks[1].click(function() {
-		mobileExercisesOpen = !mobileExercisesOpen;
-		mobileTLArray[1].reversed(!mobileTLArray[1].reversed());
-	})
-	mobileNavLinks[2].click(function() {
-		mobileQuizzesOpen = !mobileQuizzesOpen;
-		mobileTLArray[2].reversed(!mobileTLArray[2].reversed());
-	})
-	
-	menuToggle.click(function(){
-		if (mobileLessonsOpen) {
-			mobileLessonsOpen = !mobileLessonsOpen
-			mobileTLArray[0].reversed(!mobileTLArray[0].reversed());
-		} else if (mobileExercisesOpen) {
-			mobileExercisesOpen = !mobileExercisesOpen
-			mobileTLArray[1].reversed(!mobileTLArray[1].reversed());
-		} else if (mobileQuizzesOpen) {
-			mobileQuizzesOpen = !mobileQuizzesOpen
-			mobileTLArray[2].reversed(!mobileTLArray[2].reversed());
-		} else {
-			menuBar.reversed(!menuBar.reversed());
-			mobileTL.reversed(!mobileTL.reversed());
+	//Controls Hamburger open and close
+	menuToggle.click( function() {
+		if (!mobileSubTL[0].isActive() && !mobileSubTL[1].isActive()) {
+			if (!mobileSubTL[0].reversed() || !mobileSubTL[1].reversed()) {
+				mobileSubTL[0].reverse();
+				mobileSubTL[1].reverse();
+			} else {
+				menuBarTL.reversed(!menuBarTL.reversed());
+				mobileMainTL.reversed(!mobileMainTL.reversed());
+			}
 		}
 	});
 
-	//Desktop Submenus
-	const desktopTLArray = [gsap.timeline({ paused: true}),gsap.timeline({ paused: true}),gsap.timeline({ paused: true})];
-
-	for (let i = 0; i < 3; i++) {
-		desktopTLArray[i].to('.fullpage-menu', {
-			duration:0,
-			display: "block",
-			ease: 'Expo.easeInOut',
-		});
-
-		desktopTLArray[i].to('.menu-bg', {
-			duration:0.5,
-			height:"200px",
-			ease: 'Expo.easeInOut'
-		});
-
-		if (i == 0) {
-			desktopTLArray[i].to('.desktop-nav .lessons-menu', {
-				duration:0,
-				display:"flex",
-				ease: 'Expo.easeInOut'
-			});
-
-			desktopTLArray[i].from('.desktop-nav .lessons-menu li a', {
-				duration:1,
-				y:"-100%",
-				opacity:0,
-				stagger: 0.1,
-				ease: 'Expo.easeInOut'
-			}, "-=0.5");
+	//Controls Submenus open and close
+	subNavLinks[0].click(function() {
+		if (!mobileSubTL[1].isActive()) {
+			toggleSubmenu(0);
+			mobileSubTL[0].reversed(!mobileSubTL[0].reversed());
 		}
+	});
 
-		if (i == 1) {
-			desktopTLArray[i].to('.desktop-nav .exercises-menu', {
-				duration:0,
-				display:"flex",
-				ease: 'Expo.easeInOut'
-			});
-
-			desktopTLArray[i].from('.desktop-nav .exercises-menu li a', {
-				duration:1,
-				y:"-100%",
-				opacity:0,
-				stagger: 0.1,
-				ease: 'Expo.easeInOut'
-			}, "-=0.5");
+	subNavLinks[1].click(function() {
+		if (!mobileSubTL[0].isActive()) {
+			toggleSubmenu(1);
+			mobileSubTL[1].reversed(!mobileSubTL[1].reversed());
 		}
+	});
 
-		if (i == 2) {
-			desktopTLArray[i].to('.desktop-nav .quizzes-menu', {
-				duration:0,
-				display:"flex",
-				ease: 'Expo.easeInOut'
-			});
-
-			desktopTLArray[i].from('.desktop-nav .quizzes-menu li a', {
-				duration:1,
-				y:"-100%",
-				opacity:0,
-				stagger: 0.1,
-				ease: 'Expo.easeInOut'
-			}, "-=0.5");
+	function toggleSubmenu(x) {
+		if (x == 0) {
+			$('.lessons-menu').css('display', 'flex');
+			$('.exercises-menu').css('display', 'none');
+		} else {
+			$('.lessons-menu').css('display', 'none');
+			$('.exercises-menu').css('display', 'flex');
 		}
-
-		desktopTLArray[i].reverse();
 	}
-
+	/*
 	let desktopState = "";
 
-	desktopNavLinks[0].click(function() {
-		if (desktopState == "lessons") {
-			desktopTLArray[0].reversed(!desktopTLArray[0].reversed());
-		} else {
-			animate0();
-			desktopState = "lessons";
-		}
-	})
+	
 
 	desktopNavLinks[1].click(function() {
 		if (desktopState == "exercises") {
@@ -235,15 +140,6 @@ $(document).ready(function(){
 		} else {
 			animate1();
 			desktopState = "exercises";
-		}
-	})
-
-	desktopNavLinks[2].click(function() {
-		if (desktopState == "quizzes") {
-			desktopTLArray[2].reversed(!desktopTLArray[2].reversed());
-		} else {
-			animate2();
-			desktopState = "quizzes";
 		}
 	})
 
@@ -265,15 +161,5 @@ $(document).ready(function(){
 		]);
 		
 		desktopTLArray[1].timeScale(1).play();
-	}
-
-	async function animate2() {
-
-		await Promise.all([
-		  desktopTLArray[0].timeScale(1).reverse(),
-		  desktopTLArray[1].timeScale(1).reverse()
-		]);
-		
-		desktopTLArray[2].timeScale(1).play();
-	}
+	}*/
 });

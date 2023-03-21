@@ -24,100 +24,62 @@
     <link rel="stylesheet" href="CSS/styles.css">
     <script src="JavaScript/navbar.js"></script>
     <script type="module" src="JavaScript/three.js"></script>
-    <script type="module" src="JavaScript/index.js"></script>
 </head>
 <body style="background-color: white;">
-    <header>
-        <div class="header-row">
+    <header class="header">
+        <div class="header-bg"></div>
+        <div class="main-row">
             <div class="brand-logo">
                 <span class="material-symbols-outlined">local_cafe</span>
-                <h1>&nbsp<i><strong>Java</strong>tastic</i></h1>
+                <h1>&nbsp<strong>Java</strong>tastic</h1>
             </div>
             <!-- Desktop Navs -->
-            <nav class="desktop-nav">
+            <nav class="main-nav">
                 <ul class="main-menu">
-                    <li><a href="navbar.html">Home</a></li>
-                    <li><a id="desktop-lessons">Lessons</a></li>
-                    <li><a id="desktop-exercises">Exercises</a></li>
-                    <li><a id="desktop-quizzes">Quizzes</a></li>
+                    <li class="active home"><a class="active" id="home">Home</a></li>
+                    <li class="lessons"><a id="lessons">Lessons</a></li>
+                    <li class="exercises"><a id="exercises">Exercises</a></li>
+                    <li class="quiz"><a id="quiz" href="HTML/quiz.html">Quizzes</a></li>
                 </ul>
             </nav>
-            <div id="login-div">
-                <div id="sign-in">
-                    <button id="sign-in-btn">Sign In With Google</button>
-                </div>
-                <div id="sign-out" hidden>
-                    <h3 id="account-name">Your Name Here</h3>
-                    <button id="sign-out-btn">Sign Out</button>
-                </div>
-            </div>
             
-            <button class="menu-toggle" id="menuToggle">
-                <svg viewBox="0 0 12 10" class="hamburger" height="40px" width="40px">
+            <button class="menu-toggle">
+                <svg viewBox="0 0 12 10" class="hamburger">
                     <path d="M10,2 L2,2" class="bar-1"></path>
                     <path d="M2,5 L10,5" class="bar-2"></path>
                     <path d="M10,8 L2,8" class="bar-3"></path>
                 </svg>
             </button>
         </div>
-        <div class="header-row">
-            <nav class="desktop-nav secondary-nav">
-                <ul class="secondary-menu lessons-menu">
+        <div class="second-row">
+            <nav class="second-nav">
+                <ul class="lessons-menu">
                     <li><a href="">Variables</a></li>
                     <li><a href="">Objects</a></li>
-                    <li><a href="">Conditionals</a></li>
+                    <li><a href="">If Statements</a></li>
                     <li><a href="">Loops</a></li>
                     <li><a href="">Classes</a></li>
+                    <li><a href="">Arrays</a></li>
+                    <li><a href="">ArrayLists</a></li>
+                    <li><a href="">2D Arrays</a></li>
+                    <li><a href="">Inheritance</a></li>
+                    <li><a href="">Recursion</a></li>
                 </ul>
-                <ul class="secondary-menu exercises-menu">
-                    <li><a href="./HTML/Exercises/ide.html">Data Storing</a></li>
-                    <li><a href="">Stringy</a></li>
-                    <li><a href="">If Else?</a></li>
+                <ul class="exercises-menu">
+                    <li><a href="./ide/index.html">Yay, Math</a></li>
+                    <li><a href="">Stringing Along</a></li>
+                    <li><a href="">True or False</a></li>
                     <li><a href="">Again and Again</a></li>
-                </ul>
-                <ul class="secondary-menu quizzes-menu">
-                    <li><a href="">Unit 1</a></li>
-                    <li><a href="">Unit 2</a></li>
-                    <li><a href="">Unit 3</a></li>
+                    <li><a href="">Doggo</a></li>
+                    <li><a href="">Lots of Stuff</a></li>
+                    <li><a href="">Stuff of Lots</a></li>
+                    <li><a href="">Lots of Lots of Stuff </a></li>
+                    <li><a href="">More Doggo</a></li>
+                    <li><a href="">Again and Again and Again</a></li>
                 </ul>
             </nav>
         </div>
     </header>
-    
-
-    <!-- Mobile Nav -->
-    <section class="fullpage-menu">
-        <div class="fullpage-menu-inner">
-            <div class="menu-bg"></div>
-            <nav class="mobile-nav">
-                <ul class="main-menu">
-                    <li><a href="navbar.html">Home</a></li>
-                    <li><a id="mobile-lessons">Lessons</a></li>
-                    <li><a id="mobile-exercises">Exercises</a></li>
-                    <li><a id="mobile-quizzes">Quizzes</a></li>
-                </ul>
-                <ul class="secondary-menu lessons-menu">
-                    <li><a href="">Variables</a></li>
-                    <li><a href="">Objects</a></li>
-                    <li><a href="">Conditionals</a></li>
-                    <li><a href="">Loops</a></li>
-                    <li><a href="">Classes</a></li>
-                </ul>
-                <ul class="secondary-menu exercises-menu">
-                    <li><a href="">Data Storing</a></li>
-                    <li><a href="">Stringy</a></li>
-                    <li><a href="">If Else?</a></li>
-                    <li><a href="">Again and Again</a></li>
-                </ul>
-                <ul class="secondary-menu quizzes-menu">
-                    <li><a href="">Unit 1</a></li>
-                    <li><a href="">Unit 2</a></li>
-                    <li><a href="">Unit 3</a></li>
-                </ul>
-            </nav>
-        </div>
-    </section>
-    
 </body>
 
 </html>

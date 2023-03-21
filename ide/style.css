@@ -10,6 +10,18 @@
     font-family: sans-serif;
 }
 
+.control-panel {
+    background: lightgray;
+    text-align: right;
+    padding: 4px;
+    font-family: sans-serif;
+}
+
+.languages {
+    background: white;
+    border: 1px solid gray;
+}
+
 #editor { height: 400px; }
 
 .button-container {
@@ -22,6 +34,7 @@
     color: white;
     padding: 8px;
     border: 0;
+    cursor: pointer;
 }
 
 .output {
