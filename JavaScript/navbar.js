@@ -12,17 +12,17 @@ $(document).ready(function(){
 		ease: Power2.easeInOut
 	}, 'start')
 
-	menuBarTL.to('.bar-2', 0.5,{
+	.to('.bar-2', 0.5,{
 		autoAlpha: 0
 	}, 'start')
 
-	menuBarTL.to('.bar-3', 0.5,{
+	.to('.bar-3', 0.5,{
 		attr:{d: "M8,8 L2,2"},
 		x:1,
 		ease: Power2.easeInOut
 	}, 'start')
 
-	menuBarTL.reverse();
+	.reverse();
 
 	//Mobile Open Links
 	const mobileMainTL = gsap.timeline();
@@ -33,7 +33,7 @@ $(document).ready(function(){
 		ease: 'Expo.easeInOut'
 	})
 
-	mobileMainTL.from('.main-menu li', {
+	.from('.main-menu li', {
 		duration: 0.5,
 		opacity: 0,
 		x: '-100%',
@@ -41,7 +41,7 @@ $(document).ready(function(){
 		ease: 'Expo.easeInOut'
 	}, "-=0.5")
 
-	mobileMainTL.reverse();
+	.reverse();
 
 	//Mobile Submenus
 	const mobileSubTL = [gsap.timeline(),gsap.timeline()];
@@ -65,7 +65,7 @@ $(document).ready(function(){
 			}
 		}, ) 
 
-		mobileSubTL[i].to(mainmenuLi, {
+		.to(mainmenuLi, {
 			duration: 0.5,
 			x: '-12%',
 			y: mainmenuLi=='.lessons' ? '-300%' : '-575%',
@@ -81,7 +81,7 @@ $(document).ready(function(){
 			}
 		}, "-=0.5" ) 
 
-		mobileSubTL[i].from(submenuClass+' li', {
+		.from(submenuClass+' li', {
 			duration: 1,
 			opacity: 0,
 			x: '500%',
@@ -89,7 +89,7 @@ $(document).ready(function(){
 			ease: 'Expo.easeInOut'
 		}, "-=0.5")
 
-		mobileSubTL[i].reverse();
+		.reverse();
 	}
 
 	//Controls Hamburger open and close

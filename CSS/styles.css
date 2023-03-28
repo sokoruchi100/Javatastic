@@ -1,12 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Roboto+Slab&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Roboto+Slab&display=swap");
 /* Header start */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Roboto+Slab&display=swap");
 .header {
   position: fixed;
   left: 0;
   top: 0;
-  width: 100%;
-  height: 10%;
+  width: 100vw;
+  height: 8%;
 }
 .header .header-bg {
   position: absolute;
@@ -68,6 +69,7 @@
   position: relative;
 }
 .header .main-row .main-nav .main-menu li a {
+  cursor: pointer;
   font-size: clamp(3rem, 5vw + 5vh, 4rem);
   color: #131516;
   text-decoration: none;
@@ -136,6 +138,7 @@
   position: relative;
 }
 .header .second-row .second-nav ul li a {
+  cursor: pointer;
   font-size: clamp(1rem, 4vh, 2rem);
   color: #131516;
   text-decoration: none;
@@ -166,6 +169,42 @@
   transform-origin: bottom left;
 }
 
+.home-main {
+  position: fixed;
+  z-index: -10;
+  height: 100%;
+  width: 300vw;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+.home-main .panels {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+.home-main .panels .panel {
+  height: 100%;
+  width: 100%;
+}
+.home-main .panels .panel-1 {
+  background-color: #aa2e00;
+}
+.home-main .panels .panel-2 {
+  background-color: #e76f22;
+}
+.home-main .panels .panel-3 {
+  background-color: #3a75b0;
+}
+.home-main .footer {
+  background-color: #131516;
+  width: 100vw;
+  height: 10%;
+  position: absolute;
+  top: 100vh;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -176,6 +215,7 @@ body {
   font-family: "Montserrat", sans-serif;
   background: #fff;
   color: #131516;
+  height: 100%;
 }
 
 /*# sourceMappingURL=styles.css.map */
