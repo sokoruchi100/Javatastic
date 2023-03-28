@@ -41,12 +41,6 @@ public class CodeController {
             return ResponseEntity.notFound().build();
         } else {
             System.out.println("SUCCESSFULLY OBTAINED TEST RESULTS");
-            for (TestResult testResult: testResults) {
-                System.out.println(testResult.getTestCase().getInputList().toString());
-                //System.out.println(((Integer) testResult.getTestCase().getExpectedOutput()));
-                System.out.println(testResult.getOutput());
-                System.out.println(testResult.isSuccess());
-            }
             return ResponseEntity.ok(testResults);
         }
     }

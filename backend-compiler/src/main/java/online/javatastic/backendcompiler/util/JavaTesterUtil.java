@@ -16,6 +16,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+
 public class JavaTesterUtil {
     public static List<TestResult> runTests(Exercise exercise, Path tempDir) {
         System.out.println("RUNNING TESTS");
@@ -53,10 +54,25 @@ public class JavaTesterUtil {
             Object obj = clazz.newInstance();
 
             for (TestCase testCase : testCaseList) {
+                System.out.println("EXPECTED OUTPUT: "+new String((byte[]) testCase.getExpectedOutput()));
+                String outputString = new String((byte[]) testCase.getExpectedOutput());
                 TestResult result = new TestResult();
                 try {
                     result.setOutput(method.invoke(obj, testCase.getInputList().toArray()));
-                    result.setSuccess((testCase.getExpectedOutput()).equals(result.getOutput()));
+                    System.out.println("RESULT OUTPUT: "+result.getOutput());
+                    if (result.getOutput().getClass().isAssignableFrom(Integer.class)) {
+                        testCase.setExpectedOutput(Integer.parseInt(outputString));
+                        result.setSuccess(result.getOutput().equals(testCase.getExpectedOutput()));
+                    } else if (result.getOutput().getClass().isAssignableFrom(Double.class)) {
+                        testCase.setExpectedOutput(Double.parseDouble(outputString));
+                        result.setSuccess(result.getOutput().equals(testCase.getExpectedOutput()));
+                    } else if (result.getOutput().getClass().isAssignableFrom(Boolean.class)) {
+                        testCase.setExpectedOutput(Boolean.parseBoolean(outputString));
+                        result.setSuccess(result.getOutput().equals(testCase.getExpectedOutput()));
+                    } else {
+                        testCase.setExpectedOutput(outputString);
+                        result.setSuccess(result.getOutput().equals(testCase.getExpectedOutput()));
+                    }
                 } catch (InvocationTargetException ex) {
                     result.setSuccess(false);
                     result.setOutput(ex.getCause().getMessage());

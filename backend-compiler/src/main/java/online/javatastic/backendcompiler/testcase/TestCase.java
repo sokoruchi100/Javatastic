@@ -1,4 +1,5 @@
 package online.javatastic.backendcompiler.testcase;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import online.javatastic.backendcompiler.exercise.Exercise;
 
@@ -17,6 +18,7 @@ public class TestCase {
     @Lob
     @Column(name = "expected_output", columnDefinition = "BLOB")
     private Object expectedOutput;
+    @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "exercise_id")
     private Exercise exercise;

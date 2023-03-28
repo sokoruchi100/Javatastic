@@ -44,14 +44,12 @@ public class CodeControllerTest {
 
     @BeforeEach
     public void setUp() {
-        code = "public class MathMadness {" +
-                "public int oddDoubler(int a, int b) {" +
-                "    int sum = a + b;" +
-                "    int multiplier = sum % 2;" +
-                "    return sum + (multiplier * sum);" +
+        code = "public class StringShenanigans {" +
+                "public String capitalizer(String str) {" +
+                "    return str.substring(0, 1).toUpperCase() + str.substring(1).toLowerCase()" +
                 "}" +
                 "}";
-        exerciseId = 3L;
+        exerciseId = 4L;
     }
 
     @Test
@@ -81,14 +79,20 @@ public class CodeControllerTest {
                     System.out.println("SUCCEEDED GETTING TESTCASES");
                     TestResult[] testResults = response2.getBody();
                     // handle List<TestResult>
-                    System.out.println("TEST RESULTS TO STRING: "+testResults.toString());
                     System.out.println("TEST RESULTS SIZE: "+testResults.length);
+                    for (TestResult testResult : testResults) {
+                        System.out.println("INPUTS: "+testResult.getTestCase().getInputList().toString());
+                        System.out.println("OUTPUT: "+testResult.getOutput());
+                        System.out.println("EXPECTED OUTPUT: "+testResult.getTestCase().getExpectedOutput());
+                        System.out.println("SUCCESS: "+testResult.isSuccess());
+                    }
                 } else {
                     // handle error response
                     System.out.println("GET TEST CASES FAILED");
                 }
             } else {
                 System.out.println("COMPILATION ERROR");
+                System.out.println(compilationResult.getOutput());
             }
         } else {
             // handle error response
