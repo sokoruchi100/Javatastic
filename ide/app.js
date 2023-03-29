@@ -1,6 +1,7 @@
-const EXERCISE_ID = 8;
-const POST_URL = "/usercode/submit";
-const GET_URL = "/usercode/testresults";
+const EXERCISE_ID = 3;
+const SERVER_URL = "http://localhost:8080"
+const POST_URL = "/api/submit";
+const GET_URL = "/api/results";
 
 $(document).ready(function () {
     let editor = ace.edit("editor");
@@ -23,17 +24,29 @@ $(document).ready(function () {
 
         $.ajax({
             type: "POST",
-            url: POST_URL,
+            url: SERVER_URL+POST_URL,
+            contentType: "application/json",
             data: JSON.stringify({ code: code, exerciseId: EXERCISE_ID }),
             success: function(result) {
                 // Wait for the server to finish processing the code, then send a GET request
-                var intervalId = setInterval(function() {
-                $.get(GET_URL, function(output) {
-                    // Output received, update the UI with the results
-                    $(".output").text(output);
-                    clearInterval(intervalId);
-                });
-                }, 1000);
+                if (result.success) {
+                    var intervalId = setInterval(function() {
+                        $.get(SERVER_URL+GET_URL, function(output) {
+                            // Output received, update the UI with the results
+                            $(".output").empty();
+                            console.log(output);
+                            output.forEach(result => {
+                                $(".output").append(`Inputs: [${result.testCase.inputList}], Output: ${result.output}, Expected Output: ${result.testCase.expectedOutput}, Success: ${result.success} \n`);
+                            });
+                            
+                            clearInterval(intervalId);
+                        });
+                    }, 1000);
+                } else {
+                    $(".output").empty();
+                    $(".output").append(`Compilation Error: ${result.output}`);
+                }
+                
             },
             error: function(xhr, status, error) {
                 // Handle errors here

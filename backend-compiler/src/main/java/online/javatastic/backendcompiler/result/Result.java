@@ -1,7 +1,5 @@
 package online.javatastic.backendcompiler.result;
 
-import online.javatastic.backendcompiler.testcase.TestCase;
-
 public abstract class Result {
     private boolean success;
     private Object output;

@@ -1,14 +1,18 @@
 package online.javatastic.backendcompiler.util;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.*;
 import java.nio.file.attribute.BasicFileAttributes;
-import java.nio.file.attribute.FileAttribute;
 
 public class JavaWriterUtil {
-    private static final String TEMP_PATH = "src/main/java/online/javatastic/backendcompiler/";
+    //private static final String TEMP_PATH = "src/main/java/online/javatastic/backendcompiler/volume/";
+    private static final String TEMP_PATH = "data/";
     private static final String TEMP_NAME = "temp";
     private static final String JAVA_EXTENSION = ".java";
 

@@ -1,11 +1,9 @@
 package online.javatastic.backendcompiler.util;
 
 import online.javatastic.backendcompiler.exercise.Exercise;
-import online.javatastic.backendcompiler.result.Result;
 import online.javatastic.backendcompiler.result.TestResult;
 import online.javatastic.backendcompiler.testcase.TestCase;
 
-import java.io.File;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.net.MalformedURLException;
@@ -13,7 +11,6 @@ import java.net.URL;
 import java.net.URLClassLoader;
 import java.nio.file.Path;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 

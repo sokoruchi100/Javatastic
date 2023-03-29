@@ -1,19 +1,15 @@
 package online.javatastic.backendcompiler;
-import com.fasterxml.jackson.databind.util.JSONPObject;
 import jakarta.validation.Valid;
-import netscape.javascript.JSObject;
 import online.javatastic.backendcompiler.result.CompilationResult;
-import online.javatastic.backendcompiler.result.Result;
 import online.javatastic.backendcompiler.result.TestResult;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 @RequestMapping("/api")
 public class CodeController {

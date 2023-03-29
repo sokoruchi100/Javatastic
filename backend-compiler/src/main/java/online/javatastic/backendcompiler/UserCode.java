@@ -1,10 +1,5 @@
 package online.javatastic.backendcompiler;
-import org.apache.catalina.User;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
-
-import java.util.ArrayList;
 
 @Component
 public class UserCode {

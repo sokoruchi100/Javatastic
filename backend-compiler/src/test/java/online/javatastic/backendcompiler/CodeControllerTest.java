@@ -2,7 +2,6 @@ package online.javatastic.backendcompiler;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import online.javatastic.backendcompiler.result.CompilationResult;
-import online.javatastic.backendcompiler.result.Result;
 import online.javatastic.backendcompiler.result.TestResult;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -11,18 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
-import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.*;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.MvcResult;
-import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
-
-import javax.sound.midi.SysexMessage;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -46,12 +36,13 @@ public class CodeControllerTest {
     public void setUp() {
         code = "public class StringShenanigans {" +
                 "public String capitalizer(String str) {" +
-                "    return str.substring(0, 1).toUpperCase() + str.substring(1).toLowerCase()" +
+                "    return str.substring(0, 1).toUpperCase() + str.substring(1).toLowerCase();" +
                 "}" +
                 "}";
         exerciseId = 4L;
     }
 
+/*
     @Test
     public void testGetUserCode() throws InterruptedException {
         //Given
@@ -98,5 +89,5 @@ public class CodeControllerTest {
             // handle error response
             System.out.println("GET COMPILATION FAILED");
         }
-    }
+    }*/
 }

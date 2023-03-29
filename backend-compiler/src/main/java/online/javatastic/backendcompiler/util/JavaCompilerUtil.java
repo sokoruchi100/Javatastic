@@ -5,7 +5,6 @@ import online.javatastic.backendcompiler.result.CompilationResult;
 import javax.tools.JavaCompiler;
 import javax.tools.ToolProvider;
 import java.io.*;
-import java.util.Arrays;
 
 public class JavaCompilerUtil {
 

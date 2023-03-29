@@ -2,7 +2,6 @@ package online.javatastic.backendcompiler;
 import online.javatastic.backendcompiler.exercise.Exercise;
 import online.javatastic.backendcompiler.exercise.ExerciseService;
 import online.javatastic.backendcompiler.result.CompilationResult;
-import online.javatastic.backendcompiler.result.Result;
 import online.javatastic.backendcompiler.result.TestResult;
 import online.javatastic.backendcompiler.testcase.TestCase;
 import online.javatastic.backendcompiler.util.JavaCompilerUtil;
@@ -16,7 +15,6 @@ import java.io.IOException;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 @Service
 public class CodeService {
