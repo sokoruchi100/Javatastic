@@ -1,5 +1,5 @@
 const EXERCISE_ID = 3;
-const SERVER_URL = "http://localhost:8080"
+const SERVER_URL = "https://backend-compiler-image-dgs3tukkda-uc.a.run.app"
 const POST_URL = "/api/submit";
 const GET_URL = "/api/results";
 
