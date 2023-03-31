@@ -12,7 +12,7 @@ import java.nio.file.attribute.BasicFileAttributes;
 
 public class JavaWriterUtil {
     //private static final String TEMP_PATH = "src/main/java/online/javatastic/backendcompiler/volume/";
-    private static final String TEMP_PATH = "data/";
+    private static final String TEMP_PATH = "mnt/";
     private static final String TEMP_NAME = "temp";
     private static final String JAVA_EXTENSION = ".java";
 
