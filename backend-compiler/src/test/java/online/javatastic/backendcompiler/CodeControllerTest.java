@@ -30,6 +30,7 @@ public class CodeControllerTest {
     @Autowired
     private TestRestTemplate restTemplate;
     private String code;
+    private String code2;
     private Long exerciseId;
 
     @BeforeEach
@@ -38,6 +39,11 @@ public class CodeControllerTest {
                 "public String capitalizer(String str) {" +
                 "    return str.substring(0, 1).toUpperCase() + str.substring(1).toLowerCase();" +
                 "}" +
+                "}";
+        code2 = "public class Main {" +
+                "    public static void main(String[] args) {" +
+                "        System.out.println(\"Hello World!\");" +
+                "    }" +
                 "}";
         exerciseId = 4L;
     }
@@ -80,6 +86,47 @@ public class CodeControllerTest {
                 } else {
                     // handle error response
                     System.out.println("GET TEST CASES FAILED");
+                }
+            } else {
+                System.out.println("COMPILATION ERROR");
+                System.out.println(compilationResult.getOutput());
+            }
+        } else {
+            // handle error response
+            System.out.println("GET COMPILATION FAILED");
+        }
+    }*/
+
+    /*
+    @Test
+    public void testRunCode() throws InterruptedException {
+        //Given
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON);
+        String json = "{ \"code2\": \""+code+"\", \"exerciseId\": "+(-1)+" }";
+        HttpEntity<String> requestEntity = new HttpEntity<String>(json, headers);
+
+        //When
+        ResponseEntity<CompilationResult> response = restTemplate.postForEntity("/api/run", requestEntity, CompilationResult.class);
+        assertEquals(HttpStatus.OK, response.getStatusCode());
+
+        if (response.getStatusCode() == HttpStatus.OK) {
+            // check the type of the response body and cast it to the appropriate type
+            CompilationResult compilationResult = response.getBody();
+            if (compilationResult.isSuccess()) {
+                //Wait for the server to complete execution
+                ResponseEntity<String> response2 = restTemplate.getForEntity("/api/output", String.class);
+                //ResponseEntity<TestResult[]> response2 = restTemplate.exchange("/api/results", HttpMethod.GET, null, new ParameterizedTypeReference<TestResult[]>() {});
+                TimeUnit.SECONDS.sleep(5);
+                //Then
+                assertEquals(HttpStatus.OK, response2.getStatusCode());
+                assertNotNull(response2.getBody());
+                if (response2.getStatusCode() == HttpStatus.OK) {
+                    System.out.println("SUCCEEDED GETTING TESTCASES");
+                    System.out.println(response2.getBody());
+                } else {
+                    // handle error response
+                    System.out.println("RUNTIME ERROR");
                 }
             } else {
                 System.out.println("COMPILATION ERROR");
