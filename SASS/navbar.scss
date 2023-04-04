@@ -36,11 +36,8 @@
       align-items: center;
       justify-content: center;
 
-      .material-symbols-outlined {
+      .fa-solid {
         font-size: $logoFontSize;
-        width: $logoFontSize;
-        height: $logoFontSize;
-        color: $black
       }
 
       h1 {
@@ -132,73 +129,37 @@
       }
     }
   }
+}
 
-  .second-row {
-    .second-nav {
-      position: absolute;
-      height: 80vh;
-      top: 15vh;
-      left: 0;
-      padding: 20px;
-      display: none;
-
-      ul{
-        list-style-type: none;
-        padding: 0;
+@media only screen and (min-width: 768px) {
+  .header {
+    .main-row{
+      display: flex;
+      justify-content: space-between;
+      .main-nav {
+        position: static;
         height: 100%;
+        padding: 0;
+        
+        .main-menu{
+          padding: 0;
+          flex-direction: row;
+          align-items: flex-start;
+          justify-content: space-between;
+      
+          li {
+            padding-left: 1vw;
+            padding-right: 1vw;
+            
+            a {
+              font-size: $textFontSize;
+            }
+          }
+        }
+      }
+      .menu-toggle {
         display: none;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: space-between;
-    
-        li {
-          overflow: hidden;
-          transition: text-decoration 300ms ease-in-out 0s;
-          display: inline-block;
-          position: relative;
-          
-          a {
-            cursor: pointer;
-            font-size: $textFontSize;
-            color: $black;
-            text-decoration: none;
-            font-weight: bold;
-            display: inline-block;
-            transition: color 0.5s;
-          }
-
-          a:hover {
-            color: $red;
-          }
-
-          .active {
-            color: $red;
-          }
-        }
-        
-        li::after {
-          content: '';
-          position: absolute;
-          width: 100%;
-          transform: scaleX(0);
-          height: 2px;
-          bottom: 0;
-          left: 0;
-          background-color: $red;
-          transform-origin: bottom right;
-          transition: transform 0.25s ease-out;
-        }
-        
-        li:hover::after, .active::after {
-          transform: scaleX(1);
-          transform-origin: bottom left;
-        }
       }
     }
   }
-}
-
-
-@media only screen and (min-width:768px) {
-  
 }

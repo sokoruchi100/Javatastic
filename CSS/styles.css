@@ -33,11 +33,8 @@
   align-items: center;
   justify-content: center;
 }
-.header .main-row .brand-logo .material-symbols-outlined {
-  font-size: clamp(1rem, 3vw + 3vh, 3rem);
-  width: clamp(1rem, 3vw + 3vh, 3rem);
-  height: clamp(1rem, 3vw + 3vh, 3rem);
-  color: #131516;
+.header .main-row .brand-logo .fa-solid {
+  font-size: clamp(1rem, 3vw + 3vh, 2rem);
 }
 .header .main-row .brand-logo h1 {
   font-size: clamp(2rem, 4vw + 4vh, 3rem);
@@ -114,61 +111,34 @@
   stroke: #fff;
   stroke-linecap: round;
 }
-.header .second-row .second-nav {
-  position: absolute;
-  height: 80vh;
-  top: 15vh;
-  left: 0;
-  padding: 20px;
-  display: none;
-}
-.header .second-row .second-nav ul {
-  list-style-type: none;
-  padding: 0;
-  height: 100%;
-  display: none;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-}
-.header .second-row .second-nav ul li {
-  overflow: hidden;
-  transition: text-decoration 300ms ease-in-out 0s;
-  display: inline-block;
-  position: relative;
-}
-.header .second-row .second-nav ul li a {
-  cursor: pointer;
-  font-size: clamp(1rem, 4vh, 2rem);
-  color: #131516;
-  text-decoration: none;
-  font-weight: bold;
-  display: inline-block;
-  transition: color 0.5s;
-}
-.header .second-row .second-nav ul li a:hover {
-  color: #aa2e00;
-}
-.header .second-row .second-nav ul li .active {
-  color: #aa2e00;
-}
-.header .second-row .second-nav ul li::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  transform: scaleX(0);
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background-color: #aa2e00;
-  transform-origin: bottom right;
-  transition: transform 0.25s ease-out;
-}
-.header .second-row .second-nav ul li:hover::after, .header .second-row .second-nav ul .active::after {
-  transform: scaleX(1);
-  transform-origin: bottom left;
-}
 
+@media only screen and (min-width: 768px) {
+  .header .main-row {
+    display: flex;
+    justify-content: space-between;
+  }
+  .header .main-row .main-nav {
+    position: static;
+    height: 100%;
+    padding: 0;
+  }
+  .header .main-row .main-nav .main-menu {
+    padding: 0;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+  .header .main-row .main-nav .main-menu li {
+    padding-left: 1vw;
+    padding-right: 1vw;
+  }
+  .header .main-row .main-nav .main-menu li a {
+    font-size: clamp(1rem, 4vh, 2rem);
+  }
+  .header .main-row .menu-toggle {
+    display: none;
+  }
+}
 .home-main {
   position: fixed;
   z-index: -10;

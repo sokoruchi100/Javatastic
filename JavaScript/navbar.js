@@ -1,9 +1,15 @@
 "use strict";
 $(document).ready(function(){
-	const menuToggle = $(".menu-toggle");
+	// create
+	const matchMedia = gsap.matchMedia();
+	
+	// add a media query. When it matches, the associated function will run
+	matchMedia.add("(max-width: 768px)", () => {
+		// this setup code only runs when viewport is at least 768px wide
+		const menuToggle = $(".menu-toggle");
 
 	//Hamburger Menu Bar
-	const menuBarTL = gsap.timeline();
+	const menuBarTL = gsap.timeline({paused: true});
 
 	menuBarTL.to('.bar-1', 0.5,{
 		attr:{d: "M8,2 L2,8"},
@@ -24,9 +30,9 @@ $(document).ready(function(){
 	.reverse();
 
 	//Mobile Open Links
-	const mobileMainTL = gsap.timeline();
+	const mobileTL = gsap.timeline({paused: true});
 
-	mobileMainTL.to('.header-bg', {
+	mobileTL.to('.header-bg', {
 		duration: 0.5,
 		height: '100vh',
 		ease: 'Expo.easeInOut'
@@ -42,9 +48,11 @@ $(document).ready(function(){
 
 	.reverse();
 
-	//Controls Hamburger open and close
 	menuToggle.click( function() {
 		menuBarTL.reversed(!menuBarTL.reversed());
-		mobileMainTL.reversed(!mobileMainTL.reversed());
+		mobileTL.reversed(!mobileTL.reversed());
+	});
+		return () => {
+		};
 	});
 });
