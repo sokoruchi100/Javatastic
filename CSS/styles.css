@@ -3,6 +3,7 @@
 /* Header start */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Roboto+Slab&display=swap");
 .header {
+  z-index: 10;
   position: fixed;
   left: 0;
   top: 0;
@@ -139,40 +140,52 @@
     display: none;
   }
 }
-.home-main {
+.home-main #canvas-container #c {
   position: fixed;
-  z-index: -10;
-  height: 100%;
-  width: 300vw;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  display: block;
 }
-.home-main .panels {
-  display: flex;
-  flex-direction: row;
-  height: 100%;
+
+.circle-follow {
+  position: fixed;
+  border: 1px solid #fff;
+  width: 30px;
+  height: 30px;
+  left: -21px;
+  top: -21px;
+  border-radius: 100%;
+  z-index: 1;
+  user-select: none;
+  pointer-events: none;
+  z-index: 10000;
+  transform: scale(1);
 }
-.home-main .panels .panel {
+
+.slide-container {
+  height: 100%;
+  width: 300%;
+  display: flex;
+  flex-wrap: nowrap;
+}
+.slide-container .slide {
   height: 100%;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
 }
-.home-main .panels .panel-1 {
-  background-color: #aa2e00;
+.slide-container .slide .content {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
 }
-.home-main .panels .panel-2 {
-  background-color: #e76f22;
+.slide-container .slide .content h1 {
+  font-size: clamp(3rem, 5vw + 5vh, 4rem);
 }
-.home-main .panels .panel-3 {
-  background-color: #3a75b0;
-}
-.home-main .footer {
-  background-color: #131516;
-  width: 100vw;
-  height: 10%;
-  position: absolute;
-  top: 100vh;
+.slide-container .slide .content p {
+  font-size: clamp(1rem, 4vh, 2rem);
 }
 
 * {
@@ -185,7 +198,8 @@ body {
   font-family: "Montserrat", sans-serif;
   background: #fff;
   color: #131516;
-  height: 100%;
+  height: 100vh;
+  overflow-x: hidden;
 }
 
 /*# sourceMappingURL=styles.css.map */

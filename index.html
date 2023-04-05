@@ -15,7 +15,8 @@
     <script type="importmap">
     {
         "imports": {
-        "three": "https://unpkg.com/three@0.150.1/build/three.module.js"
+        "three": "https://unpkg.com/three@v0.151.0/build/three.module.js",
+        "three/addons/": "https://unpkg.com/three@v0.151.0/examples/jsm/"
         }
     }
     </script>
@@ -25,10 +26,11 @@
     <!-- CSS and Scripts -->
     <link rel="stylesheet" href="CSS/styles.css">
     <script src="JavaScript/navbar.js"></script>
-    <script src="JavaScript/home.js"></script>
-    <script type="module" src="JavaScript/three.js"></script>
+    <script type="module" src="JavaScript/home.js"></script>
+    <script src="JavaScript/cursor.js"></script>
 </head>
 <body>
+    <div class="circle-follow"></div>
     <header class="header">
         <div class="header-bg"></div>
         <div class="main-row">
@@ -40,8 +42,8 @@
             <nav class="main-nav">
                 <ul class="main-menu">
                     <li class="active home"><a class="active" id="home">Home</a></li>
-                    <li class="lessons"><a id="lessons">Lessons</a></li>
-                    <li class="exercises"><a id="exercises" href="HTML/Exercises/mathMadness.html">Exercises</a></li>
+                    <li class="lessons"><a id="lessons" href="HTML/lessonList.html">Lessons</a></li>
+                    <li class="exercises"><a id="exercises" href="HTML/exerciseList.html">Exercises</a></li>
                     <li class="quiz"><a id="quiz" href="HTML/quiz.html">Quiz</a></li>
                 </ul>
             </nav>
@@ -56,19 +58,8 @@
         </div>
     </header>
     <main class="home-main">
-        <div class="panels">
-            <div class="panel-1 panel">
-
-            </div>
-            <div class="panel-2 panel">
-    
-            </div>
-            <div class="panel-3 panel">
-    
-            </div>
-        </div>
-        <div class="footer">
-
+        <div id="canvas-container">
+            <canvas id="c"></canvas>
         </div>
     </main>
 </body>
