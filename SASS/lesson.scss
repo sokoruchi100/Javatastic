@@ -1,0 +1,49 @@
+.section-container {
+    padding-left: 3rem;
+    padding-right: 3rem;
+    padding-top: 10rem;
+    
+    .section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        h1 {
+            font-size: $headerFontSize;
+        }
+        p {
+            background-image: $blueWhiteGradient;
+            border-radius: 20px;
+            padding: 20px;
+            font-size: $smallTextFontSize;
+            font-family: $textFont;
+            text-align: justify;
+            margin-top: 3rem;
+            margin-bottom: 3rem;
+            line-height: 2;
+        }
+        ul {
+            background-color: $orange;
+            color: white;
+            border-radius: 20px;
+            padding: 4rem;
+            font-size: $smallerTextFontSize;
+            line-height: 3;
+            font-family: $textFont;
+            text-align: justify;
+            margin-top: 3rem;
+            margin-bottom: 3rem;
+    
+        }
+        pre {
+            padding: 20px;
+            border-radius: 20px;
+            background-color: $blue;
+            code {
+                font-size: $smallTextFontSize;
+                color: $white;
+                font-family: $codeFont;
+            }
+        }
+        padding-bottom: 10rem;
+    }
+}

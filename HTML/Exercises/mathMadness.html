@@ -2,26 +2,72 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Codeboard Online IDE</title>
-
-    <link rel="stylesheet" href="style.css" />
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.16.0/ace.js"></script>
-    <script src="app.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javatastic | Math Madness</title>
+    <!-- Coffee Cup -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" type="image/x-icon" href="/Sources/Images/coffee.svg">
+    <!-- CSS -->
+    <link rel="stylesheet" href="/CSS/styles.css">
 </head>
 <body>
-
-    <div class="header"> Javatastic </div>
-    <div class="editor" id="editor"></div>
-
-    <div class="button-container">
-        <button class="btn"> Submit </button>
-        <button class="btn2"> Run </button>
+    <div class="circle-follow"></div>
+    <header class="header">
+        <div class="header-bg"></div>
+        <div class="main-row">
+            <div class="brand-logo">
+                <i class="fa-solid fa-mug-hot"></i>
+                <h1>&nbsp<strong>Java</strong>tastic</h1>
+            </div>
+            <!-- Desktop Navs -->
+            <nav class="main-nav">
+                <ul class="main-menu">
+                    <li class="home"><a href="/index.html">Home</a></li>
+                    <li class="lessons"><a href="/HTML/lessonList.html">Lessons</a></li>
+                    <li class="exercises active"><a class="active" href="/HTML/exerciseList.html">Exercises</a></li>
+                    <li class="quiz"><a href="/HTML/quiz.html">Quiz</a></li>
+                </ul>
+            </nav>
+            
+            <button class="menu-toggle">
+                <svg viewBox="0 0 12 10" class="hamburger">
+                    <path d="M10,2 L2,2" class="bar-1"></path>
+                    <path d="M2,5 L10,5" class="bar-2"></path>
+                    <path d="M10,8 L2,8" class="bar-3"></path>
+                </svg>
+            </button>
+        </div>
+    </header>
+    <div class="exercise-container">
+        <div class="text-container">
+            <h2 class="exercise-title">
+                Math Madness: The Odd Doubler
+            </h2>
+            <p class="prompt">
+                Create a Java method that takes in two integers, adds them together, and returns the result. However, if the sum of the two integers is odd, return the value of the integer multiplied by 2 instead. Try to complete this without using if-statements.
+            </p>
+        </div>
+        <div class="ide-container">
+            <div class="ide" id="ide"></div>
+            <div class="output"></div>
+        </div>
+        <div class="btn-container">
+            <button class="btn submit" id="3">Submit</button>
+            <button class="btn reset">Reset</button>
+        </div>
+        
     </div>
-
-    <div class="output"></div>
-
     
 
+    <!-- CDNs -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.16.0/ace.js"></script>
+    <!--Scripts-->
+    <script src="/JavaScript/navbar.js"></script>
+    <script src="/JavaScript/cursor.js"></script>
+    <script type="module" src="/JavaScript/exercise.js"></script>
 </body>
 </html>

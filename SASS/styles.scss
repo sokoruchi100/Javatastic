@@ -1,11 +1,13 @@
 // Import Bootstrap 5 Sass variables and functions
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Roboto+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Roboto+Slab&family=Source+Code+Pro&display=swap');
 @import "variables";
 @import "mixins";
 @import "navbar";
 @import "home";
 @import "cursor";
 @import "list";
+@import "exercise";
+@import "lesson";
 
 // Override Bootstrap variables
 *{

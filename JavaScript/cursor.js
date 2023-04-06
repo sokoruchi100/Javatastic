@@ -16,14 +16,25 @@ $(document).ready(function () {
         });  
     }
 
+    function ideHoverFunc(e) {
+        TweenLite.to($follow, 0.3, {
+            scale: 0.5,
+            border: "1px solid #fff",
+            backgroundColor: "rgb(0,0,0,0.5)"
+        });  
+    }
+
     function unhoverFunc(e) {
         TweenLite.to($follow, 0.3, {
             scale: 1,
-            border: "1px solid #fff"
+            border: "1px solid #fff",
+            backgroundColor: "rgb(0,0,0,0)"
         });  
     }
 
     $(window).on('mousemove', moveCircle);
 
     $("a").hover(hoverFunc, unhoverFunc);
+    $("button").hover(hoverFunc, unhoverFunc);
+    $("#ide").hover(ideHoverFunc, unhoverFunc);
 });

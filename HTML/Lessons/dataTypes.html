@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javatastic | Unit 1</title>
+    <!-- Coffee Cup -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" type="image/x-icon" href="/Sources/Images/coffee.svg">
+    <!-- CSS -->
+    <link rel="stylesheet" href="/CSS/styles.css">
+    
+</head>
+<body>
+    <div class="circle-follow"></div>
+    <header class="header">
+        <div class="header-bg"></div>
+        <div class="main-row">
+            <div class="brand-logo">
+                <i class="fa-solid fa-mug-hot"></i>
+                <h1>&nbsp<strong>Java</strong>tastic</h1>
+            </div>
+            <!-- Desktop Navs -->
+            <nav class="main-nav">
+                <ul class="main-menu">
+                    <li class="home"><a href="/index.html">Home</a></li>
+                    <li class="active lessons"><a class="active" id="lessons" href="/HTML/lessonList.html">Lessons</a></li>
+                    <li class="exercises"><a href="/HTML/exerciseList.html">Exercises</a></li>
+                    <li class="quiz"><a href="/HTML//quiz.html">Quiz</a></li>
+                </ul>
+            </nav>
+            
+            <button class="menu-toggle">
+                <svg viewBox="0 0 12 10" class="hamburger">
+                    <path d="M10,2 L2,2" class="bar-1"></path>
+                    <path d="M2,5 L10,5" class="bar-2"></path>
+                    <path d="M10,8 L2,8" class="bar-3"></path>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <div class="section-container">
+        <div class="section">
+            <h1>Introduction</h1>
+            <p>
+                Hey kids, this website is gonna help you learn Java and other computer science stuff. And if you're getting ready for the AP Computer Science A exam, it's gonna get you ready for that too!
+
+But listen up, coding in Java is different from coding in block coding languages like Scratch or App Inventor. In Java, you gotta be careful with spelling and punctuation. But don't worry, there are cool tools called Integrated Development Environments or IDEs for short. They make coding a lot easier and you can pick the one you like best!
+Annnnd, there's also an ide built into this page. Just click on the tab at the bottom of the screen to open it up and start coding away.
+
+Learning to code can be tough, but it feels so cool when you finally figure it out! And your brain grows while you're figuring out how to solve problems and fix errors. So keep a growth mindset and stay positive. Instead of saying "I'm not good at this," say "I can learn to do this."
+
+And if you want some help while coding, try pair programming. It's when two people work together on one computer. One person types while the other gives ideas and feedback. It's a great way to learn and write better code!
+            </p>
+        </div>
+        <div class="section">
+            <h1>Java Basics</h1>
+            <p>
+                Java is like a magic wand that helps you create cool apps and software for your phone and computer! Lots of awesome apps like Minecraft and Netflix are made with Java. When we write a program in Java, we write it inside something called a <b>"class"</b>, which is like a blueprint for making things.
+
+The <b>main method</b> is like the boss of the class, and it tells the program what to do. You can change the code inside the main method to make the program do different things. Like, you could make it say <b>"Hello, [your name]!"</b> instead of just <b>"Hello, world!"</b>
+Check out the following code below to learn the syntax for making a class and a main method. Just a note, the built in ide will only recognize a class name of "Main".
+<pre>
+    <code>
+public class Main {
+    public static void main(String[] args) {
+        //Write your code here!!!
+    }
+}
+    </code>
+</pre>
+<p>
+To make the program talk, we use something called <b>"print statements"</b>. It's like telling the program to speak. There are two types: <b>System.out.println()</b> and <b>System.out.print()</b>. <b>System.out.println()</b> talks and goes to a new line, while <b>System.out.print()</b> talks without going to a new line. 
+We use double quotes to make the computer understand that we're making it say something. Text that is in double quotes like <b>"Hello, world!"</b> are called <b>String Literals</b>. 
+And just like in English, we end each command with a semicolon (<b>;</b>).
+
+But wait! Sometimes our code has mistakes, and that's okay! It just means we have a bug in our program. The reason we have these bugs is because the computer is trying to translate our code into machine code through a process called <b>"compiling"</b>. The computer needs the translation in order to do understand our instructions and do stuff, but if we use incorrect syntax, the compiler won't be able to translate correctly. In order to fix these bugs, we must do something called <b>"debugging"</b>. Even fancy coders have bugs, so don't worry if you do too! Sometimes it helps to explain our code to a rubber duck or ask a friend for help.
+
+We can also leave notes for ourselves or other coders using <b>"comments"</b>. These are like little secrets hidden inside our code that the computer ignores. 
+We can use them to explain what our code does or why we wrote it a certain way. Just like in a book, we use different types of comments for different things.
+To write them, use <b>//</b> for single line comments and <b>/*</b> and <b>*/</b> for multi-line comments. The following snippet of code below has a bug in it, can you figure out why?
+            </p>
+            <pre>
+                <code>
+public class Main {
+   public static void main(String[] args) {
+        System.out.println("Hello world!); //Try to figure out why this is causing a bug
+    }
+}
+                </code>
+            </pre>
+        </div>
+        <div class="section">
+            <h1>Variables and Data Types</h1>
+            <p>
+                Alright, let's talk about variables and primitive data types!
+
+So, imagine you have a box with your name on it. You can put anything you want in it, like a toy or a snack. Well, a <b>variable</b> is like that box - but for the computer. It's a container that can hold different things, like numbers or words.
+
+There are two types of variables: <b>primitive</b> and <b>object/reference</b>. Primitive variables are for basic stuff like whole numbers <b>(int)</b>, decimal numbers <b>(double)</b>, and true/false values <b>(boolean)</b>. <b>String</b> is an object type that holds a bunch of letters.
+
+When you make a variable, you need to give it a name and tell the computer what type of stuff it's going to hold. Under the hood, the computer allocates a location in the memory to store the data. That location holds whatever value you put in it. Whenever you want to use the variable later, you just call it by its name. 
+You can even change what's inside the box by assigning a new value to the variable!
+But wait, there are some rules for naming variables. You can't use words that Java already knows, like <b>"if"</b> or <b>"int"</b>. Also keep in mind that if you use the keyword <b>"final"</b> in a variable declaration, the variable can not be reassigned a different value later. Remember to make your names descriptive, like "score" or "playerName". 
+Also, use lowercase letters to start the name and capitalize the first letter of each new word. This is called <b>Camel Case</b> and it's structured like this: <b>camelCase</b>.
+
+So, there you have it - variables are like magic boxes for the computer that can hold different kinds of stuff. Just remember to name them wisely! Check out the following code to see the syntax of how to declare, initialize, and assign values to variables.
+            </p>
+<pre>
+    <code>
+public class Main {
+    public static void main(String[] args) {
+        final double gpa = 3.5;
+        boolean pass = true;
+        int grade = 97;
+        System.out.print(gpa); //Prints 3.5
+    }
+}
+    </code>
+</pre>
+        </div>
+        <div class="section">
+            <h1>Arithmetic Operators</h1>
+            <p>
+                I hope you like math cause we're gonna use it in our code. If you paid attention, you'll remember the variable-box analogy. 
+                In certain programs, we can use variables to store input values given by users, but that's outside the scope of this website.
+
+To assign a value to a variable, we use the <b>=</b> sign. It's like saying "this variable gets this value." And when we want to copy a variable's value to another variable without changing the original variable, we can do that too!
+
+In games, we can use variables to keep score. And when we want to add one to the score, we use a funny operation called "incrementing." It looks like this: <b>score = score + 1</b>. It might look weird, but it means the score variable gets its old value plus one.
+
+In Java, we can use math symbols like <b>+, -, *, and /</b> to do math. If we use them with whole numbers, we'll get another whole number as the answer. But if we use them with decimals, we'll get a decimal number as the answer.
+
+To check if two things are the same, we use <b>==</b>. To check if they're not the same, we use <b>!=</b>. Be careful not to mix up = with ==. And when we want to make sure things happen in the right order, we can use parentheses <b>()</b>, like in PEMDAS (or BODMAS if you're bri'ish).
+
+Finally, the <b>%</b> sign is called the mod operator. It tells you the remainder you get when you divide one number by another number. For example, 5 % 2 is 1 because 2 goes into 5 two times with a remainder of 1. And if the first number is smaller than the second number, the result will be the first number.
+For example, 2 % 3 will equal 2. Also, <b>DON'T DIVIDE BY 0!</b> You'll get an error, <i>obviously</i>.
+So go ahead and have some fun with math and variables in your code! Below is some sample code you can try out for yourself.
+            </p>
+<pre>
+    <code>
+public class Main {
+    public static void main(String[] args) {
+        int score = 3;
+        score = score + 2; //adds 2 to score
+        score = score % 2; //modulos score by 2
+        System.out.println(score); //Prints 1
+        double score2 = 1.0;
+        System.out.println(score / 2); //Prints 0 because score is an integer and rounded down
+        System.out.println(score2 / 2); //Prints 0.5 because score2 is a double
+    }
+}
+    </code>
+</pre>
+        </div>
+        <div class="section">
+            <h1>Compound Assignment</h1>
+            <p>
+                Are reassignment statements too much for you to type?  Well don't worry, cause <b>compound assignment operators</b> are here to help you!
+
+These shortcuts can do a math operation and assignment in one step! 
+For example, instead of writing x = x + 1 to add 1 to a number called x, you can write <b>x += 1</b>! And guess what? It works with other operators too like +, -, *, /, and %!
+
+Now, let's talk about the coolest shortcut operators, <b>++</b> and <b>--</b>. The ++ adds 1 to a number and -- subtracts 1. You can't use them with other operators, but they're still pretty awesome! So, <b>x++</b> means the same as x += 1 and x = x + 1. And yep, you guessed it, the -- does the opposite!
+
+These shortcuts are like magic spells that help you save time and make your code shorter! So go ahead and use them! And remember, on the exam you can use either <b>x++</b> or <b>++x</b> to add 1 to a value. The only difference is when you're assigning it to another variable. So go forth and conquer the coding world with your amazing new skills! The code below replicates the previous code, but with compound assignment operators instead.
+            </p>
+<pre>
+    <code>
+public class Main {
+    public static void main(String[] args) {
+        int score = 3;
+        score += 2;
+        score %= 2;
+        System.out.println(score); //Prints 1
+    }
+}
+    </code>
+</pre>
+        </div>
+        <div class="section">
+            <h1>Type Casting</h1>
+            <p>
+                Type casting in Java is like changing the "shape" of a variable. It's like when you take a ball of clay and shape it into a cool mug or bowl. Type casting lets you change a variable's type from one to another. So, you can turn a number into a temporary value in a different data type using <b>(int)</b> or <b>(double)</b>.
+
+Now, when you divide two integers, Java assumes you want an integer result. But, if you use both integers and decimals, Java thinks you want a double result. And if you want to get a double result from a math operation with integers, you can use <b>casting</b>.
+
+But wait, there's more! You can also round a double to the nearest integer using <b>(int)(x + 0.5)</b> or <b>(int)(x - 0.5)</b> for negative numbers. So, if you have a decimal number that's almost a whole number, you can use casting to round it to the nearest integer.
+
+But remember, Java has a limit for how many digits it can store for any double number. That means calculations on computers might not always be accurate. And finally, int values in Java have a limited range from <b>Integer.MIN_VALUE</b> to <b>Integer.MAX_VALUE</b>. If an int value goes beyond that range, it could result in an incorrect value. So, it's important to keep track of your variables and make sure they don't go out of bounds!
+            </p>
+<pre>
+    <code>
+public class Main {
+    public static void main(String[] args) {
+        int score = 3;
+        System.out.println(score / 2); //Prints 1
+        System.out.println((double)score / 2); //Prints 1.5
+    }
+}
+    </code>
+</pre>
+        </div>
+        <div class="section">
+            <h1>Keywords and Vocab</h1>
+<ul>
+    <li><b>Compiler</b>: a program that turns your code into something the computer can understand.</li>
+    <li><b>Compilation Error</b>: an error found while the compiler is running, usually caused by incorrect syntax.</li>
+    <li><b>Main Method</b>: function used to do stuff, written as "public static void main(String[] args)"</li>
+    <li><b>Variable</b>: a name you give to a place in the computer's memory where you can store information.</li>
+    <li><b>Variable Declaration</b>: Creating a variable</li>
+    <li><b>Variable Initialization</b>: Assigning a value to a variable for the first time</li>
+    <li><b>Data type</b>: the type of information you are storing, like whole numbers, decimal numbers, or true/false.</li>
+    <li><b>int</b>: datatype for a whole number</li>
+    <li><b>double</b>: datatype for a decimal number</li>
+    <li><b>boolean</b>: datatype for a true/false value</li>
+    <li><b>Camel case</b>: a way to name variables by putting words together and capitalizing each new word.</li>
+    <li><b>Casting</b>: a way to change the datatype of a variable by using the name of a datatype surrounded by ().</li>
+    <li><b>Operator</b>: a symbol used to do stuff like math, boolean logic, or assignment</li>
+    <li><b>Compound Assignment Operators</b>: Shortcut operators to quickly do math and reassign variables</li>
+    <li><b>Modulo</b>: the % symbol that returns the remainder of a division.</li>
+    <li><b>Arithmetic expression</b>: a math problem using numbers and symbols.</li>
+    <li><b>Operator precedence</b>: the order in which math problems are solved, for example, multiplication before addition. PEMDAS, essentially.</li>
+    <li><b>Keyword</b>: a word with a special meaning in Java, like "int" or "boolean."</li>
+    <li><b>String</b>: an object datatype that stores text.</li>
+    <li><b>System.out.print/println()</b>: ways to show information to the user. println() will print a next line as well.</li>
+    <li><b>=</b>: The assignment operator, used to give variables a value</li> 
+</ul>
+<h1>Things to remember</h1>
+<ul>
+    <li>Variable names are case sensitive</li>
+    <li>Don't forget the datatype when declaring a variable</li>
+    <li>Declare your variables before using them</li>
+    <li>Remember the correct names for your variables</li>
+    <li>Remember the correct types for your variables</li>
+    <li>== is for comparing, = is for assigning</li>
+    <li>ints can be negative</li>
+    <li>End each line with a ;</li>
+    <li>Remember the difference between print() and println()</li>
+    <li>Uninitialized primitive types will be equal to 0 or false</li>
+</ul>
+        </div>
+        <div class="section">
+            <a href="/HTML/Exercises/mathMadness.html">Try out this exercise!</a>
+        </div>
+    </div>
+    <!-- CDNS -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/Draggable.min.js"></script>
+    <!-- Scripts -->
+    <script src="../JavaScript/navbar.js"></script>
+    <script src="../JavaScript/cursor.js"></script>
+</body>
+
+</html>
