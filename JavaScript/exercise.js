@@ -1,3 +1,4 @@
+"use strict";
 import { exerciseBank } from "./exerciseBank.js";
 
 const SERVER_URL = "https://backend-compiler-image-dgs3tukkda-uc.a.run.app"

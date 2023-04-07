@@ -1,52 +1,191 @@
 "use strict";
 import * as THREE from 'three';
-import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
 gsap.registerPlugin(ScrollTrigger);
 
-window.onload = function () {
+$(document).ready(function () {
     
+    //Scene
     const scene = new THREE.Scene();
+    scene.background = new THREE.Color( 0xffffff );
+
+    //Camera
     const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+    camera.position.set(10,10,10);
+    camera.lookAt(0,0,0);
 
-    const renderer = new THREE.WebGLRenderer({canvas: document.getElementById('c')});
-    const container = document.getElementById('canvas-container');
-    container.appendChild(renderer.domElement);
+    //Lighting
+    const hemiLight = new THREE.HemisphereLight(0xffeeb1, 0x080820, 3);
+    scene.add(hemiLight);
+    const spotLight = new THREE.SpotLight(0xffa95c, 4);
+    spotLight.castShadow = true;
+    spotLight.shadow.bias = -0.0001;
+    spotLight.shadow.mapSize.width = 1024*4;
+    spotLight.shadow.mapSize.height = 1024*4;
+    scene.add(spotLight);
 
+    //Renderer Canvas
+    const renderer = new THREE.WebGLRenderer({antialias:true});
     renderer.setSize( window.innerWidth, window.innerHeight );
-    document.body.appendChild( renderer.domElement );
+    const container = document.getElementById("renderer");
+    container.appendChild(renderer.domElement);
+    renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    renderer.toneMappingExposure = 1;
+    renderer.shadowMap.enabled = true;
 
-    const geometry = new THREE.BoxGeometry(1, 1, 1);
-    const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-    const cube = new THREE.Mesh(geometry, material);
-    scene.add(cube);
-    camera.position.z = 5;
+    // Load GLTF
+    const loader = new GLTFLoader();
+    loader.load(
+        // resource URL
+        '/Sources/Models/Room/scene.gltf',
+        // called when the resource is loaded
+        function ( gltf ) {
+            
+            const model = gltf.scene.children[0];
 
-    function resizeRendererToDisplaySize() {
-        const canvas = renderer.domElement;
-        const width = window.innerWidth;
-        const height = window.innerHeight;
-        const needResize = canvas.width !== width || canvas.height !== height;
-        if (needResize) {
-            renderer.setSize(width, height, false);
-            camera.aspect = width / height;
-            camera.updateProjectionMatrix();
+            model.traverse(n => {
+                if (n.isMesh) {
+                    n.castShadow = true;
+                    n.receiveShadow = true;
+                    if (n.material.map) {
+                        n.material.map.anisotropy = 16;
+                    }
+                }
+            });
+
+            scene.add( model );
+
+            gltf.animations; // Array<THREE.AnimationClip>
+            gltf.scene; // THREE.Group
+            gltf.scenes; // Array<THREE.Group>
+            gltf.cameras; // Array<THREE.Camera>
+            gltf.asset; // Object
+
+        },
+        // called while loading is progressing
+        function ( xhr ) {
+
+            console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
+
+        },
+        // called when loading has errors
+        function ( error ) {
+
+            console.log( 'An error happened' );
+
         }
-    }
+    );
 
-    function animate() {
-        requestAnimationFrame(animate);
-        renderer.render(scene, camera);
-        cube.rotation.x += 0.01;
-        cube.rotation.y += 0.01;
-        resizeRendererToDisplaySize();
-    }
-
-    animate();
-
-    // add event listener for window resize
-    window.addEventListener('resize', function() {
-        resizeRendererToDisplaySize();
+    //Resize Event
+    $(window).resize(function () {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
     });
 
-};
+    //Scroll Anim
+    $(window).click(function () { 
+        /*
+        gsap
+        gsap.to(camera.rotation, {
+            duration: 1.5,
+            x:0,
+            y:0.2,
+            z:0,
+        });
+        
+
+        
+        gsap.to(camera.position, {
+            duration: 1.5,
+            x:1,
+            y:2,
+            z:1,
+        });
+        gsap.to(camera.rotation, {
+            duration: 1.5,
+            x:0,
+            y:2,
+            z:0,
+        });
+        
+       
+        gsap.to(camera.position, {
+            duration: 1.5,
+            x:0,
+            y:3,
+            z:0
+        });
+        gsap.to(camera.rotation, {
+            duration: 1.5,
+            x:0,
+            y:0.8,
+            z:0
+        });*/
+    });
+
+    const tl = gsap.timeline({
+        scrollTrigger: {
+            trigger: ".home-container",
+            start: "top top",
+            end: "bottom bottom",
+            scrub: 1,
+        }
+    })
+    
+    tl.to(camera.position, {
+        x:2,
+        y:3,
+        z:1,
+    });
+    tl.to(camera.position, {
+        x:1,
+        y:2,
+        z:1,
+    });
+    tl.to(camera.position, {
+        x:-1,
+        y:3,
+        z:-1
+    });
+
+    const tl2 = gsap.timeline({
+        scrollTrigger: {
+            trigger: ".home-container",
+            start: "top top",
+            end: "bottom bottom",
+            scrub: 1,
+        }
+    })
+    
+    tl2.to(camera.rotation, {
+        x:0,
+        y:0.2,
+        z:0,
+    });
+    tl2.to(camera.rotation, {
+        x:0,
+        y:2,
+        z:0,
+    });
+    tl2.to(camera.rotation, {
+        x:0,
+        y:0.2,
+        z:0
+    });
+
+
+
+    //Animation Loop
+    function animate() {
+        spotLight.position.set(
+            camera.position.x + 10,
+            camera.position.y + 10,
+            camera.position.z + 10
+        );
+        requestAnimationFrame(animate);
+        renderer.render(scene, camera);
+    }
+    animate();
+});

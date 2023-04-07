@@ -1,3 +1,4 @@
+"use strict";
 const SERVER_URL = "https://backend-compiler-image-dgs3tukkda-uc.a.run.app"
 const RUN_POST_URL = "/api/run";
 const RUN_GET_URL = "/api/output";

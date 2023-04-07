@@ -140,11 +140,58 @@
     display: none;
   }
 }
-.home-main #canvas-container #c {
+#renderer {
   position: fixed;
-  height: 100vh;
-  width: 100vw;
-  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.home-container {
+  padding-top: 5rem;
+  height: 400%;
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+}
+.home-container .section {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.home-container .section .content {
+  padding: 3rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.4784313725);
+  border-radius: 1rem;
+  width: 70%;
+}
+.home-container .section .content h1 {
+  font-size: clamp(3rem, 5vw + 5vh, 4rem);
+}
+.home-container .section .content p {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  font-size: clamp(1rem, 2vw + 2vh, 2rem);
+  font-family: "Roboto Slab", serif;
+}
+.home-container .section .content a {
+  background-color: rgba(58, 117, 176, 0.4823529412);
+  border-radius: 1rem;
+  padding: 1rem;
+  font-size: clamp(2rem, 4vw + 4vh, 3rem);
+  text-decoration: none;
+  color: #aa2e00;
+  width: 50%;
 }
 
 .circle-follow {

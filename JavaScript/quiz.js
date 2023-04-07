@@ -1,5 +1,6 @@
-import { questionBank } from "./questionBank.js";
 "use strict";
+import { questionBank } from "./questionBank.js";
+
 $(document).ready(function(){
     function shuffle(array) {
         for (let i = array.length - 1; i > 0; i--) {
