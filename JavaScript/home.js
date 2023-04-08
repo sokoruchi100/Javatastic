@@ -38,7 +38,7 @@ $(document).ready(function () {
     const loader = new GLTFLoader();
     loader.load(
         // resource URL
-        '../Sources/Models/Room/scene.gltf',
+        '/Sources/Models/Room/scene.gltf',
         // called when the resource is loaded
         function ( gltf ) {
             
