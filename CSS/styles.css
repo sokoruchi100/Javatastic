@@ -384,7 +384,7 @@
   color: white;
   border-radius: 20px;
   padding: 4rem;
-  font-size: clamp(0.5rem, 1vw + 1vh, 1rem);
+  font-size: clamp(0.75rem, 1vw + 1vh, 1rem);
   line-height: 3;
   font-family: "Roboto Slab", serif;
   text-align: justify;
@@ -400,6 +400,141 @@
   font-size: clamp(1rem, 1vw + 1vh, 2rem);
   color: #fff;
   font-family: "Source Code Pro", monospace;
+}
+
+.timer-container {
+  position: fixed;
+  margin-top: 5rem;
+  padding: 1rem;
+  background-color: rgba(58, 117, 176, 0.4823529412);
+  border-radius: 1rem;
+}
+
+.start-container {
+  height: 100%;
+  width: 100%;
+  padding-top: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.start-container .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(58, 117, 176, 0.4823529412);
+  border-radius: 2rem;
+  padding: 1rem;
+  width: 70%;
+}
+.start-container .content h1 {
+  font-size: clamp(3rem, 5vw + 5vh, 4rem);
+}
+.start-container .content p {
+  font-family: "Roboto Slab", serif;
+  font-size: clamp(1rem, 2vw + 2vh, 2rem);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  text-align: center;
+}
+.start-container .content button {
+  border-radius: 1rem;
+  border: 0;
+  width: 20%;
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(2rem, 4vw + 4vh, 3rem);
+  background-color: rgba(255, 255, 255, 0.4784313725);
+  transition: background-color 0.5s, color 0.5s, width 0.5s;
+  cursor: pointer;
+}
+.start-container .content button:hover {
+  background-color: #aa2e00;
+  color: #fff;
+  width: 100%;
+}
+
+.quiz-container {
+  display: none;
+  padding-top: 5rem;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+.quiz-container .section {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(58, 117, 176, 0.4823529412);
+  border-radius: 2rem;
+  padding: 2rem;
+  width: 70%;
+  margin-bottom: 10rem;
+}
+.quiz-container .section h1 {
+  font-size: clamp(3rem, 5vw + 5vh, 4rem);
+}
+.quiz-container .section h2 {
+  font-size: clamp(2rem, 4vw + 4vh, 3rem);
+}
+.quiz-container .section p {
+  font-family: "Roboto Slab", serif;
+  font-size: clamp(1rem, 1vw + 1vh, 2rem);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  text-align: justify;
+}
+.quiz-container .section pre {
+  background-color: #131516;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+.quiz-container .section pre code {
+  color: #fff;
+  font-family: "Source Code Pro", monospace;
+  font-size: clamp(0.75rem, 1vw + 1vh, 1rem);
+}
+.quiz-container .section form {
+  margin-top: 1rem;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+.quiz-container .section form label {
+  border-radius: 1rem;
+  color: #131516;
+  font-size: clamp(0.75rem, 1vw + 1vh, 1rem);
+  font-family: "Source Code Pro", monospace;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.quiz-container .section form .correct {
+  background-color: #198754;
+}
+.quiz-container .section form .incorrect {
+  background-color: #aa2e00;
+}
+.quiz-container .section .explanation {
+  display: none;
+}
+.quiz-container button {
+  border-radius: 1rem;
+  border: 0;
+  width: 30%;
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(2rem, 4vw + 4vh, 3rem);
+  background-color: rgba(58, 117, 176, 0.4823529412);
+  transition: background-color 0.5s, color 0.5s, width 0.5s;
+  cursor: pointer;
+  padding: 1rem;
+}
+.quiz-container button:hover {
+  background-color: #aa2e00;
+  color: #fff;
+  width: 100%;
 }
 
 * {
