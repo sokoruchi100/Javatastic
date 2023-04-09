@@ -3,19 +3,26 @@ const SERVER_URL = "https://backend-compiler-image-dgs3tukkda-uc.a.run.app"
 const RUN_POST_URL = "/api/run";
 const RUN_GET_URL = "/api/output";
 $(document).ready(function () {
-    const ide = ace.edit("ide");
-    ide.setTheme("ace/theme/monokai");
-    ide.session.setMode("ace/mode/java");
-
+    ace.require("ace/ext/language_tools");
+    const editor = ace.edit("editor");
+    editor.setTheme("ace/theme/chrome");
+    editor.getSession().setMode("ace/mode/java");
+    editor.getSession().setUseWorker(true);
+    editor.setOptions({
+        enableBasicAutocompletion: true,
+        enableSnippets: true,
+        enableLiveAutocompletion: true,
+    });
+    
     const javacode = `public class Main {
-        public static void main(String[] args) {
-            //Type Here
-        }
-    }`
-    ide.setValue(javacode);
+    public static void main(String[] args) {
+        //Type Here
+    }
+}`
+    editor.setValue(javacode);
 
     $(".reset").click(function () {
-        ide.setValue(javacode);
+        editor.setValue(javacode);
     })
 
     $(".run").click(function () {
@@ -23,7 +30,7 @@ $(document).ready(function () {
         $(".output").html("Loading...");
         console.log(code);
 
-        //Testing the normal ide functionality
+        //Testing the normal editor functionality
         $.ajax({
             type: "POST",
             url: SERVER_URL+RUN_POST_URL,
@@ -52,4 +59,38 @@ $(document).ready(function () {
             }
         });
     });
+
+    // this setup code only runs when viewport is at least 768px wide
+    const ideToggle = $(".ide-toggle");
+
+    //Arrow Icon
+    const ideIconTL = gsap.timeline({paused: true});
+
+    ideIconTL.to('.arrow-1', 0.5,{
+        attr:{d: "M8,2 L2,8"},
+        ease: Power2.easeInOut
+    }, 'start')
+
+    .to('.arrow-2', 0.5,{
+        attr:{d: "M2,2 L8,8"},
+		ease: Power2.easeInOut
+    }, 'start')
+
+    .reverse();
+
+    //Moving IDE
+    const ideTL = gsap.timeline({paused: true});
+
+    ideTL.from('.slider', 0.5,{
+        y:"94%",
+        ease: 'Expo.easeInOut'
+    })
+
+    .reverse();
+
+    ideToggle.click( function() {
+        ideIconTL.reversed(!ideIconTL.reversed());
+        ideTL.reversed(!ideTL.reversed());
+    });
+
 });

@@ -1,17 +1,114 @@
+.slider {
+    height: 90%;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    .ide-toggle {
+        border-radius: 1rem 1rem 0rem 0rem;
+        margin-left: 1rem;
+        height: 3rem;
+        width: 3rem;
+        background-color: $whiteTrans;
+        border: none;
+        cursor: pointer;
+    
+        .arrow {
+            height: 3rem;
+            width: 3rem;
+    
+        path{
+            fill: none;
+            stroke: $black;
+            stroke-linecap: round;
+        }
+      }
+    }
+    .ide-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: calc(100% - 3rem);
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        background-color: $whiteTrans;
+        
+    
+        .editor-container {
+            @include editor-container;
+            height:80%;
+        }
+        .btn-container {
+            @include btn-container;
+        }
+    }
+}
+
+
+
+@media only screen and (min-width: 768px) {
+.slider {
+    .ide-container {
+        .editor-container {
+            width: 100%;
+            
+            display: flex;
+            flex-direction: row;
+    
+            .editor {
+                width: 60%;
+                height: 100%;
+            }
+    
+            .output {
+                width: 40%;
+                height: 100%;
+                border-left: 0.25rem solid $black;
+                border-top: 0;
+            }
+        }
+    
+        .btn-container {
+            height: 10%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+    
+            .btn {
+                width: 30%;
+                height: 100%;
+            }
+            .run:hover {
+                background-color: $green;
+                width: 50%;
+            }
+            .reset:hover {
+                background-color: $green;
+                width: 50%;
+            }
+        }
+    }   
+}
+    
+}
+
 .section-container {
     padding-left: 3rem;
     padding-right: 3rem;
     padding-top: 10rem;
-    
+
     .section {
         display: flex;
         flex-direction: column;
         align-items: center;
+        
         h1 {
             font-size: $headerFontSize;
         }
         p {
-            background-image: $blueWhiteGradient;
+            background-color: $whiteTrans;
             border-radius: 20px;
             padding: 20px;
             font-size: $smallTextFontSize;
@@ -20,10 +117,11 @@
             margin-top: 3rem;
             margin-bottom: 3rem;
             line-height: 2;
+            box-shadow: 0.5rem 0.5rem 0.5rem $blackTrans;
         }
         ul {
-            background-color: $orange;
-            color: white;
+            background-color: $redTrans;
+            color: $white;
             border-radius: 20px;
             padding: 4rem;
             font-size: $smallerTextFontSize;
@@ -32,12 +130,14 @@
             text-align: justify;
             margin-top: 3rem;
             margin-bottom: 3rem;
-    
+            box-shadow: 0.5rem 0.5rem 0.5rem $blackTrans;
         }
         pre {
             padding: 20px;
             border-radius: 20px;
             background-color: $blue;
+            box-shadow: 0.5rem 0.5rem 0.5rem $blackTrans;
+            border: 0.5rem solid $white;
             code {
                 font-size: $smallTextFontSize;
                 color: $white;

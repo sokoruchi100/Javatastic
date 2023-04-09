@@ -18,9 +18,7 @@ $(document).ready(function () {
 
     function ideHoverFunc(e) {
         TweenLite.to($follow, 0.3, {
-            scale: 0.5,
-            border: "1px solid #fff",
-            backgroundColor: "rgb(0,0,0,0.5)"
+            scale: 0
         });  
     }
 
@@ -28,7 +26,7 @@ $(document).ready(function () {
         TweenLite.to($follow, 0.3, {
             scale: 1,
             border: "1px solid #fff",
-            backgroundColor: "rgb(0,0,0,0)"
+            backgroundColor: "rgb(0,0,0,0.5)"
         });  
     }
 
@@ -36,5 +34,5 @@ $(document).ready(function () {
 
     $("a").hover(hoverFunc, unhoverFunc);
     $("button").hover(hoverFunc, unhoverFunc);
-    $("#ide").hover(ideHoverFunc, unhoverFunc);
-});
+    $("#editor").hover(ideHoverFunc, unhoverFunc);
+})

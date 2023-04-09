@@ -7,18 +7,25 @@ const TEST_GET_URL = "/api/results";
 
 $(document).ready(function () {
     const id = $(".submit").attr("id");
-    const ide = ace.edit("ide");
-    ide.setTheme("ace/theme/monokai");
-    ide.session.setMode("ace/mode/java");
+    ace.require("ace/ext/language_tools");
+    const editor = ace.edit("editor");
+    editor.setTheme("ace/theme/chrome");
+    editor.getSession().setMode("ace/mode/java");
+    editor.getSession().setUseWorker(true);
+    editor.setOptions({
+        enableBasicAutocompletion: true,
+        enableSnippets: true,
+        enableLiveAutocompletion: true,
+    });
     
-    ide.setValue(exerciseBank[id].preCode);
+    editor.setValue(exerciseBank[id].preCode);
 
     $(".reset").click(function () {
-        ide.setValue(exerciseBank[id].preCode);
+        editor.setValue(exerciseBank[id].preCode);
     })
 
     $(".submit").click(function () {
-        let code = ide.getValue();
+        let code = editor.getValue();
         $(".output").html("Loading...");
         console.log(code);
 

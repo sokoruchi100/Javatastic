@@ -3,6 +3,8 @@
     width: 300%;
     display: flex;
     flex-wrap: nowrap;
+    overflow: auto;
+    touch-action: none;
     
     .slide {
         height: 100%;

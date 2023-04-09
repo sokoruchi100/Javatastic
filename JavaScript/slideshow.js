@@ -11,8 +11,8 @@ $(document).ready(function () {
     scrollTrigger: {
       trigger: ".slide-container",
       pin: true,
+      fixed: true,
       scrub: 1,
-      snap: 1 / (sections.length - 1),
       // base vertical scrolling on how wide the container is so it feels more natural.
       end: "+=3600",
     }
