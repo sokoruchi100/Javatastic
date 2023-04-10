@@ -788,6 +788,7 @@ body {
   background: #fff;
   color: #131516;
   height: 100vh;
+  overflow-x: hidden !important;
   transition: all 0.5s ease;
 }
 
