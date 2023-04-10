@@ -161,6 +161,7 @@
   flex-direction: column;
 }
 .home-container .section {
+  overflow-y: hidden;
   height: 100%;
   width: 100%;
   display: flex;
@@ -225,7 +226,6 @@
   display: flex;
   flex-wrap: nowrap;
   overflow: auto;
-  touch-action: none;
   overflow-y: hidden;
 }
 .slide-container .slide {
@@ -290,10 +290,6 @@
 .slide-container .exercise-1 {
   background-image: linear-gradient(rgba(255, 255, 255, 0.4784313725), rgba(58, 117, 176, 0.4823529412)), url("../Sources/Images/exercise1.jpg");
   z-index: 10;
-}
-
-* {
-  touch-action: none;
 }
 
 .exercise-container {
@@ -792,8 +788,6 @@ body {
   background: #fff;
   color: #131516;
   height: 100vh;
-  overflow-x: hidden;
-  overflow-y: scroll;
   transition: all 0.5s ease;
 }
 

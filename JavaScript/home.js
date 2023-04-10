@@ -4,8 +4,7 @@ import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
 gsap.registerPlugin(ScrollTrigger);
 
-$(document).ready(function () {
-    
+$(document).ready(function () {    
     //Scene
     const scene = new THREE.Scene();
 
@@ -84,47 +83,6 @@ $(document).ready(function () {
         renderer.setSize(window.innerWidth, window.innerHeight);
     });
 
-    //Scroll Anim
-    $(window).click(function () { 
-        /*
-        gsap
-        gsap.to(camera.rotation, {
-            duration: 1.5,
-            x:0,
-            y:0.2,
-            z:0,
-        });
-        
-
-        
-        gsap.to(camera.position, {
-            duration: 1.5,
-            x:1,
-            y:2,
-            z:1,
-        });
-        gsap.to(camera.rotation, {
-            duration: 1.5,
-            x:0,
-            y:2,
-            z:0,
-        });
-        
-       
-        gsap.to(camera.position, {
-            duration: 1.5,
-            x:0,
-            y:3,
-            z:0
-        });
-        gsap.to(camera.rotation, {
-            duration: 1.5,
-            x:0,
-            y:0.8,
-            z:0
-        });*/
-    });
-
     const tl = gsap.timeline({
         scrollTrigger: {
             trigger: ".home-container",
@@ -175,6 +133,8 @@ $(document).ready(function () {
         z:0
     });
 
+    
+
     gsap.from(".title-section", 1, {
         y:"-100%",
         ease: "elastic.out(1, 0.4)",
@@ -210,7 +170,7 @@ $(document).ready(function () {
             start: "top center",
         }
     });
-
+    
 
 
     //Animation Loop
