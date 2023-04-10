@@ -103,7 +103,7 @@ $(document).ready(function() {
                 <h2>Question ${counter}</h2>
                 <p>${obj.question}</p>
                 <pre>
-                    <code>${obj.code}</code>
+                    <code class="language-java">${obj.code}</code>
                 </pre>
                 <form class="question-${counter}">
                 ${obj.options.map((option, index) => `
@@ -118,6 +118,7 @@ $(document).ready(function() {
           container.append(element);
           counter++;
         });
+        Prism.highlightAll();
 
         const button = $(`<button class="btn quiz-btn">Submit Quiz</button>`);
         container.append(button);

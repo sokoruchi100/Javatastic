@@ -34,6 +34,7 @@
       flex-direction: row;
       align-items: center;
       justify-content: center;
+      text-shadow: 1px 1px $red;
 
       .fa-solid {
         font-size: $logoFontSize;
@@ -45,6 +46,7 @@
 
         strong {
           color: $red;
+          text-shadow: 1px 1px $black;
         }
       }
     }
@@ -79,15 +81,18 @@
             text-decoration: none;
             font-weight: bold;
             display: inline-block;
-            transition: color 0.5s;
+            transition: all 0.5s ease;
+           
           }
 
           a:hover {
             color: $red;
+            
           }
 
           .active {
             color: $red;
+            
           }
         }
         
@@ -123,7 +128,7 @@
 
         path{
           fill: none;
-          stroke: $white;
+          stroke: $black;
           stroke-linecap: round;
         }
       }

@@ -22,7 +22,20 @@ $(document).ready(function () {
 
     $(".reset").click(function () {
         editor.setValue(exerciseBank[id].preCode);
-    })
+    });
+
+    const tl = gsap.timeline({paused:true});
+
+    tl.from(".hint-container", 1, {
+        x:"300%",
+        ease: "elastic.out(0.8, 0.4)"
+    });
+
+    tl.reverse();
+
+    $(".hint").click(function() {
+        tl.reversed(!tl.reversed());
+    });
 
     $(".submit").click(function () {
         let code = editor.getValue();
@@ -43,9 +56,18 @@ $(document).ready(function () {
                             $(".output").empty();
                             console.log(output);
                             if (testFailure(output)) {
-                                $(".output").append("TEST FAILURE");
+                                $(".output").append("TEST FAILURE\n\n");
+                                $(".output").append("FAILED TESTS:\n");
+                                output.forEach(result => {
+                                    if (!result.success) {
+                                        $(".output").append("Inputs: "+result.testCase.inputList+"\n");
+                                        $(".output").append("Expected Output: "+result.testCase.expectedOutput+"\n");
+                                        $(".output").append("Real Output: "+result.output+"\n\n");
+                                    }
+                                    
+                                });
                             } else {
-                                $(".output").append("ALL TESTS SUCCEEDED");
+                                $(".output").append("ALL TESTS SUCCEEDED\n");
                             }
                             
                             clearInterval(intervalId);

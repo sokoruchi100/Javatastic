@@ -33,17 +33,17 @@
         button {
             border-radius: 1rem;
             border: 0;
-            width: 20%;
+            min-width: 20%;
             font-family: $headFont;
             font-size: $headerFontSize;
             background-color: $whiteTrans;
-            transition: background-color 0.5s, color 0.5s, width 0.5s;
+            transition: all 0.5s ease;
             cursor: pointer;
         }
         button:hover {
             background-color: $red;
             color: $white;
-            width: 100%;
+            min-width: 100%;
         }
     }
 }
@@ -63,12 +63,14 @@
         background-color: $blueTrans;
         border-radius: 2rem;
         padding: 2rem;
-        width: 70%;
+        width: 100%;
         margin-bottom: 10rem;
         h1 {
+            text-align: center;
             font-size: $jumboFontSize;
         }
         h2 {
+            text-align: center;
             font-size: $headerFontSize;
         }
         p {
@@ -79,6 +81,8 @@
             text-align: justify;
         }
         pre {
+            overflow-x: auto;
+            max-width:100% ;
             background-color: $black;
             border-radius: 1rem;
             padding: 1rem;
@@ -120,17 +124,27 @@
     button {
         border-radius: 1rem;
         border: 0;
-        width: 30%;
+        min-width: 30%;
         font-family: $headFont;
         font-size: $headerFontSize;
         background-color: $blueTrans;
-        transition: background-color 0.5s, color 0.5s, width 0.5s;
+        transition: all 0.5s ease;
         cursor: pointer;
         padding: 1rem;
     }
     button:hover {
         background-color: $red;
         color: $white;
-        width: 100%;
+        min-width: 100%;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .start-container {
+        .quiz-container {
+            .section {
+                width: 70%;
+            }
+        }
     }
 }

@@ -8,7 +8,6 @@ $(document).ready(function () {
     
     //Scene
     const scene = new THREE.Scene();
-    scene.background = new THREE.Color( 0xffffff );
 
     //Camera
     const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
@@ -26,7 +25,8 @@ $(document).ready(function () {
     scene.add(spotLight);
 
     //Renderer Canvas
-    const renderer = new THREE.WebGLRenderer({antialias:true});
+    const renderer = new THREE.WebGLRenderer({antialias:true, alpha:true});
+    renderer.setClearColor(0x000000, 0);
     renderer.setSize( window.innerWidth, window.innerHeight );
     const container = document.getElementById("renderer");
     container.appendChild(renderer.domElement);
@@ -173,6 +173,42 @@ $(document).ready(function () {
         x:0,
         y:0.2,
         z:0
+    });
+
+    gsap.from(".title-section", 1, {
+        y:"-100%",
+        ease: "elastic.out(1, 0.4)",
+        scrollTrigger: {
+            trigger: ".title-section",
+            start: "top center",
+        }
+    });
+    
+    gsap.from(".lessons-section", 1, {
+        x:"-100%",
+        ease: "elastic.out(1, 0.4)",
+        scrollTrigger: {
+            trigger: ".lessons-section",
+            start: "top center",
+        }
+    });
+
+    gsap.from(".exercises-section", 1, {
+        x:"100%",
+        ease: "elastic.out(1, 0.4)",
+        scrollTrigger: {
+            trigger: ".exercises-section",
+            start: "top center",
+        }
+    });
+
+    gsap.from(".quiz-section", 1, {
+        y:"100%",
+        ease: "elastic.out(1, 0.4)",
+        scrollTrigger: {
+            trigger: ".quiz-section",
+            start: "top center",
+        }
     });
 
 

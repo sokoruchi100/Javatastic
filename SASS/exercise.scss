@@ -1,3 +1,6 @@
+* {
+    touch-action: none;
+}
 .exercise-container {
     @include container;
 
@@ -6,9 +9,34 @@
     }
     .editor-container {
         @include editor-container;
+        pre {
+            overflow-x:auto;
+        }
     }
     .btn-container {
         @include btn-container;
+        .hint {
+            background-color: $white;
+            color: $black;
+        }
+    }
+    .hint-container {
+        display: inline-block;
+        z-index: 10;
+        margin-top: 10rem;
+        position:absolute;
+        min-width: 40%;
+        background-color: $blue;
+        border-radius: 1rem;
+        box-shadow: 1rem 1rem 1rem $blackTrans;
+        border: 0.5rem solid $white;
+        p {
+            font-size: $textFontSize;
+            font-family: $textFont;
+            text-align: justify;
+            padding: 1rem;
+            color: $white;
+        }
     }
 }
 
@@ -57,6 +85,13 @@
                 width: 30%;
                 height: 100%;
             }
+            .btn:hover {
+                width: 50%;
+            }
+        }
+
+        .hint-container {
+            max-width: 50%;
         }
     }
 }

@@ -30,9 +30,13 @@ $(document).ready(function () {
         });  
     }
 
-    $(window).on('mousemove', moveCircle);
+    const mediaQuery = window.matchMedia('(min-width: 768px)');
 
-    $("a").hover(hoverFunc, unhoverFunc);
-    $("button").hover(hoverFunc, unhoverFunc);
-    $("#editor").hover(ideHoverFunc, unhoverFunc);
+    if (mediaQuery.matches) {
+        $(window).on('mousemove', moveCircle);
+        $("a").hover(hoverFunc, unhoverFunc);
+        $("button").hover(hoverFunc, unhoverFunc);
+        $("#editor").hover(ideHoverFunc, unhoverFunc);
+    }
+    
 })

@@ -95,23 +95,23 @@
 }
 
 .section-container {
-    padding-left: 3rem;
-    padding-right: 3rem;
     padding-top: 10rem;
 
     .section {
         display: flex;
         flex-direction: column;
         align-items: center;
+        padding-bottom: 10rem;
         
         h1 {
             font-size: $headerFontSize;
+            text-align: center;
         }
         p {
             background-color: $whiteTrans;
             border-radius: 20px;
             padding: 20px;
-            font-size: $smallTextFontSize;
+            font-size: $smallerTextFontSize;
             font-family: $textFont;
             text-align: justify;
             margin-top: 3rem;
@@ -133,17 +133,43 @@
             box-shadow: 0.5rem 0.5rem 0.5rem $blackTrans;
         }
         pre {
+            overflow-x: auto;
+            max-width: 100%;
             padding: 20px;
             border-radius: 20px;
             background-color: $blue;
             box-shadow: 0.5rem 0.5rem 0.5rem $blackTrans;
             border: 0.5rem solid $white;
             code {
-                font-size: $smallTextFontSize;
+                font-size: $smallerTextFontSize;
                 color: $white;
                 font-family: $codeFont;
+                text-shadow: 1px 1px $black;
             }
         }
-        padding-bottom: 10rem;
+
+        a {
+            background-color: $blue;
+            font-size: $headerFontSize;
+            font-family: $headFont;
+            color: $white;
+            border-radius: 1rem;
+            text-align: center;
+            text-decoration: none;
+            transition: all 0.5s ease;
+            min-width: 50%;
+        }
+        a:hover {
+            min-width: 100%;
+            background-color: $red;
+        }
+        
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .section-container {
+        padding-left: 3rem;
+        padding-right: 3rem;
     }
 }
