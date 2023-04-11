@@ -90,7 +90,7 @@ $(document).ready(function () {
             end: "bottom bottom",
             scrub: 1,
         }
-    })
+    });
     
     tl.to(camera.position, {
         x:2,
@@ -115,7 +115,7 @@ $(document).ready(function () {
             end: "bottom bottom",
             scrub: 1,
         }
-    })
+    });
     
     tl2.to(camera.rotation, {
         x:0,
@@ -132,8 +132,6 @@ $(document).ready(function () {
         y:0.2,
         z:0
     });
-
-    
 
     gsap.from(".title-section", 1, {
         y:"-100%",
@@ -171,7 +169,6 @@ $(document).ready(function () {
         }
     });
     
-
 
     //Animation Loop
     function animate() {
