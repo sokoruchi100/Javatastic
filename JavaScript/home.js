@@ -95,7 +95,7 @@ $(document).ready(function () {
     tl.to(camera.position, {
         x:2,
         y:3,
-        z:1,
+        z:-0.5,
     });
     tl.to(camera.position, {
         x:1,
@@ -103,9 +103,9 @@ $(document).ready(function () {
         z:1,
     });
     tl.to(camera.position, {
-        x:-1,
-        y:3,
-        z:-1
+        x:-1.5,
+        y:2,
+        z:-1.5
     });
 
     const tl2 = gsap.timeline({
@@ -119,7 +119,7 @@ $(document).ready(function () {
     
     tl2.to(camera.rotation, {
         x:0,
-        y:0.2,
+        y:0.3,
         z:0,
     });
     tl2.to(camera.rotation, {
