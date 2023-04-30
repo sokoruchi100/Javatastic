@@ -9,7 +9,7 @@ $(document).ready(function () {
     const id = $(".submit").attr("id");
     ace.require("ace/ext/language_tools");
     const editor = ace.edit("editor");
-    editor.setTheme("ace/theme/chrome");
+    editor.setTheme("ace/theme/monokai");
     editor.getSession().setMode("ace/mode/java");
     editor.getSession().setUseWorker(true);
     editor.setOptions({

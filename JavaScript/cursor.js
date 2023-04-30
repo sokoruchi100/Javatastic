@@ -24,9 +24,7 @@ $(document).ready(function () {
 
     function unhoverFunc(e) {
         TweenLite.to($follow, 0.3, {
-            scale: 1,
-            border: "1px solid #fff",
-            backgroundColor: "rgb(0,0,0,0.5)"
+            scale: 0
         });  
     }
 
@@ -36,7 +34,7 @@ $(document).ready(function () {
         $(window).on('mousemove', moveCircle);
         $("a").hover(hoverFunc, unhoverFunc);
         $("button").hover(hoverFunc, unhoverFunc);
-        $("#editor").hover(ideHoverFunc, unhoverFunc);
+        $(".code").hover(hoverFunc, unhoverFunc);
     }
     
 })

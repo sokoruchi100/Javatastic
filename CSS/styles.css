@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Roboto+Slab&family=Source+Code+Pro&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto+Slab&family=Source+Code+Pro&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Roboto+Slab&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Roboto+Slab&display=swap");
 .header {
@@ -200,13 +200,14 @@
 }
 .home-container .section .content a:hover {
   min-width: 100%;
-  background-color: rgba(170, 46, 0, 0.4784313725);
+  background-color: #fae500;
 }
 
 @media only screen and (min-width: 768px) {
   .circle-follow {
     position: fixed;
     border: 1px solid #fff;
+    scale: 0;
     width: 30px;
     height: 30px;
     left: -21px;
@@ -246,7 +247,7 @@
   filter: blur(10px);
 }
 .slide-container .slide .content {
-  background-color: rgba(255, 255, 255, 0.25);
+  background-color: rgba(255, 255, 255, 0.75);
   padding: 20px;
   border-radius: 20px;
   z-index: 10;
@@ -283,6 +284,9 @@
   width: 100%;
   background-color: #aa2e00;
 }
+.slide-container .exercise-0 {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.4784313725), rgba(58, 117, 176, 0.4823529412)), url(../Sources/Images/exerciseMain.jpg);
+}
 .slide-container .unit-1 {
   background-image: linear-gradient(rgba(255, 255, 255, 0.4784313725), rgba(58, 117, 176, 0.4823529412)), url("../Sources/Images/unit1.jpg");
   z-index: 10;
@@ -313,11 +317,10 @@
 .exercise-container .text-container .prompt {
   padding-top: 1rem;
   font-size: clamp(1rem, 1vw + 1vh, 2rem);
-  font-family: "Roboto Slab", serif;
+  font-family: "Montserrat", sans-serif;
   text-align: justify;
 }
 .exercise-container .editor-container {
-  border: 0.25rem solid #131516;
   height: 50%;
   width: 100%;
   display: flex;
@@ -328,13 +331,16 @@
 .exercise-container .editor-container .editor {
   width: 100%;
   height: 60%;
+  border-radius: 1rem;
 }
 .exercise-container .editor-container .output {
   width: 100%;
   height: 40%;
-  border-top: 0.25rem solid #131516;
-  font-family: "Roboto Slab", serif;
+  font-family: "Source Code Pro", monospace;
   background-color: #fff;
+  border-radius: 1rem;
+  background-color: #131516;
+  color: #fff;
 }
 .exercise-container .editor-container pre {
   overflow-x: auto;
@@ -366,11 +372,15 @@
   background-color: #aa2e00;
 }
 .exercise-container .btn-container .btn:hover {
-  background-color: #198754;
+  opacity: 1;
 }
 .exercise-container .btn-container .hint {
   background-color: #fff;
   color: #131516;
+}
+.exercise-container .btn-container .btn {
+  transition: all 0.2s ease-in-out;
+  opacity: 0.8;
 }
 .exercise-container .hint-container {
   display: inline-block;
@@ -385,7 +395,7 @@
 }
 .exercise-container .hint-container p {
   font-size: clamp(1rem, 2vw + 2vh, 2rem);
-  font-family: "Roboto Slab", serif;
+  font-family: "Montserrat", sans-serif;
   text-align: justify;
   padding: 1rem;
   color: #fff;
@@ -412,12 +422,16 @@
   .exercise-container .editor-container .editor {
     width: 60%;
     height: 100%;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
   }
   .exercise-container .editor-container .output {
     width: 40%;
     height: 100%;
     border-left: 0.25rem solid #131516;
     border-top: 0;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
   }
   .exercise-container .btn-container {
     height: 10%;
@@ -430,13 +444,14 @@
     height: 100%;
   }
   .exercise-container .btn-container .btn:hover {
-    width: 50%;
+    width: 31%;
   }
   .exercise-container .hint-container {
     max-width: 50%;
   }
 }
 .slider {
+  z-index: 100;
   height: 90%;
   position: fixed;
   bottom: 0;
@@ -449,7 +464,7 @@
   margin-left: 1rem;
   height: 3rem;
   width: 3rem;
-  background-color: rgba(255, 255, 255, 0.4784313725);
+  background-color: rgba(19, 21, 22, 0.4784313725);
   border: none;
   cursor: pointer;
 }
@@ -459,7 +474,7 @@
 }
 .slider .ide-toggle .arrow path {
   fill: none;
-  stroke: #131516;
+  stroke: #fff;
   stroke-linecap: round;
 }
 .slider .ide-container {
@@ -470,10 +485,9 @@
   width: 100%;
   position: fixed;
   bottom: 0;
-  background-color: rgba(255, 255, 255, 0.4784313725);
+  background-color: rgba(19, 21, 22, 0.4784313725);
 }
 .slider .ide-container .editor-container {
-  border: 0.25rem solid #131516;
   height: 50%;
   width: 100%;
   display: flex;
@@ -485,13 +499,20 @@
 .slider .ide-container .editor-container .editor {
   width: 100%;
   height: 60%;
+  border-radius: 1rem;
 }
 .slider .ide-container .editor-container .output {
   width: 100%;
   height: 40%;
-  border-top: 0.25rem solid #131516;
-  font-family: "Roboto Slab", serif;
+  font-family: "Source Code Pro", monospace;
   background-color: #fff;
+  border-radius: 1rem;
+  background-color: #131516;
+  color: #fff;
+}
+.slider .ide-container .editor-container .output {
+  margin-top: 0.5rem;
+  padding: 1rem;
 }
 .slider .ide-container .btn-container {
   width: 100%;
@@ -520,7 +541,7 @@
   background-color: #aa2e00;
 }
 .slider .ide-container .btn-container .btn:hover {
-  background-color: #198754;
+  opacity: 1;
 }
 
 @media only screen and (min-width: 768px) {
@@ -532,12 +553,15 @@
   .slider .ide-container .editor-container .editor {
     width: 60%;
     height: 100%;
+    margin-left: 1rem;
   }
   .slider .ide-container .editor-container .output {
+    margin-top: 0;
     width: 40%;
     height: 100%;
-    border-left: 0.25rem solid #131516;
     border-top: 0;
+    margin-left: 1rem;
+    margin-right: 1rem;
   }
   .slider .ide-container .btn-container {
     height: 10%;
@@ -549,42 +573,352 @@
     width: 30%;
     height: 100%;
   }
-  .slider .ide-container .btn-container .run:hover {
+  .slider .ide-container .btn-container .btn:hover {
     background-color: #198754;
-    width: 50%;
-  }
-  .slider .ide-container .btn-container .reset:hover {
-    background-color: #198754;
-    width: 50%;
   }
 }
 .section-container {
-  padding-top: 10rem;
-}
-.section-container .section {
+  padding-top: 5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 10rem;
+  justify-content: center;
+  margin-right: 0;
 }
-.section-container .section h1 {
-  font-size: clamp(2rem, 4vw + 4vh, 3rem);
-  text-align: center;
+.section-container .section {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
-.section-container .section p {
+.section-container .section .head {
+  height: 100vh;
+  width: 100vw;
+  background-image: linear-gradient(to right, #3a75b0, #fff);
+}
+.section-container .section .head h1 {
+  font-size: clamp(3rem, 5vw + 5vh, 4rem);
+}
+.section-container .section .body:last-child {
+  margin-bottom: 0;
+}
+.section-container .section .body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin-bottom: 5rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+.section-container .section .body .left {
+  width: 100%;
+  height: 60%;
+  border-radius: 1rem;
+  padding: 1rem;
+  margin: 0.5rem;
   background-color: rgba(255, 255, 255, 0.4784313725);
-  border-radius: 20px;
-  padding: 20px;
+  box-shadow: 0.5rem 0.5rem 0.5rem rgba(19, 21, 22, 0.4784313725);
+  position: sticky;
+  top: 0;
+}
+.section-container .section .body .left h2 {
+  font-size: clamp(2rem, 4vw + 4vh, 3rem);
+  font-family: "Montserrat", sans-serif;
+}
+.section-container .section .body .left p {
   font-size: clamp(0.75rem, 1vw + 1vh, 1rem);
-  font-family: "Roboto Slab", serif;
+  font-family: "Montserrat", sans-serif;
   text-align: justify;
-  margin-top: 3rem;
-  margin-bottom: 3rem;
   line-height: 2;
+  color: #131516;
+}
+.section-container .section .body .left p b {
+  text-decoration: underline;
+}
+.section-container .section .body .right {
+  width: 100%;
+  height: 40%;
+  margin: 0.5rem;
+  display: flex;
+  flex-direction: row;
+}
+.section-container .section .body .right div {
+  margin-bottom: 1rem;
+}
+.section-container .section .body .right div:last-child {
+  margin-bottom: 0;
+}
+.section-container .section .body .right .static-image {
+  width: 100%;
+  max-height: 80vh;
+  position: relative;
+  overflow: hidden;
+  transform: translateZ(-1rem);
+  box-shadow: 0rem 0.5rem 0.5rem rgba(19, 21, 22, 0.4784313725);
+  border-radius: 1rem;
+  transition: all 0.2s ease-in-out;
+  z-index: 9;
+}
+.section-container .section .body .right .static-image .background {
+  border-radius: 1rem;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  /* Set the initial background-position property */
+  background-position: 0px 0px;
+  /* Add transition properties to create a smooth effect */
+  background-size: 100%;
+}
+.section-container .section .body .right .static-image .caption {
+  font-weight: bold;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem;
+  text-align: center;
+  color: black;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 0rem 0rem 1rem 1rem;
+}
+.section-container .section .body .right .image {
+  width: 100%;
+  height: 60vh;
+  position: relative;
+  overflow: hidden;
+  transform: translateZ(-1rem);
+  box-shadow: 0rem 0.5rem 0.5rem rgba(19, 21, 22, 0.4784313725);
+  border-radius: 1rem;
+  transition: all 0.2s ease-in-out;
+  z-index: 9;
+}
+.section-container .section .body .right .image .link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  transform: translateZ(-1rem);
+}
+.section-container .section .body .right .image .link .background {
+  border-radius: 1rem;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  /* Set the initial background-position property */
+  background-position: 0px 0px;
+  /* Add transition properties to create a smooth effect */
+  background-size: 100%;
+  transition: all 0.2s ease-in-out;
+  opacity: 0.8;
+}
+.section-container .section .body .right .image .caption {
+  font-weight: bold;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem;
+  text-align: center;
+  color: black;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 0rem 0rem 1rem 1rem;
+}
+.section-container .section .body .right .image:hover {
+  transform: translate(0rem, -1rem);
+  scale: 1.05;
+  box-shadow: 0rem 1rem 1rem rgba(19, 21, 22, 0.4784313725);
+}
+.section-container .section .body .right .image:hover .background {
+  background-size: 105%;
+  background-position: 0rem -1rem;
+  opacity: 1;
+}
+.section-container .section .body .right .img-row {
+  display: flex;
+  flex-direction: row;
+}
+.section-container .section .body .right .img-row div:first-child {
+  margin-right: 1rem;
+}
+.section-container .section .body .right .img-row .image {
+  width: 50%;
+}
+.section-container .section .body .right .img-group {
+  display: flex;
+  flex-direction: column;
+}
+.section-container .section .body .right .video {
+  width: 100%;
+  height: calc(25vh + 25vw);
+}
+.section-container .section .body .right .video iframe {
+  border-radius: 1rem;
+  width: 100%;
+  height: 100%;
   box-shadow: 0.5rem 0.5rem 0.5rem rgba(19, 21, 22, 0.4784313725);
 }
+.section-container .section .body .right .code {
+  max-width: 100%;
+  cursor: pointer;
+}
+.section-container .section .body .right .code pre {
+  overflow-x: auto;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: #131516;
+  box-shadow: 0.5rem 0.5rem 0.5rem rgba(19, 21, 22, 0.4784313725);
+}
+.section-container .section .body .right .code pre code {
+  font-size: clamp(0.75rem, 1vw + 1vh, 1rem);
+  color: #fff;
+  font-family: "Source Code Pro", monospace;
+  text-shadow: 1px 1px #131516;
+}
+.section-container .section .body .right .note {
+  padding: 1rem;
+  color: #131516;
+  font-weight: bold;
+  background-color: #fae500;
+  border-radius: 1rem;
+  box-shadow: 0.5rem 0.5rem 0.5rem rgba(19, 21, 22, 0.4784313725);
+  font-style: italic;
+}
+.section-container .section .body .right .note h2 {
+  text-decoration: underline;
+}
+.section-container .section .body .right .info {
+  padding: 1rem;
+  color: #fff;
+  font-weight: bold;
+  background-color: #3a75b0;
+  border-radius: 1rem;
+  box-shadow: 0.5rem 0.5rem 0.5rem rgba(19, 21, 22, 0.4784313725);
+  font-style: italic;
+}
+.section-container .section .body .right .exercise {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 40rem;
+  width: 100%;
+  background-color: rgba(19, 21, 22, 0.4784313725);
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: 0rem 0.5rem 0.5rem rgba(19, 21, 22, 0.4784313725);
+}
+.section-container .section .body .right .exercise .prompt {
+  color: #fff;
+  margin-bottom: 1rem;
+}
+.section-container .section .body .right .exercise .editor-container {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+.section-container .section .body .right .exercise .editor-container .editor {
+  width: 100%;
+  height: 70%;
+  border-radius: 1rem;
+}
+.section-container .section .body .right .exercise .editor-container .output {
+  padding: 0.5rem;
+  width: 100%;
+  height: 30%;
+  font-family: "Source Code Pro", monospace;
+  background-color: #fff;
+  border-radius: 1rem;
+  background-color: #131516;
+  color: #fff;
+  overflow-x: auto;
+  font-size: clamp(0.75rem, 1vw + 1vh, 1rem);
+}
+.section-container .section .body .right .exercise .btn-container {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.section-container .section .body .right .exercise .btn-container .btn {
+  cursor: pointer;
+  border: none;
+  border-radius: 1rem;
+  height: 100%;
+  font-size: clamp(1rem, 2vw + 2vh, 2rem);
+  font-family: "Montserrat", sans-serif;
+  width: 30%;
+  height: 100%;
+  margin-bottom: 1rem;
+  transition: background-color 0.5s, width 0.5s;
+  box-shadow: 0.5rem 0.5rem 0.5rem rgba(19, 21, 22, 0.4784313725);
+  opacity: 0.8;
+  transition: all 0.2s ease-in-out;
+}
+.section-container .section .body .right .exercise .btn-container .submit {
+  background-color: #3a75b0;
+}
+.section-container .section .body .right .exercise .btn-container .run {
+  background-color: #3a75b0;
+}
+.section-container .section .body .right .exercise .btn-container .reset {
+  background-color: #aa2e00;
+}
+.section-container .section .body .right .exercise .btn-container .btn:hover {
+  width: 31%;
+  opacity: 1;
+}
+.section-container .section .body .right .exercise .result {
+  color: #fff;
+}
+.section-container .section .body .right .quiz {
+  padding: 1rem;
+  color: #131516;
+  background-color: #ffab3d;
+  border-radius: 1rem;
+  box-shadow: 0.5rem 0.5rem 0.5rem rgba(19, 21, 22, 0.4784313725);
+}
+.section-container .section .body .right .quiz h2 {
+  font-size: clamp(2rem, 4vw + 4vh, 3rem);
+}
+.section-container .section .body .right .quiz p {
+  font-size: clamp(1rem, 1vw + 1vh, 2rem);
+}
+.section-container .section .body .right .quiz form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+.section-container .section .body .right .quiz form label {
+  margin-bottom: 1rem;
+  font-size: clamp(0.75rem, 1vw + 1vh, 1rem);
+}
+.section-container .section .body .right .quiz button {
+  cursor: pointer;
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(1rem, 2vw + 2vh, 2rem);
+  border-radius: 1rem;
+  border: 0;
+  height: 3rem;
+  width: 30%;
+  background-color: #fff;
+  opacity: 0.8;
+  transition: all 0.2s ease-in-out;
+}
+.section-container .section .body .right .quiz button:hover {
+  opacity: 1;
+  width: 31%;
+}
+.section-container .section .body .right .quiz .explanation {
+  display: none;
+}
 .section-container .section ul {
-  background-color: rgba(170, 46, 0, 0.4784313725);
+  background-color: #fae500;
   color: #fff;
   border-radius: 20px;
   padding: 4rem;
@@ -595,21 +929,6 @@
   margin-top: 3rem;
   margin-bottom: 3rem;
   box-shadow: 0.5rem 0.5rem 0.5rem rgba(19, 21, 22, 0.4784313725);
-}
-.section-container .section pre {
-  overflow-x: auto;
-  max-width: 100%;
-  padding: 20px;
-  border-radius: 20px;
-  background-color: #3a75b0;
-  box-shadow: 0.5rem 0.5rem 0.5rem rgba(19, 21, 22, 0.4784313725);
-  border: 0.5rem solid #fff;
-}
-.section-container .section pre code {
-  font-size: clamp(0.75rem, 1vw + 1vh, 1rem);
-  color: #fff;
-  font-family: "Source Code Pro", monospace;
-  text-shadow: 1px 1px #131516;
 }
 .section-container .section a {
   background-color: #3a75b0;
@@ -628,9 +947,45 @@
 }
 
 @media only screen and (min-width: 768px) {
-  .section-container {
-    padding-left: 3rem;
-    padding-right: 3rem;
+  .section-container .section .body {
+    flex-direction: row;
+  }
+  .section-container .section .body .left {
+    width: 40%;
+    height: 90vh;
+  }
+  .section-container .section .body .right {
+    width: 60%;
+    height: 100%;
+    flex-direction: column;
+  }
+  .section-container .section .body .right div {
+    margin-bottom: 1rem;
+  }
+  .section-container .section .body .right .img-group {
+    display: flex;
+    flex-direction: column;
+  }
+  .section-container .section .body .right .img-group .img-row {
+    display: flex;
+    flex-direction: row;
+  }
+  .section-container .section .body .right .img-group .img-row div:first-child {
+    margin-right: 1rem;
+  }
+  .section-container .section .body .right .img-group .img-row .image {
+    width: 50%;
+  }
+  .section-container .section .body .right .image {
+    width: 100%;
+  }
+  .section-container .section .body .right .image a {
+    background-color: rgba(0, 0, 0, 0);
+    width: 100%;
+  }
+  .section-container .section .body .right .image a img {
+    width: 100%;
+    max-height: 80vh;
   }
 }
 .timer-container {
@@ -662,7 +1017,7 @@
   font-size: clamp(3rem, 5vw + 5vh, 4rem);
 }
 .start-container .content p {
-  font-family: "Roboto Slab", serif;
+  font-family: "Montserrat", sans-serif;
   font-size: clamp(1rem, 2vw + 2vh, 2rem);
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -712,7 +1067,7 @@
   font-size: clamp(2rem, 4vw + 4vh, 3rem);
 }
 .quiz-container .section p {
-  font-family: "Roboto Slab", serif;
+  font-family: "Montserrat", sans-serif;
   font-size: clamp(1rem, 1vw + 1vh, 2rem);
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -731,6 +1086,7 @@
   font-size: clamp(0.75rem, 1vw + 1vh, 1rem);
 }
 .quiz-container .section form {
+  min-width: 40%;
   margin-top: 1rem;
   background-color: #fff;
   display: flex;
@@ -773,8 +1129,8 @@
 }
 
 @media only screen and (min-width: 768px) {
-  .start-container .quiz-container .section {
-    width: 70%;
+  .quiz-container .section {
+    width: 80%;
   }
 }
 * {

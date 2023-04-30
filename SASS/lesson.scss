@@ -1,4 +1,5 @@
 .slider {
+    z-index: 100;
     height: 90%;
     position: fixed;
     bottom: 0;
@@ -10,7 +11,7 @@
         margin-left: 1rem;
         height: 3rem;
         width: 3rem;
-        background-color: $whiteTrans;
+        background-color: $blackTrans;
         border: none;
         cursor: pointer;
     
@@ -20,7 +21,7 @@
     
         path{
             fill: none;
-            stroke: $black;
+            stroke: $white;
             stroke-linecap: round;
         }
       }
@@ -33,12 +34,19 @@
         width: 100%;
         position: fixed;
         bottom: 0;
-        background-color: $whiteTrans;
+        background-color: $blackTrans;
         
     
         .editor-container {
             @include editor-container;
             height:80%;
+            .editor {
+                
+            }
+            .output {
+                margin-top: 0.5rem;
+                padding: 1rem;
+            }
         }
         .btn-container {
             @include btn-container;
@@ -49,76 +57,428 @@
 
 
 @media only screen and (min-width: 768px) {
-.slider {
-    .ide-container {
-        .editor-container {
-            width: 100%;
-            
-            display: flex;
-            flex-direction: row;
+    .slider {
+        .ide-container {
+            .editor-container {
+                width: 100%;
+                
+                display: flex;
+                flex-direction: row;
     
-            .editor {
-                width: 60%;
-                height: 100%;
+                .editor {
+                    width: 60%;
+                    height: 100%;
+                    margin-left: 1rem;
+                }
+    
+                .output {
+                    margin-top: 0;
+                    width: 40%;
+                    height: 100%;
+                    border-top: 0;
+                    margin-left: 1rem;
+                    margin-right: 1rem;
+                }
             }
     
-            .output {
-                width: 40%;
-                height: 100%;
-                border-left: 0.25rem solid $black;
-                border-top: 0;
+            .btn-container {
+                height: 10%;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+    
+                .btn {
+                    width: 30%;
+                    height: 100%;
+                }
+                .btn:hover {
+                    background-color: $green;
+                }
             }
         }
-    
-        .btn-container {
-            height: 10%;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-around;
-    
-            .btn {
-                width: 30%;
-                height: 100%;
-            }
-            .run:hover {
-                background-color: $green;
-                width: 50%;
-            }
-            .reset:hover {
-                background-color: $green;
-                width: 50%;
-            }
-        }
-    }   
-}
+    }
+
     
 }
 
 .section-container {
-    padding-top: 10rem;
+    padding-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0;
 
     .section {
         display: flex;
-        flex-direction: column;
         align-items: center;
-        padding-bottom: 10rem;
+        flex-direction: column;
+
+        .head {
+            height: 100vh;
+            width: 100vw;
+            background-image: $blueWhiteGradientRight;
+
+            h1 {
+                font-size: $jumboFontSize;
+                
+            }
+        }
+
+        .body:last-child {
+            margin-bottom: 0;
+        }
+
+        .body {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            margin-bottom: 5rem;
+            margin-left: 0.5rem;
+            margin-right: 0.5rem;
+
+            .left {
+                width: 100%;
+                height: 60%;
+                border-radius: 1rem;
+                padding: 1rem;
+                margin: .5rem;
+                background-color: $whiteTrans;
+                box-shadow: 0.5rem 0.5rem 0.5rem $blackTrans;
+                position: sticky;
+                top: 0;
+
+                h2 {
+                    font-size: $headerFontSize;
+                    font-family: $headFont;
+                    
+                }
+                
+                p {
+                    
+                    font-size: $smallerTextFontSize;
+                    font-family: $headFont;
+                    text-align: justify;
+                    line-height: 2;
+                    color: $black;
+                    b {
+                        text-decoration: underline;
+                    }
+                }
+            }
+    
+            .right {
+                width: 100%;
+                height: 40%;
+                margin: .5rem;
+                display: flex;
+                flex-direction: row;
+
+                div {
+                    margin-bottom: 1rem;
+                }
+
+                div:last-child {
+                    margin-bottom: 0;
+                }
+
+                .static-image {
+                    width: 100%;
+                    max-height: 80vh;
+                    position: relative;
+                    overflow: hidden;
+                    transform: translateZ(-1rem);
+                    box-shadow: 0rem 0.5rem 0.5rem $blackTrans;
+                    border-radius: 1rem;
+                    transition: all 0.2s ease-in-out;
+                    z-index: 9;
+                    .background {
+                        border-radius: 1rem;
+                        width: 100%;
+                        height: 100%;
+                        background-position: center;
+                        background-size: cover;  
+                        background-repeat: no-repeat;
+                        position: absolute;
+                        /* Set the initial background-position property */
+                        background-position: 0px 0px;
+                        /* Add transition properties to create a smooth effect */
+                        background-size: 100%;
+                    } 
+                    .caption {
+                        font-weight: bold;
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 100%;
+                        padding: 1rem;
+                        text-align: center;
+                        color: black;
+                        background-color: rgba(255, 255, 255, 0.8);
+                        border-radius: 0rem 0rem 1rem 1rem;
+                    }
+                }
+
+                .image {
+                    width: 100%;
+                    height: 60vh;
+                    position: relative;
+                    overflow: hidden;
+                    transform: translateZ(-1rem);
+                    box-shadow: 0rem 0.5rem 0.5rem $blackTrans;
+                    border-radius: 1rem;
+                    transition: all 0.2s ease-in-out;
+                    z-index: 9;
+                    .link {
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                        transform: translateZ(-1rem);
+                        
+                        .background {
+                            border-radius: 1rem;
+                            width: 100%;
+                            height: 100%;
+                            background-position: center;
+                            background-size: cover;  
+                            background-repeat: no-repeat;
+                            position: absolute;
+                            
+                            /* Set the initial background-position property */
+                            background-position: 0px 0px;
+                            /* Add transition properties to create a smooth effect */
+                            background-size: 100%;
+                            transition: all 0.2s ease-in-out;
+                            opacity: 0.8;
+                        } 
+                           
+                    }
+                    .caption {
+                        font-weight: bold;
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 100%;
+                        padding: 1rem;
+                        text-align: center;
+                        color: black;
+                        background-color: rgba(255, 255, 255, 0.8);
+                        border-radius: 0rem 0rem 1rem 1rem;
+                    }
+                }
+                .image:hover {
+                    transform: translate(0rem, -1rem);
+                    scale: 1.05;
+                    box-shadow: 0rem 1rem 1rem $blackTrans;
+                    .background {
+                        background-size: 105%;
+                        background-position: 0rem -1rem;
+                        opacity: 1;
+                    }
+                }
+                
+                .img-row {
+                    display: flex;
+                    flex-direction: row;
+                    div:first-child {
+                        margin-right: 1rem;
+                    }
+                    .image {
+                        width: 50%;
+                    }
+                }
+
+                .img-group {
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                .video {
+                    width: 100%;
+                    height: calc(25vh + 25vw);
+                    
+                    iframe {
+                        border-radius: 1rem;
+                        width: 100%;
+                        height: 100%;
+                        box-shadow: 0.5rem 0.5rem 0.5rem $blackTrans;
+                    }
+                }
+
+                .code {
+                    max-width: 100%;
+                    cursor: pointer;
+                    
+                    pre {
+                        overflow-x: auto;
+                        padding: 20px;
+                        border-radius: 20px;
+                        background-color: $black;
+                        box-shadow: 0.5rem 0.5rem 0.5rem $blackTrans;
+                        code {
+                            font-size: $smallerTextFontSize;
+                            color: $white;
+                            font-family: $codeFont;
+                            text-shadow: 1px 1px $black;
+                        }
+                    }
+                }
+
+                .note {
+                    padding: 1rem;
+                    color: $black;
+                    font-weight: bold;
+                    background-color: $redTrans;
+                    border-radius: 1rem;
+                    box-shadow: 0.5rem 0.5rem 0.5rem $blackTrans;
+                    font-style: italic;
+                    h2 {
+                        text-decoration: underline;
+                    }
+                }
+
+                .info {
+                    padding: 1rem;
+                    color: $white;
+                    font-weight: bold;
+                    background-color: $blue;
+                    border-radius: 1rem;
+                    box-shadow: 0.5rem 0.5rem 0.5rem $blackTrans;
+                    font-style: italic;
+                }
+
+                .exercise {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    height: 40rem;
+                    width: 100%;
+                    background-color: $blackTrans;
+                    border-radius: 1rem;
+                    padding: 1rem;
+                    box-shadow: 0rem 0.5rem 0.5rem $blackTrans;
+
+                    .prompt {
+                        color: $white;
+                        margin-bottom: 1rem;
+                    }
+
+                    .editor-container {
+                        width: 100%;
+                        height: 80%;
+                        display: flex;
+                        flex-direction: column;
+                        margin-bottom: 1rem;
+
+                        .editor {
+                            width: 100%;
+                            height: 70%;
+                            border-radius: 1rem;
+                        }
+            
+                        .output {
+                            padding: 0.5rem;
+                            width: 100%;
+                            height: 30%;
+                            font-family: $codeFont;
+                            background-color: $white;
+                            border-radius: 1rem;
+                            background-color: $black;
+                            color: $white;
+                            overflow-x: auto;
+                            font-size: $smallerTextFontSize
+                        }
+                    }
+            
+                    .btn-container {
+                        width: 100%;
+                        height: 10%;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-around;
+
+                        .btn {
+                            @include button-styles;
+                            width: 30%;
+                            height: 100%;
+                            margin-bottom: 1rem;
+                            transition: background-color 0.5s, width 0.5s;
+                            box-shadow: 0.5rem 0.5rem 0.5rem $blackTrans;
+                            opacity: 0.8;
+                            transition: all 0.2s ease-in-out;
+                        }
+
+                        .submit {
+                            background-color: $blue;
+                        }
+
+                        .run {
+                            background-color: $blue;
+                        }
+
+                        .reset {
+                            background-color: $red;
+                        }
+
+                        .btn:hover {
+                            width: 31%;
+                            opacity: 1;
+                        }
+                    }
+
+                    .result {
+                        color: $white;
+                    }
+                }
+
+                .quiz {
+                    padding: 1rem;
+                    color: $black;
+                    background-color: $orange;
+                    border-radius: 1rem;
+                    box-shadow: 0.5rem 0.5rem 0.5rem $blackTrans;
+
+                    h2 {
+                        font-size: $headerFontSize;
+                    }
+                    p {
+                        font-size: $smallTextFontSize;
+                    }
+                    form {
+                        display: flex;
+                        flex-direction: column;
+                        margin-top: 1rem;
+                        label {
+                            margin-bottom: 1rem;
+                            font-size: $smallerTextFontSize;
+                        }
+                    }
+                    
+                    button {
+                        cursor: pointer;
+                        font-family: $headFont;
+                        font-size: $textFontSize;
+                        border-radius: 1rem;
+                        border: 0;
+                        height: 3rem;
+                        width: 30%;
+                        background-color: $white;
+                        opacity: 0.8;
+                        transition: all 0.2s ease-in-out;
+
+                    }
+                    button:hover {
+                        opacity: 1;
+                        width: 31%;
+                    }
+                    .explanation {
+                        display: none;
+                    }
+                }
+            }
+        }
         
-        h1 {
-            font-size: $headerFontSize;
-            text-align: center;
-        }
-        p {
-            background-color: $whiteTrans;
-            border-radius: 20px;
-            padding: 20px;
-            font-size: $smallerTextFontSize;
-            font-family: $textFont;
-            text-align: justify;
-            margin-top: 3rem;
-            margin-bottom: 3rem;
-            line-height: 2;
-            box-shadow: 0.5rem 0.5rem 0.5rem $blackTrans;
-        }
+        
         ul {
             background-color: $redTrans;
             color: $white;
@@ -132,21 +492,7 @@
             margin-bottom: 3rem;
             box-shadow: 0.5rem 0.5rem 0.5rem $blackTrans;
         }
-        pre {
-            overflow-x: auto;
-            max-width: 100%;
-            padding: 20px;
-            border-radius: 20px;
-            background-color: $blue;
-            box-shadow: 0.5rem 0.5rem 0.5rem $blackTrans;
-            border: 0.5rem solid $white;
-            code {
-                font-size: $smallerTextFontSize;
-                color: $white;
-                font-family: $codeFont;
-                text-shadow: 1px 1px $black;
-            }
-        }
+        
 
         a {
             background-color: $blue;
@@ -159,6 +505,7 @@
             transition: all 0.5s ease;
             min-width: 50%;
         }
+
         a:hover {
             min-width: 100%;
             background-color: $red;
@@ -169,7 +516,138 @@
 
 @media only screen and (min-width: 768px) {
     .section-container {
-        padding-left: 3rem;
-        padding-right: 3rem;
+        .section {
+            
+            .body {
+                flex-direction: row;
+    
+                .left {
+                    width: 40%;
+                    height: 90vh;
+                    h2 {
+                        
+                        
+                    }
+                    
+                    p {
+                        
+                    }
+                }
+        
+                .right {
+                    width: 60%;
+                    height: 100%;
+                    flex-direction: column;
+
+                    div {
+                        margin-bottom: 1rem;
+                    }
+                    
+
+                    .img-group {
+                        display: flex;
+                        flex-direction: column;
+                        .img-row {
+                            display: flex;
+                            flex-direction: row;
+                            div:first-child {
+                                margin-right: 1rem;
+                            }
+                            .image {
+                                width: 50%;
+                            }
+                        }
+                        
+                    }
+    
+                    .image {
+                        width: 100%;
+                        a {
+                            background-color: rgba(0, 0, 0, 0);
+                            width: 100%;
+                            img {
+                                width: 100%;
+                                max-height: 80vh;
+                            }
+                        }
+                        
+                        .caption {
+                                                 
+                        }
+                    }
+    
+                    .video {
+                        
+                        iframe {
+                            
+                        }
+                    }
+    
+                    .code {
+                        
+                        pre {
+                            
+                            code {
+                                
+                            }
+                        }
+                    }
+    
+                    .note {
+                        
+                    }
+    
+                    .exercise {
+    
+                        .prompt {
+                            
+                        }
+    
+                        .editor-container {
+                           
+                            .editor {
+                                
+                            }
+                
+                            .output {
+                                
+                            }
+                        }
+                
+                        .btn-container {
+                            
+    
+                            .btn {
+                    
+                            }
+    
+                            .run {
+                                
+                            }
+    
+                            .reset {
+                                
+                            }
+    
+                            .btn:hover {
+                                
+                            }
+                        }
+                    }
+    
+                    .quiz {
+                        
+                        .explanation {
+                            
+                        }
+                    }
+                }
+            }
+            
+            
+            ul {
+                
+            }
+        }
     }
 }

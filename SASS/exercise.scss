@@ -16,6 +16,10 @@
             background-color: $white;
             color: $black;
         }
+        .btn {
+            transition: all 0.2s ease-in-out;
+            opacity: .8;
+        }
     }
     .hint-container {
         display: inline-block;
@@ -29,7 +33,7 @@
         border: 0.5rem solid $white;
         p {
             font-size: $textFontSize;
-            font-family: $textFont;
+            font-family: $headFont;
             text-align: justify;
             padding: 1rem;
             color: $white;
@@ -62,6 +66,8 @@
             .editor {
                 width: 60%;
                 height: 100%;
+                margin-left: 0.5rem;
+                margin-right: 0.5rem;
             }
 
             .output {
@@ -69,6 +75,8 @@
                 height: 100%;
                 border-left: 0.25rem solid $black;
                 border-top: 0;
+                margin-left: 0.5rem;
+                margin-right: 0.5rem;
             }
         }
     
@@ -83,7 +91,7 @@
                 height: 100%;
             }
             .btn:hover {
-                width: 50%;
+                width: 31%;
             }
         }
 

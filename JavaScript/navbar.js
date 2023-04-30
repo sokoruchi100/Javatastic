@@ -2,6 +2,20 @@
 $(document).ready(function(){
 	// create
 	const matchMedia = gsap.matchMedia();
+
+	let prevScrollpos = $(window).scrollTop();
+	$(window).scroll(function() {
+		let currentScrollPos = $(this).scrollTop();
+		if (prevScrollpos > currentScrollPos) {
+			// scrolling up, show navbar
+			gsap.to("header", {top: 0, duration: 0.3});
+		} else {
+			// scrolling down, hide navbar
+			gsap.to("header", {top: "-5rem", duration: 0.3}); // change the value to the height of your navbar
+		}
+		prevScrollpos = currentScrollPos;
+	});
+
 	
 	// add a media query. When it matches, the associated function will run
 	matchMedia.add("(max-width: 768px)", () => {
