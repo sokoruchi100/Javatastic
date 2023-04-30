@@ -2,7 +2,7 @@
 const SERVER_URL = "https://backend-compiler-image-dgs3tukkda-uc.a.run.app"
 const RUN_POST_URL = "/api/run";
 const RUN_GET_URL = "/api/output";
-export function setupAceEditor(editorId, check) {
+export function setupAceEditor(editorId, code) {
 
     ace.require("ace/ext/language_tools");
     const editor = ace.edit(editorId);
@@ -24,7 +24,7 @@ export function setupAceEditor(editorId, check) {
 
     const javacode = `public class Main {
     public static void main(String[] args) {
-        //Type Here
+        ${code}
     }
 }`;
     editor.setValue(javacode);
@@ -46,12 +46,7 @@ export function setupAceEditor(editorId, check) {
                 if (result.success) {
                     var intervalId = setInterval(function() {
                         $.get(SERVER_URL + RUN_GET_URL, function(output) {
-                            console.log(output);
                             outputContainer.text(output);
-                            if (ide)
-                            if (output == check) {
-
-                            }
                             clearInterval(intervalId);
                         });
                     }, 1000);
@@ -68,7 +63,7 @@ export function setupAceEditor(editorId, check) {
 }
 
 $(document).ready(function () {
-    setupAceEditor("editor");
+    setupAceEditor("editor", "");
     // this setup code only runs when viewport is at least 768px wide
     const ideToggle = $(".ide-toggle");
 

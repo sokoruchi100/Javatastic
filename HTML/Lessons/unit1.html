@@ -65,9 +65,27 @@
         </div>
     </div>
     
+    <!--Sliding Nav Menu-->
+    <div class="nav-slider">
+        <button class="nav-toggle">
+            <svg viewBox="0 0 10 10" class="nav-arrow">
+                <path d="M8,8 L2,5" class="nav-arrow-1"></path>
+                <path d="M8,2 L2,5" class="nav-arrow-2"></path>
+            </svg>
+        </button>
+        <div class="nav-container">
+            <a href="#introduction">Introduction</a>
+            <a href="#section-1">Section 1</a>
+            <a href="#section-2">Section 2</a>
+            <a href="#section-3">Section 3</a>
+            <a href="#section-4">Section 4</a>
+            <a href="#section-5">Section 5</a>
+            <a href="#summary">Summary</a>
+        </div>
+    </div>
 
     <div class="section-container">
-        <div class="section">
+        <div class="section" id="introduction">
             <div class="head">
                 <h1>Introduction</h1>
             </div>
@@ -248,7 +266,7 @@ public class Main {
                 </div>
             </div>
         </div>
-        <div class="section">
+        <div class="section" id="section-1">
             <div class="head">
                 <h1>Section 1: First Steps</h1>
             </div>
@@ -321,8 +339,7 @@ public class Main {}</code>
                         The <b>Main Method</b> is a special type of method that automatically runs when the program starts.
                         However, you will need to define what your main method will do, that is where <b>Statements</b> come in.
                         A <b>Statement</b> is just a line of code that does a specific action, such as calling another function.
-                        You can write a <b>Print Statement</b> to print out anything you specify within its parameters.
-                        The parameters are basically inputs that the method needs to perform an action.
+                        You can write a <b>Print Statement</b> to print out anything you specify within the parentheses.
                     </p>
                 </div>
                 <div class="right">
@@ -358,9 +375,8 @@ System.out.println();</code>
                 <div class="left">
                     <h2>String Literals</h2>
                     <p>
-                        You can input numbers in the print statement as arguments.
-                        Arguments are the real pieces of data that your input into the method.
-                        If you've noticed, you can't put in letters into your print statement, or else you'll get an error.
+                        You can input numbers into the print statement for them to printed out into the console.
+                        If you've noticed, putting letters into your print statement will give you an error.
                         In order to fix this issue, you will need to create a <b>String Literal</b>.
                         <b>String Literals</b> are letters, words, or sentences surrounded by quotation marks so that Java will recognize them as such.
                         The program runs the what is in the main method and will output the results into the console.
@@ -411,30 +427,7 @@ System.out.println();</code>
                         </a>
                         <p class="caption">The first bug ever recorded was actually a real bug found inside of the computer.</p>
                     </div>
-                    <div class="quiz q1">
-                        <h2>Bug Quiz</h2>
-                        <p>Which of these lines of code will NOT produce a Syntax Error?</p>
-                        <form class="q1">
-                            <label>
-                                <input type="radio" name="q1" value="1">
-                                System.out.println("Hello world!")
-                            </label>
-                            <label>
-                                <input type="radio" name="q1" value="2">
-                                System.out.print("Hello world!);
-                            </label>
-                            <label>
-                                <input type="radio" name="q1" value="3">
-                                System.out.println("Hello world!");
-                            </label>
-                            <label>
-                                <input type="radio" name="q1" value="4">
-                                print("Hello world!");
-                            </label>
-                        </form>
-                        <button class="check" id="check1">Submit</button>
-                        <p class="explanation"></p>
-                    </div>
+                    
                     <div class="info">
                         <p>Comments are written like this. You can use them to hide parts of your code from the compiler so you don't get any errors.</p>
                     </div>
@@ -453,7 +446,7 @@ System.out.println();</code>
                 
                 </div>
         </div>
-        <div class="section">
+        <div class="section" id="section-2">
             <div class="head">
                 <h1>Section 2: Variables and Data Types</h1>
             </div>
@@ -481,18 +474,18 @@ System.out.println();</code>
                 <div class="left">
                     <h2>What Are Data Types?</h2>
                     <p>
-                        There are three main types of primitive data types, <b>int</b>, <b>double</b>, and <b>boolean</b>.
-                        An <b>int</b> is a whole number that can be positive or negative.
-                        A <b>double</b> is just like an integer, but they are decimal numbers instead of whole numbers.
-                        A <b>boolean</b> is either a true or false value and are often used for if statements.
-                        Remember <b>Strings</b>? Well, it turns out that they aren't primitive types, they're actually reference types (objects).
-                        A <b>String</b>, as you've seen before, can store letters, numbers, and symbols.
-                        You can <b>Concatenate</b> Strings, meaning you can combine two strings together, by using the "+" sign.
+                        There are three main types of primitive data types, <em>int</em>, <em>double</em>, and <em>boolean</em>.
+                        An <em>int</em> is a whole number that can be positive or negative.
+                        A <em>double</em> is just like an integer, but they are decimal numbers instead of whole numbers.
+                        A <em>boolean</em> is either a true or false value and are often used for if statements.
+                        Remember <em>String</em>s? Well, it turns out that they aren't primitive types, they're actually reference types (objects).
+                        A <em>String</em>, as you've seen before, can store letters, numbers, and symbols.
+                        You can <b>Concatenate</b> Strings, meaning you can combine two strings together, by using the <em>+</em> sign.
                     </p>
                 </div>
                 <div class="right">
                     <div class="image" style="height:60vh;">
-                        <a class="link" href="https://en.wikipedia.org/wiki/Data_type" target="_blank">
+                        <a class="link" href="https://www.w3schools.com/java/java_data_types.asp" target="_blank">
                             <div class="background" style="background-image: url(../../Sources/Images/datatypeChart.png);"></div>    
                         </a>
                         <p class="caption">Chart of Data Types</p>
@@ -510,7 +503,7 @@ System.out.println();</code>
                         The computer's <b>Memory</b> is an electronic device used to store data temporarily, not to be confused with storage.
                         You can name your variables anything you want, except for keywords such as "int" or "boolean".
                         Most professionals use a naming system for their variables, such as <b>Camel Case</b>, to keep them consistent.
-                        If you want to make sure the value you give to your variable doesn't change, you can use the <b>final</b> keyword.
+                        If you want to make sure the value you give to your variable doesn't change, you can use the <em>final</em> keyword.
                     </p>
                 </div>
                 <div class="right">
@@ -532,7 +525,7 @@ boolean hasNum = true;</code>
                         <iframe src="https://www.youtube.com/embed/p3q5zWCw8J4" title="YouTube video player" frameborder="0" allow="" allowfullscreen></iframe>
                     </div>
                     <div class="image" style="height:80vh;">
-                        <a class="link" href="https://en.wikipedia.org/wiki/Naming_convention_(programming)" target="_blank">
+                        <a class="link" href="https://khalilstemmler.com/blogs/camel-case-snake-case-pascal-case/" target="_blank">
                             <div class="background" style="background-image: url(../../Sources/Images/cases.png);"></div>    
                         </a>
                         <p class="caption">Funny List of Variable Naming Conventions</p>
@@ -542,7 +535,7 @@ boolean hasNum = true;</code>
                 </div>
             </div>
         </div>
-        <div class="section">
+        <div class="section" id="section-3">
             <div class="head">
                 <h1>Section 3:Operators and Arithmetic</h1>
             </div>
@@ -554,14 +547,27 @@ boolean hasNum = true;</code>
                         Remember variables? Well, to assign values to your variables, you will need the <b>Assignment Operator</b>!
                         An <b>Operator</b> is a symbol used in <b>Expressions</b> to perform actions in your code.
                         <b>Expressions</b> are statements that use operators.
-                        The <b>Assignment Operator</b> (=) is a type of operator that is used to assign values to variables.
+                        The <b>Assignment Operator</b> (<em>=</em>) is a type of operator that is used to assign values to variables.
                         When you assign a value to a variable for the first time, it is called initialization.
                         You can also update variables by reassigning new values to them.
                         You can even use the value within variables to store them within other variables!
                     </p>
                 </div>
                 <div class="right">
-                    
+                    <div class="info">
+                        <p>Here is how to use the assignment operator. You can also reassign values to variables.</p>
+                    </div>
+                    <div class="code">
+                        <pre>
+<code class="language-java">
+int x = 1;
+x = 2;</code>
+                        </pre>
+                    </div>
+                    <div class="note">
+                        <h2>NOTE!</h2>
+                        <p>Do not reassign a new value to a final variable! It will produce an error.</p>
+                    </div>
                 </div>
             </div>
             <div class="body">
@@ -570,10 +576,10 @@ boolean hasNum = true;</code>
                     <p>
                         There are also other types of operators such as the arithmetic operators.
                         These operators can add, subtract, multiply, and divide integers and doubles.
-                        Use the +, -, *, / symbols to perform arithmetic expressions.
+                        Use the <em>+</em>, <em>-</em>, <em>*</em>, <em>/</em> symbols to perform arithmetic expressions.
                         Expressions with more than one operator are called <b>Compound Expressions</b>.
                         There is a certain order when it comes to compound Expressions and this order is known as <b>Operator Precedence</b>.
-                        Basically, they follow the standard conventions of arithmetic such as PEMDAS.
+                        Basically, they follow the standard conventions of arithmetic, starting with parentheses, then multiplication or division, and then addition or subtraction.
                         If you try to perform an impossible mathematical task, such as dividing by 0, the computer will produce an <b>Arithmetic Exception</b> after compiling.
                         If you perform arithmetic operations with values of the same data type, they will always evaluate to the same data type.
                         For example, ints will always return an int and doubles will always return a double.
@@ -581,154 +587,493 @@ boolean hasNum = true;</code>
                     </p>
                 </div>
                 <div class="right">
-                      
+                    <div class="image" style="height:100vh; width: 60%; align-self: center;">
+                        <a class="link" href="https://www.w3schools.com/java/java_operators.asp" target="_blank">
+                            <div class="background" style="background-image: url(../../Sources/Images/precedence.jpeg);"></div>    
+                        </a>
+                        <p class="caption">Informative Chart of All Operators and their Precedence</p>
+                    </div>
+                    <div class="exercise e2">
+                        <div class="prompt">
+                            <h2>Integer Division</h2>
+                            <p>If you divide two integers, you'll get an integer in return which may not be what you expected. Try to print out 5/2. Try to find a way to make it print out the correct value using a double.</p>
+                        </div>
+                        <div class="editor-container">
+                            <div class="editor" id="e2"></div>
+                            <pre class="output">This is the console.</pre>
+                        </div>
+                        <div class="btn-container">
+                            <button class="btn run">Run</button>
+                            <button class="btn reset">Reset</button>
+                        </div>
+                        <div class="result">
+                            <p></p>
+                        </div>
+                    </div>
+
+                    <div class="note">
+                        <h2>NOTE!</h2>
+                        <p>If you divide by 0, you'll get an Arithmetic Exception error!</p>
+                    </div>
                 </div>
             </div>
             <div class="body">
                 <div class="left">
                     <h2>What Are Some Other Operators?</h2>
                     <p>
-                        There's also another operator called the <b>Modulo Operator</b> and it looks like this: %.
+                        There's also another operator called the <b>Modulo Operator</b> and it looks like this: <em>%</em>.
                         Use this operator to get the remainder of a division.
-                        For example, 5 % 2 is 1 because 2 goes into 5 two times with a remainder of 1.
+                        For example, <em>5 % 2</em> is <em>1</em> because 2 goes into 5 two times with a remainder of 1.
                         There are some other operators that will be talked about later on.
-                        You can use the <b>Equivalence Operator</b> (==) to compare to values.
+                        You can use the <b>Equality Operator</b> (<em>==</em>) to compare to values.
                         If they are the same, it will return "true", otherwise, it returns false.
-                        To negate an equivalence operator, you can use the <b>Negation Operator</b> (!=) to check if two things are NOT equal.
+                        To negate an equivalence operator, you can use the <b>Not-Equals Operator</b>(<em>!=</em>) to check if two things are NOT equal.
                     </p>
                 </div>
                 <div class="right">
-                    
-                    
+                    <div class="exercise e3">
+                        <div class="prompt">
+                            <h2>Equality</h2>
+                            <p>Try to print out an equality operation between an integer and a double of the same value.</p>
+                        </div>
+                        <div class="editor-container">
+                            <div class="editor" id="e3"></div>
+                            <pre class="output">This is the console.</pre>
+                        </div>
+                        <div class="btn-container">
+                            <button class="btn run">Run</button>
+                            <button class="btn reset">Reset</button>
+                        </div>
+                        <div class="result">
+                            <p></p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-
-        <!--
-        
-        
-        <div class="section">
-            <h1>What Are Operators?</h1>
-            <p>
-
-                I hope you like math cause we're gonna use it in our code.
-                Remember variables? Well, to assign values to your variables, you will need the <b>Assignment Operator</b>!
-                An <b>Operator</b> is a symbol used in <b>Expressions</b> to perform actions in your code.
-                <b>Expressions</b> are statements that use operators.
-                The <b>Assignment Operator</b> (=) is a type of operator that is used to assign values to variables.
-                When you assign a value to a variable for the first time, it is called initialization.
-                You can also update variables by reassigning new values to them.
-                You can even use the value within variables to store them within other variables!
-                
-                There are also other types of operators such as the arithmetic operators.
-                These operators can add, subtract, multiply, and divide integers and doubles.
-                Use the +, -, *, / symbols to perform arithmetic expressions.
-                There's also another operator called the <b>Modulo Operator</b> and it looks like this: %.
-                Use this operator to get the remainder of a division.
-                For example, 5 % 2 is 1 because 2 goes into 5 two times with a remainder of 1.
-                Expressions with more than one operator are called <b>Compound Expressions</b>.
-                There is a certain order when it comes to compound Expressions and this order is known as <b>Operator Precedence</b>.
-                Basically, they follow the standard conventions of arithmetic such as PEMDAS.
-
-                If you perform arithmetic operations with values of the same data type, they will always evaluate to the same data type.
-                For example, ints will always return an int and doubles will always return a double.
-                However, if you combine ints and doubles in an expression, it will always return a double.
-                There are some other operators that will be talked about later on.
-                You can use the <b>Equivalence Operator</b> (==) to compare to values.
-                If they are the same, it will return "true", otherwise, it returns false.
-                To negate an equivalence operator, you can use the <b>Negation Operator</b> (!=) to check if two things are NOT equal.
-                If you try to perform an impossible mathematical task, such as dividing by 0, the computer will produce an <b>Arithmetic Exception</b> after compiling.
-            </p>
-
+        <div class="section" id="section-4">
+            <div class="head">
+                <h1>Section 4: Compound Assignment Operators</h1>
+            </div>
+            <div class="body">
+                <div class="left">
+                    <h2>What If I Want To Operate and Assign Together?</h2>
+                    <p>
+                        Now you might be wondering, what if I want to perform an operation AND reassign a variable at the same time.
+                        Well don't worry, cause you can just reassign a value like this: <em>x = x + 1;</em>.
+                        But, there's another operator you can use specifically designed for this called <b>Compound Assignment Operators</b>
+                        To write them, just place the arithmetic operator right before assignment operator like so: <em>x += 1;</em>.
+                        And guess what? It works with all of the other operators you learned about in the last section.
+                        There's also another operator called the <b>Increment Operator</b> that increases a variable by 1.
+                        All you have to do is just add two <em>+</em> signs in front of (or behind) a variable, like so: <em>x++</em>.
+                        Oh, and guess what? There's also a sign for <b>Decrementing</b>, meaning decreasing by 1, and yes, you use the <em>--</em> sign.
+                    </p>
+                </div>
+                <div class="right">
+                    <div class="info">
+                        <p>
+                            Here are some examples of compound assignment operators
+                        </p>
+                    </div>
+                    <div class="code">
+                        <pre>
+<code class="language-java">
+x += 2; //Same as x = x + 2;
+x -= 2; //Same as x = x - 2;
+x *= 2; //Same as x = x * 2;
+x /= 2; //Same as x = x / 2;
+x %= 2; //Same as x = x % 2;
+x++; //Same as x = x + 1;
+x--; //Same as x = x - 1;</code>
+                        </pre>
+                    </div>
+                    <div class="note">
+                        <h2>NOTE!</h2>
+                        <p>Here's a neat debugging trick called <b>Code Tracing</b>. Basically, you just trace the path your code takes to understand what is happening to your variables and functions to find any possible errors.</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="section">
-            <h1>What Are Compound Assignment Operators?</h1>
-            <p>
-                Are reassignment statements too much for you to type?  Well don't worry, cause <b>compound assignment operators</b> are here to help you!
-
-These shortcuts can do a math operation and assignment in one step! 
-For example, instead of writing x = x + 1 to add 1 to a number called x, you can write <b>x += 1</b>! And guess what? It works with other operators too like +, -, *, /, and %!
-
-Now, let's talk about the coolest shortcut operators, <b>++</b> and <b>--</b>. The ++ adds 1 to a number and -- subtracts 1. You can't use them with other operators, but they're still pretty awesome! So, <b>x++</b> means the same as x += 1 and x = x + 1. And yep, you guessed it, the -- does the opposite!
-
-These shortcuts are like magic spells that help you save time and make your code shorter! So go ahead and use them! And remember, on the exam you can use either <b>x++</b> or <b>++x</b> to add 1 to a value. The only difference is when you're assigning it to another variable. So go forth and conquer the coding world with your amazing new skills! The code below replicates the previous code, but with compound assignment operators instead.
-            </p>
-<pre>
-    <code class="language-java">
+        <div class="section" id="section-5">
+            <div class="head">
+                <h1>Section 5: Type Casting</h1>
+            </div>
+            <div class="body">
+                <div class="left">
+                    <h2>What If I Want To Change Data Types?</h2>
+                    <p>
+                        You can simply change the data type of your value or variable by simply using <b>Type Casting</b>!
+                        <b>Type Casting</b> is when you convert a value into a different type.
+                        In order to cast a value, just use the cast operator right before the value you want to cast.
+                        The cast operator is the name of the data type surrounded by parentheses, like this: <em>(int)</em>.
+                        When you convert a double to an int, it will truncate, or cut off, the decimal values, essentially rounding it down.
+                        Remember back when if you use a double and an int in an expressions, a double is returned?
+                        Well, that's an example of implicit casting, which means it casts the data type automatically.
+                    </p>
+                </div>
+                <div class="right">
+                    <div class="image" style="height: 40vh;">
+                        <a class="link" href="https://www.w3schools.com/java/java_type_casting.asp" target="_blank">
+                            <div class="background" style="background-image: url(../../Sources/Images/casting.png);"></div>    
+                        </a>
+                        <p class="caption">Type Casting Diagram for increasing and decreasing bit size</p>
+                    </div>
+                    <div class="info">
+                        <p>Here's an example of how type casting works</p>
+                    </div>
+                    <div class="code">
+                        <pre>
+<code class="language-java">
+int x = 2; //x is an integer
+int y = x / 5; //will evaluate into an integer value of 0
+double z = (double) x / 5; //Converts x into a double before division and evaluates to 0.4</code>
+                        </pre>
+                    </div>
+                    <div class="note">
+                        <h2>NOTE!</h2>
+                        <p>Converting doubles to ints will truncate the value, meaning the decimals are cut off.</p>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="body">
+                <div class="left">
+                    <h2>What's The Biggest Number I Can Store?</h2>
+                    <p>
+                        Java has a limit for how big integers can be due to how they are stored as bits of memory.
+                        ints are stored as 4 bytes of memory, meaning 32 bits.
+                        The highest value it can store is a <em>2147483647</em>, which is also known as <em>Integer.MAX_VALUE</em>.
+                        There is also a minimum value it can store which is <em>-2147483648</em>, also known as <em>Integer.MIN_VALUE</em>.
+                        If you try to store a value beyond that range, you will get an <b>Integer Overflow</b> error.
+                        And that's it for Unit 1! I hope you learned a lot about programming in Java, because we're just getting started!
+                    </p>
+                </div>
+                <div class="right">
+                    <div class="note">
+                        <h2>NOTE!</h2>
+                        <p>Due to how doubles are stored, you might get an error when doing double arithmetic. This is a well known problem of computers.</p>
+                    </div>
+                    <div class="exercise e4">
+                        <div class="prompt">
+                            <h2>Integer Overflow</h2>
+                            <p>See what happens if you try to print an integer that's too big. Try to go over the minimum value.</p>
+                        </div>
+                        <div class="editor-container">
+                            <div class="editor" id="e4"></div>
+                            <pre class="output">This is the console.</pre>
+                        </div>
+                        <div class="btn-container">
+                            <button class="btn run">Run</button>
+                            <button class="btn reset">Reset</button>
+                        </div>
+                        <div class="result">
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section" id="summary">
+            <div class="head">
+                <h1>Unit 1 Summary</h1>
+            </div>
+            <div class="body">
+                <div class="left summary">
+                    <h2>
+                        Section 1
+                    </h2>
+                    <ul>
+                        <li><b>Programming Language</b>: a language used to communicate instructions to a computer.</li>
+                        <li><b>Object-Oriented Language</b>: a type of programming language that is designed around objects.</li>
+                        <li><b>Class</b>: a blueprint for making objects as well as the place where you write your code.</li>
+                        <li><b>Main Method</b>: a method that is automatically called when the program starts</li>
+                        <li><b>Statement</b>: a line of code that performs a specific action.</li>
+                        <li><b>Print Statement</b>: a type of statement that prints a value into the console.</li>
+                        <li><b>String Literal</b>: a value made up of letters and other characters, surrounded by quotation marks.</li>
+                        <li><b>Bug</b>: an error usually caused by a mistake while programming.</li>
+                        <li><b>Syntax Error</b>: a bug caused by faulty syntax such as forgetting a semicolon or misspelling a keyword. Also known as a compilation error.</li>
+                        <li><b>Compiler</b>: a program that compiles your code before executing it.</li>
+                        <li><b>Compile</b>: to translate a higher level programming language into a lower level language so that the computer can understand.</li>
+                        <li><b>Debugging</b>: the process of finding and fixing bugs.</li>
+                        <li><b>Comment</b>: a piece of code that is not read by the compiler, usually meant for programmers to read.</li>
+                    </ul>
+                </div>
+                <div class="right">
+                    <div class="info">
+                        Keywords and Example Code Snippets
+                    </div>
+                    <div class="code">
+                        <pre>
+<code class="language-java">
 public class Main {
     public static void main(String[] args) {
-        int score = 3;
-        score += 2;
-        score %= 2;
-        System.out.println(score); //Prints 1
+
     }
-}
-    </code>
-</pre>
+}</code>
+                        </pre>
+                    </div>
+                    <div class="code">
+                        <pre>
+<code class="language-java">
+System.out.print("Hello");
+System.out.println("World!");</code>
+                        </pre>
+                    </div>
+                    <div class="code">
+                        <pre>
+<code class="language-java">
+//This is a comment
+/*
+    This is also a comment
+*/</code>
+                        </pre>
+                    </div>
+                    <div class="quiz q1">
+                        <h2>Question 1</h2>
+                        <p>Which of these lines of code will NOT produce a Syntax Error?</p>
+                        <form class="q1">
+                            <label>
+                                <input type="radio" name="q1" value="1">
+                                System.out.println("Hello world!")
+                            </label>
+                            <label>
+                                <input type="radio" name="q1" value="2">
+                                System.out.print("Hello world!);
+                            </label>
+                            <label>
+                                <input type="radio" name="q1" value="3">
+                                System.out.println("Hello world!");
+                            </label>
+                            <label>
+                                <input type="radio" name="q1" value="4">
+                                print("Hello world!");
+                            </label>
+                        </form>
+                        <button class="check" id="check1">Submit</button>
+                        <p class="explanation"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="body">
+                <div class="left summary">
+                    <h2>
+                        Section 2
+                    </h2>
+                    <ul>
+                        <li><b>Variable</b>: a piece of code used to store data like numbers or words.</li>
+                        <li><b>Data Type</b>: the type of data that is being stored, such as int or String.</li>
+                        <li><b>Primitive Variable</b>: a variable that stores primitive types such as int, double, or boolean.</li>
+                        <li><b>Reference Variable</b>: a variable that stores reference types such as String or Array. Also known as an object.</li>
+                        <li><b>Concatenation</b>: Combining multiple strings together into one string.</li>
+                        <li><b>Variable Declaration</b>: Creating a variable by defining a type and a name.</li>
+                        <li><b>Bit</b>: 1s and 0s used to create data types.</li>
+                        <li><b>Memory</b>: an electronic part inside of the computer that holds bits and store data temporarily.</li>
+                        <li><b>Camel Case</b>: a popular naming convention used to keep variable names consistent. The first word is uncapitalized and every word after that is capitalized.</li>
+                    </ul>
+                </div>
+                <div class="right">
+                    <div class="info">
+                        Keywords and Example Code Snippets
+                    </div>
+                    <div class="code">
+                        <pre>
+<code class="language-java">
+int number;
+double decimal = 3.5;
+boolean isTrue = true;
+String sentence = "Hello" + "world!";
+final double PI = 3.14159;</code>
+                        </pre>
+                    </div>
+                    <div class="quiz q2">
+                        <h2>Question 2</h2>
+                        <p>Which of these is NOT a primitive type?</p>
+                        <form class="q2">
+                            <label>
+                                <input type="radio" name="q2" value="1">
+                                String
+                            </label>
+                            <label>
+                                <input type="radio" name="q2" value="2">
+                                int
+                            </label>
+                            <label>
+                                <input type="radio" name="q2" value="3">
+                                double
+                            </label>
+                            <label>
+                                <input type="radio" name="q2" value="4">
+                                boolean 
+                            </label>
+                        </form>
+                        <button class="check" id="check2">Submit</button>
+                        <p class="explanation"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="body">
+                <div class="left summary">
+                    <h2>
+                        Section 3
+                    </h2>
+                    <ul>
+                        <li><b>Operator</b>: a symbol used in an expression to evaluate into a single value.</li>
+                        <li><b>Assignment Operator</b>: a symbol used to assign a value to a variable. It can also assign a new value to a variable that already has a value.</li>
+                        <li><b>Expression</b>: a piece of code that evaluates into a single value. Can be made up of smaller expressions and makes up a statement.</li>
+                        <li><b>Compound Expression</b>: multiple expressions within one expression. Will eventually evaluate to one value.</li>
+                        <li><b>Operator Precedence</b>: the order in which the expression evaluates. Starts with parentheses, then division or multiplication, and then addition or subtraction.</li>
+                        <li><b>Arithmetic Exception</b>: a bug that occurs due to an impossible mathematical operation, such as dividing by 0.</li>
+                        <li><b>Modulo Operator</b>: an operator that returns the remainder of an expression. Written using the % sign.</li>
+                        <li><b>Equality Operator</b>: an operator that checks if two values are equal and evaluates to true or false. Written using the == sign.</li>
+                        <li><b>Not-Equals Operator</b>: an operator that checks if two values are NOT equal and evaluates to true or false. Written using the != sign.</li>
+                    </ul>
+                </div>
+                <div class="right">
+                    <div class="info">
+                        Keywords and Example Code Snippets
+                    </div>
+                    <div class="code">
+                        <pre>
+<code class="language-java">
+int x = 5;
+x = 2 * 10 - 3; //Will evaluate to a single value before assigning
+x = 6 / 0; //Produces an Arithmetic Exception error
+int y = 23;
+y = y % 2; //Evaluates and assigns itself to 1
+y == 1; //Evaluates to true
+y != 1; //Evaluates to false</code>
+                        </pre>
+                    </div>
+                    <div class="quiz q3">
+                        <h2>Question 3</h2>
+                        <p>What does this evaluate to: 3 % ((2 + 3) * 4 / 5)</p>
+                        <form class="q3">
+                            <label>
+                                <input type="radio" name="q3" value="1">
+                                4
+                            </label>
+                            <label>
+                                <input type="radio" name="q3" value="2">
+                                3
+                            </label>
+                            <label>
+                                <input type="radio" name="q3" value="3">
+                                0
+                            </label>
+                            <label>
+                                <input type="radio" name="q3" value="4">
+                                1
+                            </label>
+                        </form>
+                        <button class="check" id="check3">Submit</button>
+                        <p class="explanation"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="body">
+                <div class="left summary">
+                    <h2>
+                        Section 4
+                    </h2>
+                    <ul>
+                        <li><b>Compound Assignment Operators</b>: shortcut operators used to quickly operate and assign a value at the same time.</li>
+                        <li><b>Increment Operator</b>: an operator that increases a variable's value by 1. Written using the ++ sign.</li>
+                        <li><b>Decrement Operator</b>: an operator that decreases a variable's value by 1. Written using the -- sign.</li>
+                        <li><b>Code Tracing</b>: a technique used by programmers to trace the path their code takes to find bugs.</li>
+                    </ul>
+                </div>
+                <div class="right">
+                    <div class="info">
+                        Keywords and Example Code Snippets
+                    </div>
+                    <div class="code">
+                        <pre>
+<code class="language-java">
+x += 2; //Same as x = x + 2;
+x -= 2; //Same as x = x - 2;
+x *= 2; //Same as x = x * 2;
+x /= 2; //Same as x = x / 2;
+x %= 2; //Same as x = x % 2;
+x++; //Same as x = x + 1;
+x--; //Same as x = x - 1;</code>
+                        </pre>
+                    </div>
+                    <div class="quiz q4">
+                        <h2>Question 4</h2>
+                        <p>Which of these is the same as x += x + 2;</p>
+                        <form class="q4">
+                            <label>
+                                <input type="radio" name="q4" value="1">
+                                x *= 2 + x
+                            </label>
+                            <label>
+                                <input type="radio" name="q4" value="2">
+                                x = x + 4
+                            </label>
+                            <label>
+                                <input type="radio" name="q4" value="3">
+                                x = 2 * x + 2; 
+                            </label>
+                            <label>
+                                <input type="radio" name="q4" value="4">
+                                x += x++
+                            </label>
+                        </form>
+                        <button class="check" id="check4">Submit</button>
+                        <p class="explanation"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="body">
+                <div class="left summary">
+                    <h2>
+                        Section 5
+                    </h2>
+                    <ul>
+                        <li><b>Type Casting</b>: an operation that converts a value's data type into a different type.</li>
+                        <li><b>Integer Overflow</b>: a bug caused by storing an int value that is too large (or too small) for the computer's memory to handle.</li>
+                    </ul>
+                </div>
+                <div class="right">
+                    <div class="info">
+                        Keywords and Example Code Snippets
+                    </div>
+                    <div class="code">
+                        <pre>
+<code class="language-java">
+int x = 2;
+x += (int) 2.5; //Will truncate 2.5 to 2 and add it to x
+double y = (double) 3 / 2; //Evaluates to 1.5
+x = Integer.MAX_VALUE + 1; //Will produce an integer overflow error</code>
+                        </pre>
+                    </div>
+                    <div class="quiz q5">
+                        <h2>Question 5</h2>
+                        <p>Which of these will evaluate to 3.5</p>
+                        <form class="q5">
+                            <label>
+                                <input type="radio" name="q5" value="1">
+                                7 / 2
+                            </label>
+                            <label>
+                                <input type="radio" name="q5" value="2">
+                                (double)(7 / 2)
+                            </label>
+                            <label>
+                                <input type="radio" name="q5" value="3">
+                                (int) 7 / 2 
+                            </label>
+                            <label>
+                                <input type="radio" name="q5" value="4">
+                                (double) 7 / 2
+                            </label>
+                        </form>
+                        <button class="check" id="check5">Submit</button>
+                        <p class="explanation"></p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="section">
-            <h1>How Do We Convert Data Types</h1>
-            <p>
-                Type casting in Java is like changing the "shape" of a variable. It's like when you take a ball of clay and shape it into a cool mug or bowl. Type casting lets you change a variable's type from one to another. So, you can turn a number into a temporary value in a different data type using <b>(int)</b> or <b>(double)</b>.
-
-Now, when you divide two integers, Java assumes you want an integer result. But, if you use both integers and decimals, Java thinks you want a double result. And if you want to get a double result from a math operation with integers, you can use <b>casting</b>.
-
-But wait, there's more! You can also round a double to the nearest integer using <b>(int)(x + 0.5)</b> or <b>(int)(x - 0.5)</b> for negative numbers. So, if you have a decimal number that's almost a whole number, you can use casting to round it to the nearest integer.
-
-But remember, Java has a limit for how many digits it can store for any double number. That means calculations on computers might not always be accurate. And finally, int values in Java have a limited range from <b>Integer.MIN_VALUE</b> to <b>Integer.MAX_VALUE</b>. If an int value goes beyond that range, it could result in an incorrect value. So, it's important to keep track of your variables and make sure they don't go out of bounds!
-            </p>
-<pre>
-    <code class="language-java">
-public class Main {
-    public static void main(String[] args) {
-        int score = 3;
-        System.out.println(score / 2); //Prints 1
-        System.out.println((double)score / 2); //Prints 1.5
-    }
-}
-    </code>
-</pre>
-        </div>
-        <div class="section">
-            <h1>Summary</h1>
-<ul>
-    <li><b>Compiler</b>: a program that turns your code into something the computer can understand.</li>
-    <li><b>Compilation Error</b>: an error found while the compiler is running, usually caused by incorrect syntax.</li>
-    <li><b>Main Method</b>: function used to do stuff, written as "public static void main(String[] args)"</li>
-    <li><b>Variable</b>: a name you give to a place in the computer's memory where you can store information.</li>
-    <li><b>Variable Declaration</b>: Creating a variable</li>
-    <li><b>Variable Initialization</b>: Assigning a value to a variable for the first time</li>
-    <li><b>Data type</b>: the type of information you are storing, like whole numbers, decimal numbers, or true/false.</li>
-    <li><b>int</b>: datatype for a whole number</li>
-    <li><b>double</b>: datatype for a decimal number</li>
-    <li><b>boolean</b>: datatype for a true/false value</li>
-    <li><b>Camel case</b>: a way to name variables by putting words together and capitalizing each new word.</li>
-    <li><b>Casting</b>: a way to change the datatype of a variable by using the name of a datatype surrounded by ().</li>
-    <li><b>Operator</b>: a symbol used to do stuff like math, boolean logic, or assignment</li>
-    <li><b>Compound Assignment Operators</b>: Shortcut operators to quickly do math and reassign variables</li>
-    <li><b>Modulo</b>: the % symbol that returns the remainder of a division.</li>
-    <li><b>Arithmetic expression</b>: a math problem using numbers and symbols.</li>
-    <li><b>Operator precedence</b>: the order in which math problems are solved, for example, multiplication before addition. PEMDAS, essentially.</li>
-    <li><b>Keyword</b>: a word with a special meaning in Java, like "int" or "boolean."</li>
-    <li><b>String</b>: an object datatype that stores text.</li>
-    <li><b>System.out.print/println()</b>: ways to show information to the user. println() will print a new line while print() will not.</li>
-    <li><b>=</b>: The assignment operator, used to give variables a value</li> 
-</ul>
-<h1>Things to remember</h1>
-<ul>
-    <li>Variable names are case sensitive</li>
-    <li>Don't forget the datatype when declaring a variable</li>
-    <li>Declare your variables before using them</li>
-    <li>Remember the correct names for your variables</li>
-    <li>Remember the correct types for your variables</li>
-    <li>== is for comparing, = is for assigning</li>
-    <li>ints can be negative</li>
-    <li>End each line with a ;</li>
-    <li>Remember the difference between print() and println()</li>
-    <li>Uninitialized primitive types will be equal to 0 or false</li>
-</ul>
-        </div>
-        -->
     </div>
     <!-- CDNS -->
     <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
@@ -743,7 +1088,7 @@ public class Main {
     <script src="../../JavaScript/cursor.js"></script>
     <script src="../../JavaScript/ide.js" type="module"></script>
     <script src="../../JavaScript/unit1.js" type="module"></script>
-    <script src="../../JavaScript/copyText.js"></script>
+    <script src="../../JavaScript/lesson.js"></script>
 </body>
 
 </html>
