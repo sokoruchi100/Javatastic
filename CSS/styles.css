@@ -175,7 +175,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: rgba(255, 255, 255, 0.4784313725);
+  background-color: rgba(255, 255, 255, 0.7333333333);
   border-radius: 1rem;
   width: 90%;
 }
@@ -186,7 +186,7 @@
   padding-top: 2rem;
   padding-bottom: 2rem;
   font-size: clamp(1rem, 2vw + 2vh, 2rem);
-  font-family: "Roboto Slab", serif;
+  font-family: "Montserrat", sans-serif;
 }
 .home-container .section .content a {
   background-color: rgba(58, 117, 176, 0.4784313725);
@@ -194,19 +194,19 @@
   padding: 1rem;
   font-size: clamp(2rem, 4vw + 4vh, 3rem);
   text-decoration: none;
-  color: #aa2e00;
+  color: #fff;
   min-width: 50%;
   transition: all 0.5s ease;
 }
 .home-container .section .content a:hover {
-  min-width: 100%;
-  background-color: rgba(170, 46, 0, 0.4823529412);
+  min-width: 55%;
+  background-color: #3a75b0;
 }
 
 @media only screen and (min-width: 768px) {
   .circle-follow {
     position: fixed;
-    border: 1px solid #fff;
+    border: 1px solid black;
     scale: 0;
     width: 30px;
     height: 30px;
@@ -218,7 +218,10 @@
     pointer-events: none;
     z-index: 10000;
     transform: scale(1);
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(255, 255, 255, 0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 .slide-container {
@@ -262,7 +265,7 @@
 }
 .slide-container .slide .content p {
   font-size: clamp(1rem, 2vw + 2vh, 2rem);
-  font-family: "Roboto Slab", serif;
+  font-family: "Montserrat", sans-serif;
   text-align: center;
   padding-bottom: 1rem;
 }
@@ -274,25 +277,25 @@
   border-radius: 1rem;
   height: 100%;
   text-align: center;
-  width: 60%;
+  width: 30%;
   font-size: clamp(1rem, 2vw + 2vh, 2rem);
   font-family: "Montserrat", sans-serif;
-  background-color: #3a75b0;
+  background-color: rgba(58, 117, 176, 0.4823529412);
   transition: width 0.5s, background-color 0.5s;
 }
 .slide-container .slide .content a:hover {
-  width: 100%;
-  background-color: #aa2e00;
+  width: 35%;
+  background-color: #3a75b0;
 }
 .slide-container .exercise-0 {
-  background-image: linear-gradient(rgba(255, 255, 255, 0.4784313725), rgba(58, 117, 176, 0.4823529412)), url(../Sources/Images/exerciseMain.jpg);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.7333333333), rgba(58, 117, 176, 0.4823529412)), url(../Sources/Images/exerciseMain.jpg);
 }
 .slide-container .unit-1 {
-  background-image: linear-gradient(rgba(255, 255, 255, 0.4784313725), rgba(58, 117, 176, 0.4823529412)), url("../Sources/Images/unit1.jpg");
+  background-image: linear-gradient(rgba(255, 255, 255, 0.7333333333), rgba(58, 117, 176, 0.4823529412)), url("../Sources/Images/unit1.jpg");
   z-index: 10;
 }
 .slide-container .exercise-1 {
-  background-image: linear-gradient(rgba(255, 255, 255, 0.4784313725), rgba(58, 117, 176, 0.4823529412)), url("../Sources/Images/exercise1.jpg");
+  background-image: linear-gradient(rgba(255, 255, 255, 0.7333333333), rgba(58, 117, 176, 0.4823529412)), url("../Sources/Images/exercise1.jpg");
   z-index: 10;
 }
 
@@ -390,8 +393,8 @@
   min-width: 40%;
   background-color: #3a75b0;
   border-radius: 1rem;
-  box-shadow: 1rem 1rem 1rem rgba(19, 21, 22, 0.4784313725);
-  border: 0.5rem solid #fff;
+  box-shadow: 1rem 1rem 1rem rgba(19, 21, 22, 0.6901960784);
+  border: 0;
 }
 .exercise-container .hint-container p {
   font-size: clamp(1rem, 2vw + 2vh, 2rem);
@@ -464,7 +467,7 @@
   margin-left: 1rem;
   height: 3rem;
   width: 3rem;
-  background-color: rgba(19, 21, 22, 0.4784313725);
+  background-color: rgba(19, 21, 22, 0.6901960784);
   border: none;
   cursor: pointer;
 }
@@ -485,7 +488,7 @@
   width: 100%;
   position: fixed;
   bottom: 0;
-  background-color: rgba(19, 21, 22, 0.4784313725);
+  background-color: rgba(19, 21, 22, 0.6901960784);
 }
 .slider .ide-container .editor-container {
   height: 50%;
@@ -587,6 +590,15 @@
   text-decoration: none;
   font-size: clamp(1rem, 1vw + 1vh, 2rem);
   color: #fff;
+  transition: all 0.2s ease-in-out;
+  width: 100%;
+  border-radius: 1rem;
+}
+.nav-slider .nav-container a:hover {
+  background-color: white;
+  color: #131516;
+  width: 100%;
+  border-radius: 1rem;
 }
 
 @media only screen and (min-width: 768px) {
@@ -635,14 +647,21 @@
   flex-direction: column;
 }
 .section-container .section .head {
-  height: 100vh;
-  width: 100vw;
-  background-image: linear-gradient(to right, #3a75b0, #fff);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 1rem;
+  height: 50vh;
+  width: 100%;
   display: flex;
   flex-direction: column-reverse;
 }
 .section-container .section .head h1 {
   font-size: clamp(3rem, 5vw + 5vh, 4rem);
+  padding-bottom: 5rem;
+  padding-left: 5rem;
+  color: white;
 }
 .section-container .section .body:last-child {
   margin-bottom: 0;
@@ -663,10 +682,10 @@
   border-radius: 1rem;
   padding: 1rem;
   margin: 0.5rem;
-  background-color: rgba(255, 255, 255, 0.4784313725);
-  box-shadow: 0.5rem 0.5rem 0.5rem rgba(19, 21, 22, 0.4784313725);
+  background-color: rgba(255, 255, 255, 0.7333333333);
+  box-shadow: 0.5rem 0.5rem 0.5rem rgba(19, 21, 22, 0.6901960784);
   position: sticky;
-  top: 0;
+  top: 5rem;
 }
 .section-container .section .body .left h2 {
   font-size: clamp(2rem, 4vw + 4vh, 3rem);
@@ -684,7 +703,7 @@
 }
 .section-container .section .body .left p em {
   font-style: normal;
-  background-color: rgba(19, 21, 22, 0.4784313725);
+  background-color: rgba(19, 21, 22, 0.6901960784);
   color: #fff;
   font-family: "Source Code Pro", monospace;
   border-radius: 0.5rem;
@@ -721,7 +740,7 @@
   position: relative;
   overflow: hidden;
   transform: translateZ(-1rem);
-  box-shadow: 0rem 0.5rem 0.5rem rgba(19, 21, 22, 0.4784313725);
+  box-shadow: 0rem 0.5rem 0.5rem rgba(19, 21, 22, 0.6901960784);
   border-radius: 1rem;
   transition: all 0.2s ease-in-out;
   z-index: 9;
@@ -757,7 +776,7 @@
   position: relative;
   overflow: hidden;
   transform: translateZ(-1rem);
-  box-shadow: 0rem 0.5rem 0.5rem rgba(19, 21, 22, 0.4784313725);
+  box-shadow: 0rem 0.5rem 0.5rem rgba(19, 21, 22, 0.6901960784);
   border-radius: 1rem;
   transition: all 0.2s ease-in-out;
   z-index: 9;
@@ -798,7 +817,7 @@
 .section-container .section .body .right .image:hover {
   transform: translate(0rem, -1rem);
   scale: 1.05;
-  box-shadow: 0rem 1rem 1rem rgba(19, 21, 22, 0.4784313725);
+  box-shadow: 0rem 1rem 1rem rgba(19, 21, 22, 0.6901960784);
 }
 .section-container .section .body .right .image:hover .background {
   background-size: 105%;
@@ -827,7 +846,7 @@
   border-radius: 1rem;
   width: 100%;
   height: 100%;
-  box-shadow: 0.5rem 0.5rem 0.5rem rgba(19, 21, 22, 0.4784313725);
+  box-shadow: 0.5rem 0.5rem 0.5rem rgba(19, 21, 22, 0.6901960784);
 }
 .section-container .section .body .right .code {
   max-width: 100%;
@@ -838,7 +857,7 @@
   padding: 20px;
   border-radius: 20px;
   background-color: #131516;
-  box-shadow: 0.5rem 0.5rem 0.5rem rgba(19, 21, 22, 0.4784313725);
+  box-shadow: 0.5rem 0.5rem 0.5rem rgba(19, 21, 22, 0.6901960784);
 }
 .section-container .section .body .right .code pre code {
   font-size: clamp(0.75rem, 1vw + 1vh, 1rem);
@@ -852,7 +871,7 @@
   font-weight: bold;
   background-color: #fae500;
   border-radius: 1rem;
-  box-shadow: 0.5rem 0.5rem 0.5rem rgba(19, 21, 22, 0.4784313725);
+  box-shadow: 0.5rem 0.5rem 0.5rem rgba(19, 21, 22, 0.6901960784);
   font-style: italic;
 }
 .section-container .section .body .right .note h2 {
@@ -864,7 +883,7 @@
   font-weight: bold;
   background-color: #3a75b0;
   border-radius: 1rem;
-  box-shadow: 0.5rem 0.5rem 0.5rem rgba(19, 21, 22, 0.4784313725);
+  box-shadow: 0.5rem 0.5rem 0.5rem rgba(19, 21, 22, 0.6901960784);
   font-style: italic;
 }
 .section-container .section .body .right .exercise {
@@ -873,10 +892,10 @@
   justify-content: center;
   height: 40rem;
   width: 100%;
-  background-color: rgba(19, 21, 22, 0.4784313725);
+  background-color: rgba(19, 21, 22, 0.6901960784);
   border-radius: 1rem;
   padding: 1rem;
-  box-shadow: 0rem 0.5rem 0.5rem rgba(19, 21, 22, 0.4784313725);
+  box-shadow: 0rem 0.5rem 0.5rem rgba(19, 21, 22, 0.6901960784);
 }
 .section-container .section .body .right .exercise .prompt {
   color: #fff;
@@ -924,7 +943,7 @@
   height: 100%;
   margin-bottom: 1rem;
   transition: background-color 0.5s, width 0.5s;
-  box-shadow: 0.5rem 0.5rem 0.5rem rgba(19, 21, 22, 0.4784313725);
+  box-shadow: 0.5rem 0.5rem 0.5rem rgba(19, 21, 22, 0.6901960784);
   opacity: 0.8;
   transition: all 0.2s ease-in-out;
 }
@@ -949,7 +968,7 @@
   color: #131516;
   background-color: rgba(255, 244, 129, 0.4823529412);
   border-radius: 1rem;
-  box-shadow: 0.5rem 0.5rem 0.5rem rgba(19, 21, 22, 0.4784313725);
+  box-shadow: 0.5rem 0.5rem 0.5rem rgba(19, 21, 22, 0.6901960784);
 }
 .section-container .section .body .right .quiz h2 {
   font-size: clamp(2rem, 4vw + 4vh, 3rem);
@@ -992,21 +1011,6 @@
 }
 .section-container .section .body .right .quiz .explanation {
   display: none;
-}
-.section-container .section a {
-  background-color: #3a75b0;
-  font-size: clamp(2rem, 4vw + 4vh, 3rem);
-  font-family: "Montserrat", sans-serif;
-  color: #fff;
-  border-radius: 1rem;
-  text-align: center;
-  text-decoration: none;
-  transition: all 0.5s ease;
-  min-width: 50%;
-}
-.section-container .section a:hover {
-  min-width: 100%;
-  background-color: #aa2e00;
 }
 
 @media only screen and (min-width: 768px) {
@@ -1055,7 +1059,8 @@
   position: fixed;
   margin-top: 5rem;
   padding: 1rem;
-  background-color: rgba(58, 117, 176, 0.4823529412);
+  background-color: rgba(19, 21, 22, 0.6901960784);
+  color: white;
   border-radius: 1rem;
 }
 
@@ -1092,14 +1097,13 @@
   min-width: 20%;
   font-family: "Montserrat", sans-serif;
   font-size: clamp(2rem, 4vw + 4vh, 3rem);
-  background-color: rgba(255, 255, 255, 0.4784313725);
-  transition: all 0.5s ease;
+  background-color: rgba(255, 255, 255, 0.7333333333);
+  transition: all 0.2s ease;
   cursor: pointer;
 }
 .start-container .content button:hover {
-  background-color: #aa2e00;
-  color: #fff;
-  min-width: 100%;
+  background-color: #fff;
+  min-width: 25%;
 }
 
 .quiz-container {
@@ -1186,14 +1190,14 @@
   padding: 1rem;
 }
 .quiz-container button:hover {
-  background-color: #aa2e00;
+  background-color: #3a75b0;
   color: #fff;
-  min-width: 100%;
+  min-width: 35%;
 }
 
 @media only screen and (min-width: 768px) {
   .quiz-container .section {
-    width: 80%;
+    width: 68%;
   }
 }
 * {
@@ -1216,7 +1220,7 @@ body {
   z-index: -10;
   height: 100vh;
   width: 100vw;
-  background-image: linear-gradient(rgba(255, 255, 255, 0.4784313725), rgba(58, 117, 176, 0.4823529412));
+  background-image: linear-gradient(rgba(255, 255, 255, 0.7333333333), rgba(58, 117, 176, 0.4823529412));
 }
 
 /*# sourceMappingURL=styles.css.map */

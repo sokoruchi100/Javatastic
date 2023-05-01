@@ -2,7 +2,8 @@
     position: fixed;
     margin-top: 5rem;
     padding: 1rem;
-    background-color: $blueTrans;
+    background-color: $blackTrans;
+    color: white;
     border-radius: 1rem;
 }
 .start-container {
@@ -37,13 +38,12 @@
             font-family: $headFont;
             font-size: $headerFontSize;
             background-color: $whiteTrans;
-            transition: all 0.5s ease;
+            transition: all 0.2s ease;
             cursor: pointer;
         }
         button:hover {
-            background-color: $red;
-            color: $white;
-            min-width: 100%;
+            background-color: $white;
+            min-width: 25%;
         }
     }
 }
@@ -134,16 +134,16 @@
         padding: 1rem;
     }
     button:hover {
-        background-color: $red;
+        background-color: $blue;
         color: $white;
-        min-width: 100%;
+        min-width: 35%;
     }
 }
 
 @media only screen and (min-width: 768px) {
     .quiz-container {
         .section {
-            width: 80%;
+            width: 68%;
         }
     }
 }

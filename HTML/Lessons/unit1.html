@@ -15,7 +15,9 @@
     
 </head>
 <body>
-    <div class="circle-follow"></div>
+    <div class="circle-follow">
+        <i class="mouse fa-solid fa-location-arrow"></i>
+    </div>
     <header class="header">
         <div class="header-bg"></div>
         <div class="main-row">
@@ -74,24 +76,24 @@
             </svg>
         </button>
         <div class="nav-container">
-            <a href="#introduction">Introduction</a>
-            <a href="#section-1">Section 1</a>
-            <a href="#section-2">Section 2</a>
-            <a href="#section-3">Section 3</a>
-            <a href="#section-4">Section 4</a>
-            <a href="#section-5">Section 5</a>
-            <a href="#summary">Summary</a>
+            <a href="#introduction" class="lesson-nav">Introduction</a>
+            <a href="#section-1" class="lesson-nav">Section 1</a>
+            <a href="#section-2" class="lesson-nav">Section 2</a>
+            <a href="#section-3" class="lesson-nav">Section 3</a>
+            <a href="#section-4" class="lesson-nav">Section 4</a>
+            <a href="#section-5" class="lesson-nav">Section 5</a>
+            <a href="#summary" class="lesson-nav">Summary</a>
         </div>
     </div>
 
     <div class="section-container">
         <div class="section" id="introduction">
-            <div class="head">
-                <h1>Introduction</h1>
+            <div class="head" style="background-image: url(../../Sources/Images/aurora.jpg);">
+                <h1 style="color:white;">Introduction</h1>
             </div>
             <div class="body">
                 <div class="left">
-                    <h2>What Is This?</h2>
+                    <h2>What Is This Website?</h2>
                     <p>
                         Hi! Welcome to Javatastic's first lesson page: Unit 1!
                         These lessons are based off of the AP Computer Science A curriculum, but the content has been specifically designed and reworked for beginners.
@@ -192,7 +194,7 @@ public class Main {
             </div>
             <div class="body">
                 <div class="left">
-                    <h2>What If I Fail?</h2>
+                    <h2>What If I'm Lost?</h2>
                     <p>
                         Learning to code can be tough, but it feels very rewarding when you finally figure it out!
                         Your brain also grows while you're figuring out how to solve problems and fix errors, so keep a growth mindset and stay positive.
@@ -209,66 +211,12 @@ public class Main {
                     <div class="video">                        
                         <iframe src="https://www.youtube.com/embed/vgkahOzFH2Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                     </div>
-
-                    <!--
-                        <div class="code">
-                        <pre>
-                            <code class="language-java">
-public class Main {
-    public static void main(String[] args) {
-        //Write your code here!!!
-    }
-}
-                            </code>
-                        </pre>
-                    </div>
-
-                    <div class="exercise e1">
-                        <div class="prompt">
-                            <h2>Example Exercise</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus eum aliquam molestias quaerat voluptatem nam inventore in quas. Cum est architecto praesentium quae eos ab voluptatibus nostrum id minima debitis!</p>
-                        </div>
-                        <div class="editor-container">
-                            <div class="editor" id="e1"></div>
-                            <pre class="output">This is the console. Your code will output here.</pre>
-                        </div>
-                        <div class="btn-container">
-                            <button class="btn run">Run</button>
-                            <button class="btn reset">Reset</button>
-                        </div>
-                    </div>
-
-                    <div class="quiz q1">
-                        <h2>Example Question</h2>
-                        <p>Which of these is the number 1?</p>
-                        <form class="q1">
-                            <label>
-                                <input type="radio" name="q1" value="1">
-                                1
-                            </label>
-                            <label>
-                                <input type="radio" name="q1" value="2">
-                                2
-                            </label>
-                            <label>
-                                <input type="radio" name="q1" value="3">
-                                3
-                            </label>
-                            <label>
-                                <input type="radio" name="q1" value="4">
-                                4
-                            </label>
-                        </form>
-                        <button class="check" id="check1">Submit</button>
-                        <p class="explanation">Explanation: Yadiyadayada</p>
-                    </div>
-                    -->
                 </div>
             </div>
         </div>
         <div class="section" id="section-1">
-            <div class="head">
-                <h1>Section 1: First Steps</h1>
+            <div class="head" style="background-image: url(../../Sources/Images/firstSteps.jpg);">
+                <h1 style="color: white;">Section 1: First Steps</h1>
             </div>
             <div class="body">
                 <div class="left">
@@ -447,7 +395,7 @@ System.out.println();</code>
                 </div>
         </div>
         <div class="section" id="section-2">
-            <div class="head">
+            <div class="head" style="background-image: url(../../Sources/Images/boxes.jpg);">
                 <h1>Section 2: Variables and Data Types</h1>
             </div>
             <div class="body">
@@ -536,8 +484,8 @@ boolean hasNum = true;</code>
             </div>
         </div>
         <div class="section" id="section-3">
-            <div class="head">
-                <h1>Section 3:Operators and Arithmetic</h1>
+            <div class="head" style="background-image: url(../../Sources/Images/math.jpg);">
+                <h1 style="color: white;">Section 3:Operators and Arithmetic</h1>
             </div>
             <div class="body">
                 <div class="left">
@@ -652,8 +600,8 @@ x = 2;</code>
             </div>
         </div>
         <div class="section" id="section-4">
-            <div class="head">
-                <h1>Section 4: Compound Assignment Operators</h1>
+            <div class="head" style="background-image: url(../../Sources/Images/compound.jpg); background-position: bottom;">
+                <h1 style="color: white;">Section 4: Compound Assignment Operators</h1>
             </div>
             <div class="body">
                 <div class="left">
@@ -695,7 +643,7 @@ x--; //Same as x = x - 1;</code>
             </div>
         </div>
         <div class="section" id="section-5">
-            <div class="head">
+            <div class="head" style="background-image: url(../../Sources/Images/casting.jpg);">
                 <h1>Section 5: Type Casting</h1>
             </div>
             <div class="body">
@@ -773,8 +721,8 @@ double z = (double) x / 5; //Converts x into a double before division and evalua
                 </div>
             </div>
         </div>
-        <div class="section" id="summary">
-            <div class="head">
+        <div class="section" id="summary" >
+            <div class="head" style="background-image: url(../../Sources/Images/world.jpg);">
                 <h1>Unit 1 Summary</h1>
             </div>
             <div class="body">
@@ -849,7 +797,7 @@ System.out.println("World!");</code>
                                 print("Hello world!");
                             </label>
                         </form>
-                        <button class="check" id="check1">Submit</button>
+                        <button class="check" id="check1">Check</button>
                         <p class="explanation"></p>
                     </div>
                 </div>
@@ -906,7 +854,7 @@ final double PI = 3.14159;</code>
                                 boolean 
                             </label>
                         </form>
-                        <button class="check" id="check2">Submit</button>
+                        <button class="check" id="check2">Check</button>
                         <p class="explanation"></p>
                     </div>
                 </div>
@@ -965,7 +913,7 @@ y != 1; //Evaluates to false</code>
                                 1
                             </label>
                         </form>
-                        <button class="check" id="check3">Submit</button>
+                        <button class="check" id="check3">Check</button>
                         <p class="explanation"></p>
                     </div>
                 </div>
@@ -1019,7 +967,7 @@ x--; //Same as x = x - 1;</code>
                                 x += x++
                             </label>
                         </form>
-                        <button class="check" id="check4">Submit</button>
+                        <button class="check" id="check4">Check</button>
                         <p class="explanation"></p>
                     </div>
                 </div>
@@ -1068,7 +1016,7 @@ x = Integer.MAX_VALUE + 1; //Will produce an integer overflow error</code>
                                 (double) 7 / 2
                             </label>
                         </form>
-                        <button class="check" id="check5">Submit</button>
+                        <button class="check" id="check5">Check</button>
                         <p class="explanation"></p>
                     </div>
                 </div>

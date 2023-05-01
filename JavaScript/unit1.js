@@ -68,4 +68,14 @@ $(document).ready(function () {
             }
         });
     }
+
+
+    $(".lesson-nav").click(function(event) {
+        event.preventDefault(); // prevent default link behavior
+        const section = $($(this).attr("href")); // get section element
+        $('html, body').animate({
+            scrollTop: section.offset().top
+        }, 1000); // animate scroll to section over 1 second
+    });
+
 });

@@ -134,38 +134,48 @@ $(document).ready(function () {
     });
 
     gsap.from(".title-section", 1, {
-        y:"-100%",
-        ease: "elastic.out(1, 0.4)",
+        x:"100%",
+        opacity: 0,
+        ease: "power4.inOut",
         scrollTrigger: {
             trigger: ".title-section",
             start: "top center",
         }
     });
     
-    gsap.from(".lessons-section", 1, {
+    gsap.from(".lessons-section", {
         x:"-100%",
-        ease: "elastic.out(1, 0.4)",
+        opacity: 0,
+        ease: "power4.inOut",
         scrollTrigger: {
             trigger: ".lessons-section",
-            start: "top center",
+            start: "top bottom",
+            end: "bottom bottom",
+            scrub: 1
         }
     });
 
-    gsap.from(".exercises-section", 1, {
+    gsap.from(".exercises-section", {
         x:"100%",
-        ease: "elastic.out(1, 0.4)",
+        opacity: 0,
+        ease: "power4.inOut",
         scrollTrigger: {
             trigger: ".exercises-section",
-            start: "top center",
+            start: "top bottom",
+            end: "bottom bottom",
+            scrub: 1
         }
     });
 
-    gsap.from(".quiz-section", 1, {
-        y:"100%",
-        ease: "elastic.out(1, 0.4)",
+    gsap.from(".quiz-section", {
+        x:"-100%",
+        opacity: 0,
+        ease: "power4.inOut",
         scrollTrigger: {
             trigger: ".quiz-section",
-            start: "top center",
+            start: "top bottom",
+            end: "bottom bottom",
+            scrub: 1
         }
     });
     

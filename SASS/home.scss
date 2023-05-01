@@ -19,6 +19,7 @@
     display: flex;
     flex-wrap: nowrap;
     flex-direction: column;
+
     .section {
         overflow-y: hidden;
         height: 100%;
@@ -51,13 +52,13 @@
                 padding: 1rem;
                 font-size: $headerFontSize;
                 text-decoration: none;
-                color: $red;
+                color: $white;
                 min-width: 50%;
                 transition: all 0.5s ease;
             }
             a:hover {
-                min-width: 100%;
-                background-color: $redTrans;
+                min-width: 55%;
+                background-color: $blue;
             }
         }
     }

@@ -4,21 +4,15 @@ $(document).ready(function () {
 
   const scroller = $('.slide-container');
   const content = $('.slide');
-  const proxy = ScrollTrigger.scrollerProxy(scroller, {
-    scrollTop(value) {
-      if (arguments.length) {
-        content.scrollTop = value;
-      }
-      return content.scrollTop;
-    },
-    getBoundingClientRect() {
-      return {top: 0, left: 0, width: window.innerWidth, height: window.innerHeight};
-    }
-  });
   
+  gsap.from(".content", 1, {
+    x:"100%",
+    ease: "easeInOut",
+    opacity: "0"
+  })
+
   let sections = gsap.utils.toArray(".slide");
   $(".slide-container").css("width", 100*sections.length+"vw");
-  let sectionVideos = gsap.utils.toArray(".slide video");
 
   const tl = gsap.timeline({
     scrollTrigger: {

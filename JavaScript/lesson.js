@@ -1,6 +1,36 @@
 "use strict";
-
+gsap.registerPlugin(ScrollTrigger);
 $(document).ready(function () {
+
+    // Select all section headings
+    const sections = gsap.utils.toArray(".section");
+
+    // Loop through each section
+    sections.forEach((section, index) => {
+        // Create a new timeline for this section heading
+
+        
+        gsap.to(section, {
+            x:"-100%",
+            scrollTrigger: {
+                trigger: section,
+                start: "bottom bottom",
+                end: "bottom top",
+                scrub: 1
+            }
+        });
+        
+        gsap.from(section, {
+            x:"100%",
+            scrollTrigger: {
+                trigger: section,
+                start: "top bottom",
+                end: "top top",
+                scrub: 1
+            }
+        });
+    });
+
     // Select the element
     const $copyText = $('.code');
 
@@ -15,6 +45,7 @@ $(document).ready(function () {
                 console.error("Error copying code: ", error);
             });
     });
+
     const navToggle = $(".nav-toggle");
     //Arrow Icon
     const navIconTL = gsap.timeline({paused: true});

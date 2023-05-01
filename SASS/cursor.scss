@@ -4,7 +4,7 @@
 @media only screen and (min-width: 768px) {
     .circle-follow {
         position: fixed;
-        border:1px solid #fff;
+        border:1px solid black;
         scale: 0;
         width: 30px;
         height: 30px;
@@ -15,11 +15,13 @@
         user-select: none;
         pointer-events: none;
         z-index: 10000;
-        //overflow: hidden;
         transform: scale(1);
-        background-color: rgb(0,0,0,0.5);
-        // &.active {
-        //     transform: scale(3);
-        // }  
+        background-color: rgba(255, 255, 255, 0.75);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        i {
+
+        }
     }
 }

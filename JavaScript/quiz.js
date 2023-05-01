@@ -2,6 +2,21 @@
 import { questionBank } from "./questionBank.js";
 
 $(document).ready(function() {
+    
+    gsap.from(".content", 1, {
+        x:"100%",
+        ease: "easeInOut",
+        opacity: "0"
+    })
+
+    const timertl = gsap.timeline({paused:true});
+    timertl.from(".timer-container", 0.5, {
+        y:"-100%",
+        ease: "easeInOut",
+        opacity: "0"
+    });
+
+
     let questions; //scope access
     let timerInterval;
     let timeRemaining = 45 * 60; // 45 minutes in seconds
@@ -38,6 +53,7 @@ $(document).ready(function() {
         $(".start-container").hide();
         $(".quiz-container").css("display", "flex");
         startTimer();
+        timertl.play();
     });
 
     //Shuffles the questionBank array an returns the first 20 questions
